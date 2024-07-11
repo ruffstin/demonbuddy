@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05BC78A22C3DDE1C0076FE87 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BC78A12C3DDE1C0076FE87 /* LoginViewController.swift */; };
+		05BC78A42C3DE1D70076FE87 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BC78A32C3DE1D70076FE87 /* RegisterViewController.swift */; };
+		05BC78C92C40605D0076FE87 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05BC78C82C40605D0076FE87 /* GoogleService-Info.plist */; };
+		05BC78CC2C40633A0076FE87 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 05BC78CB2C40633A0076FE87 /* FirebaseAuth */; };
+		05BC78CF2C40725B0076FE87 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BC78CE2C40725B0076FE87 /* HomeViewController.swift */; };
 		05BDBB5E2C3B32F6007D4203 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BDBB5D2C3B32F6007D4203 /* AppDelegate.swift */; };
 		05BDBB602C3B32F6007D4203 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BDBB5F2C3B32F6007D4203 /* SceneDelegate.swift */; };
-		05BDBB622C3B32F6007D4203 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BDBB612C3B32F6007D4203 /* ViewController.swift */; };
 		05BDBB652C3B32F6007D4203 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 05BDBB642C3B32F6007D4203 /* Base */; };
 		05BDBB682C3B32F6007D4203 /* DemonBuddy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 05BDBB662C3B32F6007D4203 /* DemonBuddy.xcdatamodeld */; };
 		05BDBB6A2C3B32F7007D4203 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05BDBB692C3B32F7007D4203 /* Assets.xcassets */; };
@@ -17,10 +21,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05BC78A12C3DDE1C0076FE87 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		05BC78A32C3DE1D70076FE87 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		05BC78C82C40605D0076FE87 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		05BC78CD2C40656B0076FE87 /* DemonBuddy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DemonBuddy.entitlements; sourceTree = "<group>"; };
+		05BC78CE2C40725B0076FE87 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		05BDBB5A2C3B32F6007D4203 /* DemonBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemonBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05BDBB5D2C3B32F6007D4203 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05BDBB5F2C3B32F6007D4203 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		05BDBB612C3B32F6007D4203 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		05BDBB642C3B32F6007D4203 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		05BDBB672C3B32F6007D4203 /* DemonBuddy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DemonBuddy.xcdatamodel; sourceTree = "<group>"; };
 		05BDBB692C3B32F7007D4203 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -33,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05BC78CC2C40633A0076FE87 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,14 +67,18 @@
 		05BDBB5C2C3B32F6007D4203 /* DemonBuddy */ = {
 			isa = PBXGroup;
 			children = (
+				05BC78CD2C40656B0076FE87 /* DemonBuddy.entitlements */,
 				05BDBB5D2C3B32F6007D4203 /* AppDelegate.swift */,
 				05BDBB5F2C3B32F6007D4203 /* SceneDelegate.swift */,
-				05BDBB612C3B32F6007D4203 /* ViewController.swift */,
+				05BC78A12C3DDE1C0076FE87 /* LoginViewController.swift */,
+				05BC78A32C3DE1D70076FE87 /* RegisterViewController.swift */,
+				05BC78CE2C40725B0076FE87 /* HomeViewController.swift */,
 				05BDBB632C3B32F6007D4203 /* Main.storyboard */,
 				05BDBB692C3B32F7007D4203 /* Assets.xcassets */,
 				05BDBB6B2C3B32F7007D4203 /* LaunchScreen.storyboard */,
 				05BDBB6E2C3B32F7007D4203 /* Info.plist */,
 				05BDBB662C3B32F6007D4203 /* DemonBuddy.xcdatamodeld */,
+				05BC78C82C40605D0076FE87 /* GoogleService-Info.plist */,
 			);
 			path = DemonBuddy;
 			sourceTree = "<group>";
@@ -86,6 +99,9 @@
 			dependencies = (
 			);
 			name = DemonBuddy;
+			packageProductDependencies = (
+				05BC78CB2C40633A0076FE87 /* FirebaseAuth */,
+			);
 			productName = DemonBuddy;
 			productReference = 05BDBB5A2C3B32F6007D4203 /* DemonBuddy.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +130,9 @@
 				Base,
 			);
 			mainGroup = 05BDBB512C3B32F6007D4203;
+			packageReferences = (
+				05BC78CA2C40633A0076FE87 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 05BDBB5B2C3B32F6007D4203 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -129,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05BDBB6A2C3B32F7007D4203 /* Assets.xcassets in Resources */,
+				05BC78C92C40605D0076FE87 /* GoogleService-Info.plist in Resources */,
 				05BDBB6D2C3B32F7007D4203 /* Base in Resources */,
 				05BDBB652C3B32F6007D4203 /* Base in Resources */,
 			);
@@ -141,9 +161,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05BDBB622C3B32F6007D4203 /* ViewController.swift in Sources */,
 				05BDBB5E2C3B32F6007D4203 /* AppDelegate.swift in Sources */,
 				05BDBB682C3B32F6007D4203 /* DemonBuddy.xcdatamodeld in Sources */,
+				05BC78A42C3DE1D70076FE87 /* RegisterViewController.swift in Sources */,
+				05BC78A22C3DDE1C0076FE87 /* LoginViewController.swift in Sources */,
+				05BC78CF2C40725B0076FE87 /* HomeViewController.swift in Sources */,
 				05BDBB602C3B32F6007D4203 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,6 +316,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DemonBuddy/DemonBuddy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5NV6RU3Q53;
@@ -322,6 +345,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DemonBuddy/DemonBuddy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5NV6RU3Q53;
@@ -367,6 +391,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		05BC78CA2C40633A0076FE87 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.29.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		05BC78CB2C40633A0076FE87 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 05BC78CA2C40633A0076FE87 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		05BDBB662C3B32F6007D4203 /* DemonBuddy.xcdatamodeld */ = {
