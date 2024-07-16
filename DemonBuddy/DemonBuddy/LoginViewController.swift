@@ -20,7 +20,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        loginButton.layer.cornerRadius = 10
+        loginButton.layer.cornerRadius = 5
         loginButton.clipsToBounds = true
         
         Auth.auth().addStateDidChangeListener() {
@@ -39,13 +39,7 @@ class LoginViewController: UIViewController {
             Auth.auth().signIn(withEmail: emailInput.text!, password: passwordInput.text!) {
                 authResult, error in
                 if let error = error as NSError? {
-                    switch AuthErrorCode.Code(rawValue: error.code){
-                        case .wrongPassword:
-                            self.errorLabel.text = "\u{2757} Email or password is incorrect"
-                            break
-                        default:
-                            break
-                    }
+                    self.errorLabel.text = "Email or password is incorrect"
                 } else {
                     self.errorLabel.text = nil
                 }

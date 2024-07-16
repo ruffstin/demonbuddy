@@ -28,7 +28,7 @@ class RegisterViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        registerButton.layer.cornerRadius = 10
+        registerButton.layer.cornerRadius = 5
         registerButton.clipsToBounds = true
         
         Auth.auth().addStateDidChangeListener() {
@@ -65,8 +65,6 @@ class RegisterViewController: UIViewController {
                 } else {
                     self.emailErrorLabel.text = nil
                     self.passwordErrorLabel.text = nil
-                    
-                    Auth.auth().signIn(withEmail: self.emailInput.text!, password: self.passwordInput.text!)
                 }
             }
         }

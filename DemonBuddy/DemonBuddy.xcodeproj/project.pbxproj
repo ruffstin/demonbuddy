@@ -12,6 +12,7 @@
 		05BC78C92C40605D0076FE87 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05BC78C82C40605D0076FE87 /* GoogleService-Info.plist */; };
 		05BC78CC2C40633A0076FE87 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 05BC78CB2C40633A0076FE87 /* FirebaseAuth */; };
 		05BC78CF2C40725B0076FE87 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BC78CE2C40725B0076FE87 /* HomeViewController.swift */; };
+		05BC78F82C46B4620076FE87 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BC78F72C46B4620076FE87 /* NotesViewController.swift */; };
 		05BDBB5E2C3B32F6007D4203 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BDBB5D2C3B32F6007D4203 /* AppDelegate.swift */; };
 		05BDBB602C3B32F6007D4203 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BDBB5F2C3B32F6007D4203 /* SceneDelegate.swift */; };
 		05BDBB652C3B32F6007D4203 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 05BDBB642C3B32F6007D4203 /* Base */; };
@@ -26,6 +27,7 @@
 		05BC78C82C40605D0076FE87 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		05BC78CD2C40656B0076FE87 /* DemonBuddy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DemonBuddy.entitlements; sourceTree = "<group>"; };
 		05BC78CE2C40725B0076FE87 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		05BC78F72C46B4620076FE87 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotesViewController.swift; path = DemonBuddy/NotesViewController.swift; sourceTree = "<group>"; };
 		05BDBB5A2C3B32F6007D4203 /* DemonBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemonBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05BDBB5D2C3B32F6007D4203 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05BDBB5F2C3B32F6007D4203 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +53,7 @@
 		05BDBB512C3B32F6007D4203 = {
 			isa = PBXGroup;
 			children = (
+				05BC78F72C46B4620076FE87 /* NotesViewController.swift */,
 				05BDBB5C2C3B32F6007D4203 /* DemonBuddy */,
 				05BDBB5B2C3B32F6007D4203 /* Products */,
 			);
@@ -164,6 +167,7 @@
 				05BDBB5E2C3B32F6007D4203 /* AppDelegate.swift in Sources */,
 				05BDBB682C3B32F6007D4203 /* DemonBuddy.xcdatamodeld in Sources */,
 				05BC78A42C3DE1D70076FE87 /* RegisterViewController.swift in Sources */,
+				05BC78F82C46B4620076FE87 /* NotesViewController.swift in Sources */,
 				05BC78A22C3DDE1C0076FE87 /* LoginViewController.swift in Sources */,
 				05BC78CF2C40725B0076FE87 /* HomeViewController.swift in Sources */,
 				05BDBB602C3B32F6007D4203 /* SceneDelegate.swift in Sources */,
