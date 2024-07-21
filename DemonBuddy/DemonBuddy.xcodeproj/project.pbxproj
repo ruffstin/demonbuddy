@@ -20,6 +20,10 @@
 		05BDBB6A2C3B32F7007D4203 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05BDBB692C3B32F7007D4203 /* Assets.xcassets */; };
 		05BDBB6D2C3B32F7007D4203 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 05BDBB6C2C3B32F7007D4203 /* Base */; };
 		21C04AF72C4DA34D00BC871F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C04AF62C4DA34D00BC871F /* SettingsViewController.swift */; };
+		C6096D742C4DAE3800E93C81 /* CharactersCreatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6096D732C4DAE3800E93C81 /* CharactersCreatedViewController.swift */; };
+		C6096D762C4DB23000E93C81 /* CreatedMonstersorNPCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6096D752C4DB23000E93C81 /* CreatedMonstersorNPCViewController.swift */; };
+		C6096D782C4DB9D500E93C81 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6096D772C4DB9D500E93C81 /* PlayerViewController.swift */; };
+		C6096D7A2C4DBA0D00E93C81 /* DungeonMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6096D792C4DBA0D00E93C81 /* DungeonMasterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,10 @@
 		05BDBB6C2C3B32F7007D4203 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		05BDBB6E2C3B32F7007D4203 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21C04AF62C4DA34D00BC871F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		C6096D732C4DAE3800E93C81 /* CharactersCreatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersCreatedViewController.swift; sourceTree = "<group>"; };
+		C6096D752C4DB23000E93C81 /* CreatedMonstersorNPCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatedMonstersorNPCViewController.swift; sourceTree = "<group>"; };
+		C6096D772C4DB9D500E93C81 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		C6096D792C4DBA0D00E93C81 /* DungeonMasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonMasterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +79,6 @@
 		05BDBB5C2C3B32F6007D4203 /* DemonBuddy */ = {
 			isa = PBXGroup;
 			children = (
-				05BC78F72C46B4620076FE87 /* NotesViewController.swift */,
 				05BC78CD2C40656B0076FE87 /* DemonBuddy.entitlements */,
 				05BDBB5D2C3B32F6007D4203 /* AppDelegate.swift */,
 				05BDBB5F2C3B32F6007D4203 /* SceneDelegate.swift */,
@@ -85,6 +92,11 @@
 				05BDBB6E2C3B32F7007D4203 /* Info.plist */,
 				05BDBB662C3B32F6007D4203 /* DemonBuddy.xcdatamodeld */,
 				05BC78C82C40605D0076FE87 /* GoogleService-Info.plist */,
+				C6096D792C4DBA0D00E93C81 /* DungeonMasterViewController.swift */,
+				C6096D772C4DB9D500E93C81 /* PlayerViewController.swift */,
+				C6096D732C4DAE3800E93C81 /* CharactersCreatedViewController.swift */,
+				C6096D752C4DB23000E93C81 /* CreatedMonstersorNPCViewController.swift */,
+				05BC78F72C46B4620076FE87 /* NotesViewController.swift */,
 			);
 			path = DemonBuddy;
 			sourceTree = "<group>";
@@ -167,13 +179,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6096D742C4DAE3800E93C81 /* CharactersCreatedViewController.swift in Sources */,
+				C6096D7A2C4DBA0D00E93C81 /* DungeonMasterViewController.swift in Sources */,
 				05BDBB5E2C3B32F6007D4203 /* AppDelegate.swift in Sources */,
 				05BDBB682C3B32F6007D4203 /* DemonBuddy.xcdatamodeld in Sources */,
+				C6096D762C4DB23000E93C81 /* CreatedMonstersorNPCViewController.swift in Sources */,
 				05BC78A42C3DE1D70076FE87 /* RegisterViewController.swift in Sources */,
 				05BC78F82C46B4620076FE87 /* NotesViewController.swift in Sources */,
 				05BC78A22C3DDE1C0076FE87 /* LoginViewController.swift in Sources */,
 				05BC78CF2C40725B0076FE87 /* HomeViewController.swift in Sources */,
 				05BDBB602C3B32F6007D4203 /* SceneDelegate.swift in Sources */,
+				C6096D782C4DB9D500E93C81 /* PlayerViewController.swift in Sources */,
 				21C04AF72C4DA34D00BC871F /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
