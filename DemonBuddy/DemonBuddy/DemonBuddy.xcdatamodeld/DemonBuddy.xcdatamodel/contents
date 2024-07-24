@@ -16,6 +16,7 @@
         <attribute name="proficiencyBonus" optional="YES" attributeType="String"/>
         <attribute name="race" optional="YES" attributeType="String"/>
         <attribute name="speed" optional="YES" attributeType="String"/>
+        <attribute name="userID" optional="YES" attributeType="String"/>
         <relationship name="spells" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SpellSheet" inverseName="caster" inverseEntity="SpellSheet"/>
     </entity>
     <entity name="NPCorMonster" representedClassName="NPCorMonster" syncable="YES" codeGenerationType="class"/>

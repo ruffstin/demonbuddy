@@ -203,22 +203,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybv-tD-o29">
-                                <rect key="frame" x="147" y="547" width="98" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="DM mode"/>
-                                <connections>
-                                    <segue destination="X14-eM-y1D" kind="show" id="M2O-te-8bg"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Wc-KO-uHe">
-                                <rect key="frame" x="137" y="486" width="119" height="35"/>
+                                <rect key="frame" x="142" y="325" width="108" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Player mode"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Characters"/>
                                 <connections>
-                                    <segue destination="1jQ-Tg-qY1" kind="show" id="a3g-1g-GSh"/>
+                                    <segue destination="ele-kp-AYY" kind="show" id="CP8-0B-eV6"/>
                                 </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9IZ-lW-i5Y">
@@ -245,12 +236,15 @@
                                                 </button>
                                             </barButtonItem>
                                             <barButtonItem style="plain" id="MPN-t7-QVx">
-                                                <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="muc-0U-LwH">
+                                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="muc-0U-LwH">
                                                     <rect key="frame" x="197" y="4.6666666666666679" width="87" height="35"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="filled" title="Notes"/>
                                                 </button>
+                                                <connections>
+                                                    <segue destination="EfI-Cq-IrG" kind="show" id="QIl-UY-t6Q"/>
+                                                </connections>
                                             </barButtonItem>
                                         </leftBarButtonItems>
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="quw-PX-98W">
@@ -264,6 +258,15 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybv-tD-o29">
+                                <rect key="frame" x="117" y="389" width="159" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Monsters &amp; NPCs"/>
+                                <connections>
+                                    <segue destination="80J-sO-Eu2" kind="show" id="3xd-in-yYJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="o16-qV-S2N"/>
                         <color key="backgroundColor" name="Background Color"/>
@@ -373,12 +376,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lnz-uP-cAl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2809.9236641221373" y="1448.5915492957747"/>
+            <point key="canvasLocation" x="3182" y="730"/>
         </scene>
-        <!--New Player View Controller-->
+        <!--New Character View Controller-->
         <scene sceneID="CwK-I4-5dJ">
             <objects>
-                <viewController id="plj-Ad-Lsb" customClass="NewPlayerViewController" customModule="DemonBuddy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="plj-Ad-Lsb" customClass="NewCharacterViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ph6-nM-dGH">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -866,6 +869,15 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VoI-L1-0ji">
+                                                <rect key="frame" x="296" y="1268" width="61" height="35"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Save"/>
+                                                <connections>
+                                                    <action selector="saveButtonPressed:" destination="plj-Ad-Lsb" eventType="touchUpInside" id="Pef-eo-UV8"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -893,10 +905,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="xS3-sn-2Cv"/>
                     <size key="freeformSize" width="393" height="852"/>
+                    <connections>
+                        <outlet property="charGameName" destination="Pxg-7B-y3k" id="MhG-Xt-Hpw"/>
+                        <outlet property="charName" destination="o1F-pc-ksE" id="roI-X6-q3u"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DMh-zG-ciB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1152" y="1450"/>
+            <point key="canvasLocation" x="1631" y="739"/>
         </scene>
         <!--NewNPC Monster View Controller-->
         <scene sceneID="N7q-ZZ-tPF">
@@ -912,7 +928,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hOz-xt-v3D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4595" y="1451"/>
+            <point key="canvasLocation" x="4842" y="601"/>
         </scene>
         <!--Characters Created View Controller-->
         <scene sceneID="6uK-d5-07A">
@@ -927,7 +943,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="noteCell" textLabel="Svx-d2-zS7" detailTextLabel="D9a-KA-eUo" style="IBUITableViewCellStyleSubtitle" id="Zbk-GZ-ubG">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="characterCell" textLabel="Svx-d2-zS7" detailTextLabel="D9a-KA-eUo" style="IBUITableViewCellStyleSubtitle" id="Zbk-GZ-ubG" customClass="CharacterViewTableCell" customModule="DemonBuddy" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="361" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zbk-GZ-ubG" id="ilV-kD-Z5c">
@@ -950,6 +966,11 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="characterCell"/>
+                                        <connections>
+                                            <outlet property="charName" destination="Svx-d2-zS7" id="ZkF-SG-CgL"/>
+                                            <outlet property="gameName" destination="D9a-KA-eUo" id="2Hc-do-nXK"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
@@ -967,7 +988,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="addNotePressed:" destination="ele-kp-AYY" eventType="touchUpInside" id="kA7-UR-TXF"/>
-                                    <segue destination="plj-Ad-Lsb" kind="show" id="Ixb-w8-jfn"/>
+                                    <segue destination="plj-Ad-Lsb" kind="show" identifier="createCharacter" id="Ixb-w8-jfn"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Characters" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4F-3A-xKR">
@@ -997,12 +1018,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="cEG-fH-US6"/>
                     <connections>
-                        <outlet property="tableView" destination="j53-dU-p88" id="U1X-fi-9tB"/>
+                        <outlet property="tableView" destination="j53-dU-p88" id="4mE-7I-G4b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sdO-1v-chI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1965.6488549618321" y="1450.7042253521126"/>
+            <point key="canvasLocation" x="2424" y="746"/>
         </scene>
         <!--Created MonstersorNPC View Controller-->
         <scene sceneID="QxO-lV-tt2">
@@ -1092,91 +1113,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GT3-U6-0X1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3768.7022900763359" y="1450.7042253521126"/>
-        </scene>
-        <!--Player View Controller-->
-        <scene sceneID="eGt-qw-tEd">
-            <objects>
-                <viewController id="1jQ-Tg-qY1" customClass="PlayerViewController" customModule="DemonBuddy" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ghR-MI-uYW">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pHc-hn-Ibm">
-                                <rect key="frame" x="142" y="235" width="108" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Characters"/>
-                                <connections>
-                                    <segue destination="ele-kp-AYY" kind="show" id="3M3-en-Ow9"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKI-cW-5Y2">
-                                <rect key="frame" x="113" y="400" width="168" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Roll Initiative (Play)"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgX-ej-Dqb">
-                                <rect key="frame" x="161" y="320" width="70" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Notes"/>
-                                <connections>
-                                    <segue destination="EfI-Cq-IrG" kind="show" id="EpX-iF-TRK"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="Bty-ED-TeQ"/>
-                        <color key="backgroundColor" name="Background Color"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="KFH-Gg-Xu4"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aUS-Hz-JjP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2376" y="787"/>
-        </scene>
-        <!--Dungeon Master View Controller-->
-        <scene sceneID="x3r-AI-rZG">
-            <objects>
-                <viewController id="X14-eM-y1D" customClass="DungeonMasterViewController" customModule="DemonBuddy" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="hAD-GL-dLS">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MrW-BD-3kd">
-                                <rect key="frame" x="91" y="235" width="210" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Created Monsters/NPCS"/>
-                                <connections>
-                                    <segue destination="80J-sO-Eu2" kind="show" id="5mk-ih-5xP"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5G3-BY-vQO">
-                                <rect key="frame" x="113" y="400" width="168" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Roll Initiative (Play)"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ci-ke-ay0">
-                                <rect key="frame" x="161" y="320" width="70" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Notes"/>
-                                <connections>
-                                    <segue destination="EfI-Cq-IrG" kind="show" id="cL0-RM-h06"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="Epw-g9-plj"/>
-                        <color key="backgroundColor" name="Background Color"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="tdQ-g6-95h"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="phQ-jf-fxi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3239" y="787"/>
+            <point key="canvasLocation" x="4117" y="710"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="v7g-Mr-8Zw">
@@ -1199,7 +1136,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="IPc-Vi-pTd"/>
-        <segue reference="cL0-RM-h06"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="plus" catalog="system" width="128" height="113"/>
