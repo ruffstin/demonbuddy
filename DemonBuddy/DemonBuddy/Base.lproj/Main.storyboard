@@ -7,6 +7,7 @@
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -379,6 +380,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="addNotePressed:" destination="EfI-Cq-IrG" eventType="touchUpInside" id="EGE-dT-hYr"/>
+                                    <segue destination="I2P-tM-0H3" kind="presentation" id="uFT-nY-h91"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -393,6 +395,102 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lnz-uP-cAl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3180.9160305343512" y="729.57746478873241"/>
+        </scene>
+        <!--New Note View Controller-->
+        <scene sceneID="BZR-RS-FvB">
+            <objects>
+                <viewController id="I2P-tM-0H3" customClass="NewNoteViewController" customModule="DemonBuddy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tnl-bW-Ug8">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="WcF-IP-H5t">
+                                <rect key="frame" x="19" y="204" width="355" height="434"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ukf-gb-DJi">
+                                        <rect key="frame" x="20" y="20" width="315" height="31.666666666666671"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hC0-PR-YZd">
+                                        <rect key="frame" x="20" y="81.666666666666686" width="315" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wSR-99-63t">
+                                        <rect key="frame" x="20" y="161.66666666666669" width="315" height="30"/>
+                                        <menu key="menu" title="Select Game" identifier="gameSelector" id="sjW-aR-idr">
+                                            <children>
+                                                <command title="Example Game 1" id="bg7-AI-nua"/>
+                                                <command title="None" id="xIO-7f-lxA"/>
+                                            </children>
+                                        </menu>
+                                        <state key="normal" title="Game Name">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="gameNamePressed:" destination="I2P-tM-0H3" eventType="touchUpInside" id="9IR-P4-Wy6"/>
+                                        </connections>
+                                    </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" text="Lorem ipsum " translatesAutoresizingMaskIntoConstraints="NO" id="xfb-PJ-dhB">
+                                        <rect key="frame" x="20" y="221.66666666666669" width="315" height="128"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="equalCentering" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="gwo-dP-i6R">
+                                        <rect key="frame" x="20" y="379.66666666666663" width="315" height="34.333333333333314"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGV-kh-ZGm">
+                                                <rect key="frame" x="0.0" y="0.0" width="250" height="34.333333333333336"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="250" id="aty-Jl-12d"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Done">
+                                                    <color key="baseBackgroundColor" name="Primary Color"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="donePressed:" destination="I2P-tM-0H3" eventType="touchUpInside" id="t61-qz-4Yr"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yua-4K-lgh">
+                                                <rect key="frame" x="268.66666666666669" y="0.0" width="46.333333333333314" height="34.333333333333336"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" image="xmark" catalog="system">
+                                                    <color key="baseBackgroundColor" name="Secondary Color"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="cancelNote:" destination="I2P-tM-0H3" eventType="touchUpInside" id="gO6-mV-eLj"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="315" id="weh-Zm-EjG"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <edgeInsets key="layoutMargins" top="20" left="20" bottom="20" right="20"/>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Nxv-76-Umv"/>
+                        <color key="backgroundColor" name="Background Color"/>
+                        <constraints>
+                            <constraint firstItem="WcF-IP-H5t" firstAttribute="centerX" secondItem="Tnl-bW-Ug8" secondAttribute="centerX" id="bkb-ZN-a5M"/>
+                            <constraint firstItem="WcF-IP-H5t" firstAttribute="centerY" secondItem="Tnl-bW-Ug8" secondAttribute="centerY" id="bvF-HW-3Kn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="9l2-Af-8VY"/>
+                    <connections>
+                        <outlet property="dateLabel" destination="hC0-PR-YZd" id="VI1-0T-blc"/>
+                        <outlet property="textView" destination="xfb-PJ-dhB" id="mS9-e9-MDS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3kH-wi-kcq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3180.9160305343512" y="1427.4647887323945"/>
         </scene>
         <!--New Character View Controller-->
         <scene sceneID="CwK-I4-5dJ">
@@ -1156,6 +1254,7 @@
     <resources>
         <image name="DemonBuddy" width="1000" height="750"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="Background Color">
             <color red="0.82745098039215681" green="0.82745098039215681" blue="0.82745098039215681" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -1165,6 +1264,9 @@
         <namedColor name="Secondary Color">
             <color red="0.84705882352941175" green="0.74901960784313726" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

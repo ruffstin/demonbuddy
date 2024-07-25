@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05B4BBBC2C52DA7800031121 /* NewNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B4BBBB2C52DA7800031121 /* NewNoteViewController.swift */; };
 		05BC78A22C3DDE1C0076FE87 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BC78A12C3DDE1C0076FE87 /* LoginViewController.swift */; };
 		05BC78A42C3DE1D70076FE87 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BC78A32C3DE1D70076FE87 /* RegisterViewController.swift */; };
 		05BC78C92C40605D0076FE87 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05BC78C82C40605D0076FE87 /* GoogleService-Info.plist */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05B4BBBB2C52DA7800031121 /* NewNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteViewController.swift; sourceTree = "<group>"; };
 		05BC78A12C3DDE1C0076FE87 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		05BC78A32C3DE1D70076FE87 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		05BC78C82C40605D0076FE87 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				05BC78A32C3DE1D70076FE87 /* RegisterViewController.swift */,
 				05BC78CE2C40725B0076FE87 /* HomeViewController.swift */,
 				05BDBB632C3B32F6007D4203 /* Main.storyboard */,
+				05B4BBBB2C52DA7800031121 /* NewNoteViewController.swift */,
 				21C04AF62C4DA34D00BC871F /* SettingsViewController.swift */,
 				05BDBB692C3B32F7007D4203 /* Assets.xcassets */,
 				05BDBB6B2C3B32F7007D4203 /* LaunchScreen.storyboard */,
@@ -182,6 +185,7 @@
 				C6096D742C4DAE3800E93C81 /* CharactersCreatedViewController.swift in Sources */,
 				05BDBB5E2C3B32F6007D4203 /* AppDelegate.swift in Sources */,
 				C64215D02C5071B90094D596 /* CharacterViewTableCell.swift in Sources */,
+				05B4BBBC2C52DA7800031121 /* NewNoteViewController.swift in Sources */,
 				05BDBB682C3B32F6007D4203 /* DemonBuddy.xcdatamodeld in Sources */,
 				C6096D762C4DB23000E93C81 /* CreatedMonstersorNPCViewController.swift in Sources */,
 				C64215CE2C5071860094D596 /* NewCharacterViewController.swift in Sources */,
