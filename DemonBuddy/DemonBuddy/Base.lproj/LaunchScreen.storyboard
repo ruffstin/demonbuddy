@@ -16,9 +16,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Demon Buddy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08L-7O-o3p">
-                                <rect key="frame" x="142.33333333333334" y="416" width="108.33333333333334" height="20.333333333333314"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DemonBuddy" translatesAutoresizingMaskIntoConstraints="NO" id="QlF-q4-0Js">
+                                <rect key="frame" x="71.666666666666686" y="301" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="wD0-e4-8ky"/>
+                                    <constraint firstAttribute="width" constant="250" id="xe5-AE-dEV"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Demon Buddy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ilz-T8-mxq">
+                                <rect key="frame" x="120" y="530" width="154" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -26,8 +34,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="Primary Color"/>
                         <constraints>
-                            <constraint firstItem="08L-7O-o3p" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="LK6-0C-THZ"/>
-                            <constraint firstItem="08L-7O-o3p" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Voo-Ew-PWk"/>
+                            <constraint firstItem="QlF-q4-0Js" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Dln-S2-Hg7"/>
+                            <constraint firstItem="QlF-q4-0Js" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="d3b-Df-lGM"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -37,6 +45,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="DemonBuddy" width="1000" height="750"/>
         <namedColor name="Primary Color">
             <color red="0.57647058823529407" green="0.4392156862745098" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

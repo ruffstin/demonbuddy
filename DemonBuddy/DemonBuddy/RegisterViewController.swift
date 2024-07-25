@@ -19,10 +19,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var emailInput: UITextField!
     
     
-    @IBOutlet weak var emailErrorLabel: UILabel!
-    @IBOutlet weak var usernameErrorLabel: UILabel!
-    @IBOutlet weak var passwordErrorLabel: UILabel!
-    @IBOutlet weak var confirmPasswordErrorLabel: UILabel!
+    @IBOutlet weak var errorLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,45 +48,41 @@ class RegisterViewController: UIViewController {
                 if let error = error as NSError? {
                     switch AuthErrorCode.Code(rawValue: error.code){
                         case .emailAlreadyInUse:
-                            self.emailErrorLabel.text = "\u{2757} Email is already in use"
+                            self.errorLabel.text = "\u{2757} Email is already in use"
                             break
                         case .missingEmail:
-                            self.emailErrorLabel.text = "\u{2757} Email missing"
+                            self.errorLabel.text = "\u{2757} Email missing"
                             break
                         case .weakPassword:
-                            self.passwordErrorLabel.text = "\u{2757} Password must be at least 7 characters long"
+                            self.errorLabel.text = "\u{2757} Password must be at least 7 characters long"
                             break
                         default:
                             break
                     }
                 } else {
-                    self.emailErrorLabel.text = nil
-                    self.passwordErrorLabel.text = nil
+                    self.errorLabel.text = nil
                 }
             }
         }
     }
     
     func fieldsIncorrect() -> Bool{
-        self.usernameErrorLabel.text = nil
-        self.emailErrorLabel.text = nil
-        self.passwordErrorLabel.text = nil
-        self.confirmPasswordErrorLabel.text = nil
+        self.errorLabel.text = nil
         
         if self.usernameInput.text!.isEmpty{
-            self.usernameErrorLabel.text = "Missing username"
+            self.errorLabel.text = "Missing username"
             return true
         } else if self.emailInput.text!.isEmpty{
-            self.emailErrorLabel.text = "Missing email"
+            self.errorLabel.text = "Missing email"
             return true
         } else if self.passwordInput.text!.isEmpty{
-            self.passwordErrorLabel.text = "Missing password"
+            self.errorLabel.text = "Missing password"
             return true
         } else if self.confirmPasswordInput.text!.isEmpty{
-            self.confirmPasswordErrorLabel.text = "Missing confirm password"
+            self.errorLabel.text = "Missing confirm password"
             return true
         } else if self.passwordInput.text! != self.confirmPasswordInput.text!{
-            self.confirmPasswordErrorLabel.text = "Passwords must match"
+            self.errorLabel.text = "Passwords must match"
             return true
         }
         

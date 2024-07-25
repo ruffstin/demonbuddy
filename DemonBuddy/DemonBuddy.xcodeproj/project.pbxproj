@@ -21,8 +21,6 @@
 		21C04AF72C4DA34D00BC871F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C04AF62C4DA34D00BC871F /* SettingsViewController.swift */; };
 		C6096D742C4DAE3800E93C81 /* CharactersCreatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6096D732C4DAE3800E93C81 /* CharactersCreatedViewController.swift */; };
 		C6096D762C4DB23000E93C81 /* CreatedMonstersorNPCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6096D752C4DB23000E93C81 /* CreatedMonstersorNPCViewController.swift */; };
-		C6096D782C4DB9D500E93C81 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6096D772C4DB9D500E93C81 /* PlayerViewController.swift */; };
-		C6096D7A2C4DBA0D00E93C81 /* DungeonMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6096D792C4DBA0D00E93C81 /* DungeonMasterViewController.swift */; };
 		C64215CE2C5071860094D596 /* NewCharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64215CD2C5071860094D596 /* NewCharacterViewController.swift */; };
 		C64215D02C5071B90094D596 /* CharacterViewTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64215CF2C5071B90094D596 /* CharacterViewTableCell.swift */; };
 		C6AE6A882C50674500DCB52C /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C6AE6A872C50674500DCB52C /* FirebaseAuth */; };
@@ -46,8 +44,6 @@
 		21C04AF62C4DA34D00BC871F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		C6096D732C4DAE3800E93C81 /* CharactersCreatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersCreatedViewController.swift; sourceTree = "<group>"; };
 		C6096D752C4DB23000E93C81 /* CreatedMonstersorNPCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatedMonstersorNPCViewController.swift; sourceTree = "<group>"; };
-		C6096D772C4DB9D500E93C81 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
-		C6096D792C4DBA0D00E93C81 /* DungeonMasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonMasterViewController.swift; sourceTree = "<group>"; };
 		C64215CD2C5071860094D596 /* NewCharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCharacterViewController.swift; sourceTree = "<group>"; };
 		C64215CF2C5071B90094D596 /* CharacterViewTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewTableCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -96,8 +92,6 @@
 				05BDBB6E2C3B32F7007D4203 /* Info.plist */,
 				05BDBB662C3B32F6007D4203 /* DemonBuddy.xcdatamodeld */,
 				05BC78C82C40605D0076FE87 /* GoogleService-Info.plist */,
-				C6096D792C4DBA0D00E93C81 /* DungeonMasterViewController.swift */,
-				C6096D772C4DB9D500E93C81 /* PlayerViewController.swift */,
 				C6096D732C4DAE3800E93C81 /* CharactersCreatedViewController.swift */,
 				C64215CF2C5071B90094D596 /* CharacterViewTableCell.swift */,
 				C6096D752C4DB23000E93C81 /* CreatedMonstersorNPCViewController.swift */,
@@ -186,7 +180,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6096D742C4DAE3800E93C81 /* CharactersCreatedViewController.swift in Sources */,
-				C6096D7A2C4DBA0D00E93C81 /* DungeonMasterViewController.swift in Sources */,
 				05BDBB5E2C3B32F6007D4203 /* AppDelegate.swift in Sources */,
 				C64215D02C5071B90094D596 /* CharacterViewTableCell.swift in Sources */,
 				05BDBB682C3B32F6007D4203 /* DemonBuddy.xcdatamodeld in Sources */,
@@ -197,7 +190,6 @@
 				05BC78A22C3DDE1C0076FE87 /* LoginViewController.swift in Sources */,
 				05BC78CF2C40725B0076FE87 /* HomeViewController.swift in Sources */,
 				05BDBB602C3B32F6007D4203 /* SceneDelegate.swift in Sources */,
-				C6096D782C4DB9D500E93C81 /* PlayerViewController.swift in Sources */,
 				21C04AF72C4DA34D00BC871F /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
