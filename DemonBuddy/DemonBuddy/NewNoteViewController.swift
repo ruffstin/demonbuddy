@@ -8,7 +8,9 @@
 import UIKit
 
 class NewNoteViewController: UIViewController {
-
+    
+    @IBOutlet weak var buttonsView: UIStackView!
+    @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var textView: UITextView!
     
@@ -20,7 +22,9 @@ class NewNoteViewController: UIViewController {
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
         dateLabel.text = dateFormatter.string(from: date)
         
-        self.view.addSubview(textView)
+        stackView.addArrangedSubview(textView)
+        stackView.addArrangedSubview(buttonsView)
+        view.addSubview(stackView)
     }
     
     

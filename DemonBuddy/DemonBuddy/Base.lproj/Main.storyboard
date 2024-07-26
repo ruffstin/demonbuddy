@@ -404,8 +404,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="WcF-IP-H5t">
-                                <rect key="frame" x="19" y="204" width="355" height="434"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="WcF-IP-H5t">
+                                <rect key="frame" x="19" y="208" width="355" height="426"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ukf-gb-DJi">
                                         <rect key="frame" x="20" y="20" width="315" height="31.666666666666671"/>
@@ -433,15 +433,18 @@
                                             <action selector="gameNamePressed:" destination="I2P-tM-0H3" eventType="touchUpInside" id="9IR-P4-Wy6"/>
                                         </connections>
                                     </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" text="Lorem ipsum " translatesAutoresizingMaskIntoConstraints="NO" id="xfb-PJ-dhB">
-                                        <rect key="frame" x="20" y="221.66666666666669" width="315" height="128"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum " translatesAutoresizingMaskIntoConstraints="NO" id="xfb-PJ-dhB">
+                                        <rect key="frame" x="20" y="221.66666666666669" width="315" height="120"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="U8U-w3-e2i"/>
+                                        </constraints>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="equalCentering" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="gwo-dP-i6R">
-                                        <rect key="frame" x="20" y="379.66666666666663" width="315" height="34.333333333333314"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="gwo-dP-i6R">
+                                        <rect key="frame" x="20" y="371.66666666666663" width="315" height="34.333333333333314"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGV-kh-ZGm">
                                                 <rect key="frame" x="0.0" y="0.0" width="250" height="34.333333333333336"/>
@@ -484,7 +487,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="9l2-Af-8VY"/>
                     <connections>
+                        <outlet property="buttonsView" destination="gwo-dP-i6R" id="IWv-9z-zdp"/>
                         <outlet property="dateLabel" destination="hC0-PR-YZd" id="VI1-0T-blc"/>
+                        <outlet property="stackView" destination="WcF-IP-H5t" id="DgF-N1-399"/>
                         <outlet property="textView" destination="xfb-PJ-dhB" id="mS9-e9-MDS"/>
                     </connections>
                 </viewController>

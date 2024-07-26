@@ -87,7 +87,6 @@ class CharactersCreatedViewController: UIViewController, UITableViewDelegate, UI
     }
     
     @IBAction func addNotePressed(_ sender: Any) {
-        performSegue(withIdentifier: "createCharacter", sender: self)
     }
     
 }

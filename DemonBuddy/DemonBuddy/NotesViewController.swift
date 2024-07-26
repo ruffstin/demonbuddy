@@ -21,8 +21,6 @@ class NotesViewController: UIViewController {
     @IBAction func filterPressed(_ sender: Any) {
     }
     
-    
     @IBAction func addNotePressed(_ sender: Any) {
     }
-    
 }
