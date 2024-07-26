@@ -19,7 +19,7 @@ class NewNoteViewController: UIViewController {
 
         let date = Date()
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        dateFormatter.dateFormat = "yyyy-MM-dd"
         dateLabel.text = dateFormatter.string(from: date)
         
         stackView.addArrangedSubview(textView)
@@ -34,7 +34,7 @@ class NewNoteViewController: UIViewController {
     
     // Dismiss the screen
     @IBAction func cancelNote(_ sender: Any) {
-        
+        self.dismiss(animated: true)
     }
     
     // Create Note
