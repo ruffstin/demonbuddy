@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "demon_with_background_1024x1024.png",
+      "filename" : "demon_with_background_1024x1024_aspect.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
