@@ -520,16 +520,16 @@
                                         <rect key="frame" x="20" y="111.66666666666669" width="315" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="700" verticalCompressionResistancePriority="700" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hC0-PR-YZd">
-                                                <rect key="frame" x="0.0" y="0.0" width="210" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="178.33333333333334" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="240" verticalHuggingPriority="240" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wSR-99-63t">
-                                                <rect key="frame" x="230" y="0.0" width="85" height="50"/>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="240" verticalHuggingPriority="240" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wSR-99-63t">
+                                                <rect key="frame" x="198.33333333333334" y="0.0" width="116.66666666666666" height="50"/>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                                 <menu key="menu" title="Select Game" identifier="gameSelector" id="sjW-aR-idr">
                                                     <children>
-                                                        <command title="Example Game 1" id="bg7-AI-nua"/>
                                                         <command title="None" id="xIO-7f-lxA"/>
                                                     </children>
                                                 </menu>
@@ -596,8 +596,10 @@
                     <connections>
                         <outlet property="buttonsView" destination="gwo-dP-i6R" id="IWv-9z-zdp"/>
                         <outlet property="dateLabel" destination="hC0-PR-YZd" id="VI1-0T-blc"/>
+                        <outlet property="gameNameDropdown" destination="wSR-99-63t" id="9of-ff-ptN"/>
                         <outlet property="stackView" destination="WcF-IP-H5t" id="DgF-N1-399"/>
                         <outlet property="textView" destination="xfb-PJ-dhB" id="mS9-e9-MDS"/>
+                        <outlet property="titleTextView" destination="ukf-gb-DJi" id="vlU-kk-4pJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3kH-wi-kcq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

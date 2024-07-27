@@ -19,6 +19,13 @@
         <attribute name="userID" optional="YES" attributeType="String"/>
         <relationship name="spells" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SpellSheet" inverseName="caster" inverseEntity="SpellSheet"/>
     </entity>
+    <entity name="Note" representedClassName="Note" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="String"/>
+        <attribute name="gameName" optional="YES" attributeType="String"/>
+        <attribute name="noteText" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="userID" optional="YES" attributeType="String"/>
+    </entity>
     <entity name="NPCorMonster" representedClassName="NPCorMonster" syncable="YES" codeGenerationType="class"/>
     <entity name="SpellSheet" representedClassName="SpellSheet" syncable="YES" codeGenerationType="class">
         <attribute name="cantrip1" optional="YES" attributeType="String"/>

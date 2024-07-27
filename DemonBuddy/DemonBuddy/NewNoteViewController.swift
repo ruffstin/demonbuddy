@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import CoreData
+import FirebaseAuth
 
 class NewNoteViewController: UIViewController {
     
@@ -13,14 +15,26 @@ class NewNoteViewController: UIViewController {
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var titleTextView: UITextField!
+    @IBOutlet weak var gameNameDropdown: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let gameNameOptions = [
+            UIAction(title: "None")
+            { _ in self.gameNameDropdown.setTitle("None", for: .normal) }
+        ]
+        
+        let menu = UIMenu(title: "Game Names", options: .displayInline, children: gameNameOptions)
+        gameNameDropdown.menu = menu
+        gameNameDropdown.showsMenuAsPrimaryAction = true
 
         let date = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        dateLabel.text = dateFormatter.string(from: date)
+        dateLabel.text = "Edited on: \(dateFormatter.string(from: date))"
         
         stackView.addArrangedSubview(textView)
         stackView.addArrangedSubview(buttonsView)
@@ -39,7 +53,43 @@ class NewNoteViewController: UIViewController {
     
     // Create Note
     @IBAction func donePressed(_ sender: Any) {
-        
+        if ((titleTextView.text?.isEmpty) != nil) {
+            let controller = UIAlertController(
+                title: "Missing Title",
+                message: "Input a title",
+                preferredStyle: .alert
+            )
+            
+            controller.addAction(UIAlertAction(title: "Ok", style: .default))
+            present(controller, animated: true)
+        } else {
+            // Create new Note instance
+            let title = titleTextView.text
+            let game = gameNameDropdown.title(for: .normal)
+            let userID = Auth.auth().currentUser?.uid
+            let noteText = textView.text
+            let date = dateLabel.text
+            
+            let note = NSEntityDescription.insertNewObject(forEntityName: "Note", into: context)
+            note.setValue(title, forKey: "title")
+            note.setValue(game, forKey: "gameName")
+            note.setValue(userID, forKey: "userID")
+            note.setValue(noteText, forKey: "noteText")
+            note.setValue(date, forKey: "date")
+            
+            saveContext()
+        }
+    }
+    
+    func saveContext () {
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                let nserror = error as NSError
+                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            }
+        }
     }
     
 }
