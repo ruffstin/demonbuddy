@@ -45,6 +45,7 @@ class CharactersCreatedViewController: UIViewController, UITableViewDelegate, UI
                 do {
                     characterList = try context.fetch(fetchRequest)
                     tableView.reloadData()
+                    
                 } catch {
                     print("Failed to fetch characters: \(error)")
                 }

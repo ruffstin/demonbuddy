@@ -70,15 +70,19 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
-        let row = indexPath.row
-        if let name = notes[row].value(forKey: "title") as? String {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! NotesCell
+        let note = notes[indexPath.row]
+        //let row = indexPath.row
+        cell.noteName.text = (note.value(forKey: "title") as? String ?? "")
+        cell.noteGameName.text = (note.value(forKey: "gameName") as? String ?? "" )
+       // cell.noteGameName.text =
+        /*if let name = notes[row].value(forKey: "title") as? String {
             cell.textLabel?.text = name
         }
         
         if let game = notes[row].value(forKey: "gameName") as? String {
             cell.detailTextLabel?.text = game
-        }
+        }*/
         
         return cell
     }

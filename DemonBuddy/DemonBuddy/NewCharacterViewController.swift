@@ -17,12 +17,14 @@ protocol CharacterCreationDelegate: AnyObject {
 
 class NewCharacterViewController: UIViewController {
     
-    weak var delegate: CharacterCreationDelegate?
-    
+    @IBOutlet weak var charName: UITextField!
     
     @IBOutlet weak var charGameName: UITextField!
     
-    @IBOutlet weak var charName: UITextField!
+    weak var delegate: CharacterCreationDelegate?
+
+    
+    @IBOutlet weak var scrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
