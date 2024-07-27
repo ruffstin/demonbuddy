@@ -19,10 +19,6 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        loginButton.layer.cornerRadius = 5
-        loginButton.clipsToBounds = true
-        
         Auth.auth().addStateDidChangeListener() {
             auth, user in
                 if user != nil {

@@ -23,10 +23,6 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        registerButton.layer.cornerRadius = 5
-        registerButton.clipsToBounds = true
         
         Auth.auth().addStateDidChangeListener() {
             auth, user in
