@@ -18,6 +18,7 @@ class NewNoteViewController: UIViewController {
     @IBOutlet weak var titleTextView: UITextField!
     @IBOutlet weak var gameNameDropdown: UIButton!
     
+    var note: NSManagedObject?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +54,7 @@ class NewNoteViewController: UIViewController {
     
     // Create Note
     @IBAction func donePressed(_ sender: Any) {
-        if ((titleTextView.text?.isEmpty) != nil) {
+        if ((titleTextView.text?.isEmpty) == nil) {
             let controller = UIAlertController(
                 title: "Missing Title",
                 message: "Input a title",
@@ -78,6 +79,8 @@ class NewNoteViewController: UIViewController {
             note.setValue(date, forKey: "date")
             
             saveContext()
+            self.dismiss(animated: true)
+            print("Note has been added")
         }
     }
     

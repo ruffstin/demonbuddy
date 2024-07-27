@@ -6,16 +6,32 @@
 //
 
 import UIKit
+import CoreData
+import FirebaseAuth
 
-class NotesViewController: UIViewController {
+var notes: [NSManagedObject]!
 
+class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
+    // Outlets for views
     @IBOutlet weak var sortFiltersStackView: UIStackView!
     @IBOutlet weak var filterButtonsStackView: UIStackView!
-    
     @IBOutlet weak var filtersStackView: UIStackView!
     @IBOutlet weak var selectFiltersView: UIView!
     @IBOutlet weak var tableView: UITableView!
+    
+    // Outlets for buttons
+    @IBOutlet weak var nameSortFilter: UIButton!
+    @IBOutlet weak var gameNameSortFilter: UIButton!
+    @IBOutlet weak var orderSortFilter: UIButton!
+    @IBOutlet weak var gameNameFilter: UIButton!
+    
+    let cellIdentifier = "noteCell"
+    
+    var nameSortSelected = false
+    var gameSortSelected = false
+    var descSortSelected = false
+    var gameFilterSelected = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +44,53 @@ class NotesViewController: UIViewController {
         view.addSubview(selectFiltersView)
         selectFiltersView.layer.cornerRadius = 10
         selectFiltersView.layer.masksToBounds = true
+        
+        let gameNameOptions = [
+            UIAction(title: "None")
+            { _ in self.gameNameFilter.setTitle("None", for: .normal) }
+        ]
+        
+        let menu = UIMenu(title: "Game Names", options: .displayInline, children: gameNameOptions)
+        gameNameFilter.menu = menu
+        gameNameFilter.showsMenuAsPrimaryAction = true
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        notes = retrieveNotes()
+        tableView.reloadData()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return notes!.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        let row = indexPath.row
+        if let name = notes[row].value(forKey: "title") as? String {
+            cell.textLabel?.text = name
+        }
+        
+        if let game = notes[row].value(forKey: "gameName") as? String {
+            cell.detailTextLabel?.text = game
+        }
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            context.delete(notes[indexPath.row])
+            notes.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            saveContext()
+        }
+        tableView.reloadData()
     }
     
     @IBAction func filterPressed(_ sender: Any) {
@@ -41,14 +104,62 @@ class NotesViewController: UIViewController {
     @IBAction func addNotePressed(_ sender: Any) {
     }
     
-    
     @IBAction func filtersDonePressed(_ sender: Any) {
         selectFiltersView.isHidden = true
     }
-    
     
     @IBAction func filtersCancelPressed(_ sender: Any) {
         selectFiltersView.isHidden = true
     }
     
+    @IBAction func nameSortFilterPressed(_ sender: Any) {
+        nameSortSelected = !nameSortSelected
+        if nameSortSelected {
+            nameSortFilter.backgroundColor = UIColor(named: "Primary Color")
+        } else {
+            nameSortFilter.backgroundColor = UIColor(named: "Secondary Color")
+        }
+    }
+    
+    @IBAction func gameNameSortFilterPressed(_ sender: Any) {
+        gameSortSelected = !gameSortSelected
+        if gameSortSelected {
+            gameNameSortFilter.backgroundColor = UIColor(named: "Primary Color")
+        } else {
+            gameNameSortFilter.backgroundColor = UIColor(named: "Secondary Color")
+        }
+    }
+    
+    @IBAction func orderSortFilterPressed(_ sender: Any) {
+        descSortSelected = !descSortSelected
+        if descSortSelected {
+            orderSortFilter.setTitle("Desc", for: .normal)
+        } else {
+            orderSortFilter.setTitle("Asc", for: .normal)
+        }
+    }
+    
+    @IBAction func gameNameFilterPressed(_ sender: Any) {
+        gameFilterSelected = true
+    }
+    
+    // Return all notes for the current user
+    func retrieveNotes() -> [NSManagedObject] {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Note")
+        var fetchedResults: [NSManagedObject]?
+        
+//        if let user = Auth.auth().currentUser?.uid {
+//            let predicate = NSPredicate(format: "userID = \(user)")
+//            request.predicate = predicate
+//        }
+        
+        do {
+            try fetchedResults = context.fetch(request) as? [NSManagedObject]
+        } catch {
+            print("Error occured while retrieving data")
+            abort()
+        }
+    
+        return (fetchedResults)!
+    }
 }
