@@ -64,7 +64,7 @@ class CharactersCreatedViewController: UIViewController, UITableViewDelegate, UI
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "charactercell", for: indexPath) as! CharacterViewTableCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "characterCell", for: indexPath) as! CharacterViewTableCell
         let character = characterList[indexPath.row]
         // grab character and game name
         cell.charName.text = (character.value(forKey: "name") as? String ?? "")

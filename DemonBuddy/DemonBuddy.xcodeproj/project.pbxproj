@@ -20,6 +20,9 @@
 		05BDBB6A2C3B32F7007D4203 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05BDBB692C3B32F7007D4203 /* Assets.xcassets */; };
 		05BDBB6D2C3B32F7007D4203 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 05BDBB6C2C3B32F7007D4203 /* Base */; };
 		21C04AF72C4DA34D00BC871F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C04AF62C4DA34D00BC871F /* SettingsViewController.swift */; };
+		C60435582C56AE750000EB8F /* SpellSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60435572C56AE750000EB8F /* SpellSheetViewController.swift */; };
+		C604355A2C56AF740000EB8F /* DiceRollerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60435592C56AF740000EB8F /* DiceRollerViewController.swift */; };
+		C604355C2C56C3F40000EB8F /* NPCMonsterCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C604355B2C56C3F40000EB8F /* NPCMonsterCellViewController.swift */; };
 		C6096D742C4DAE3800E93C81 /* CharactersCreatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6096D732C4DAE3800E93C81 /* CharactersCreatedViewController.swift */; };
 		C6096D762C4DB23000E93C81 /* CreatedMonstersorNPCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6096D752C4DB23000E93C81 /* CreatedMonstersorNPCViewController.swift */; };
 		C64215D02C5071B90094D596 /* CharacterViewTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64215CF2C5071B90094D596 /* CharacterViewTableCell.swift */; };
@@ -45,6 +48,9 @@
 		05BDBB6C2C3B32F7007D4203 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		05BDBB6E2C3B32F7007D4203 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21C04AF62C4DA34D00BC871F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		C60435572C56AE750000EB8F /* SpellSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellSheetViewController.swift; sourceTree = "<group>"; };
+		C60435592C56AF740000EB8F /* DiceRollerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceRollerViewController.swift; sourceTree = "<group>"; };
+		C604355B2C56C3F40000EB8F /* NPCMonsterCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NPCMonsterCellViewController.swift; sourceTree = "<group>"; };
 		C6096D732C4DAE3800E93C81 /* CharactersCreatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersCreatedViewController.swift; sourceTree = "<group>"; };
 		C6096D752C4DB23000E93C81 /* CreatedMonstersorNPCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatedMonstersorNPCViewController.swift; sourceTree = "<group>"; };
 		C64215CF2C5071B90094D596 /* CharacterViewTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewTableCell.swift; sourceTree = "<group>"; };
@@ -91,6 +97,7 @@
 				05BC78A32C3DE1D70076FE87 /* RegisterViewController.swift */,
 				05BC78CE2C40725B0076FE87 /* HomeViewController.swift */,
 				05BDBB632C3B32F6007D4203 /* Main.storyboard */,
+				C604355B2C56C3F40000EB8F /* NPCMonsterCellViewController.swift */,
 				C696D6E02C5597C30076029A /* NotesCell.swift */,
 				05B4BBBB2C52DA7800031121 /* NewNoteViewController.swift */,
 				21C04AF62C4DA34D00BC871F /* SettingsViewController.swift */,
@@ -103,6 +110,8 @@
 				C64215CF2C5071B90094D596 /* CharacterViewTableCell.swift */,
 				C6096D752C4DB23000E93C81 /* CreatedMonstersorNPCViewController.swift */,
 				05BC78F72C46B4620076FE87 /* NotesViewController.swift */,
+				C60435572C56AE750000EB8F /* SpellSheetViewController.swift */,
+				C60435592C56AF740000EB8F /* DiceRollerViewController.swift */,
 			);
 			path = DemonBuddy;
 			sourceTree = "<group>";
@@ -194,10 +203,13 @@
 				C696D6DF2C558E390076029A /* NewCharacterViewController.swift in Sources */,
 				C6096D762C4DB23000E93C81 /* CreatedMonstersorNPCViewController.swift in Sources */,
 				05BC78A42C3DE1D70076FE87 /* RegisterViewController.swift in Sources */,
+				C60435582C56AE750000EB8F /* SpellSheetViewController.swift in Sources */,
 				05BC78F82C46B4620076FE87 /* NotesViewController.swift in Sources */,
 				05BC78A22C3DDE1C0076FE87 /* LoginViewController.swift in Sources */,
 				05BC78CF2C40725B0076FE87 /* HomeViewController.swift in Sources */,
+				C604355A2C56AF740000EB8F /* DiceRollerViewController.swift in Sources */,
 				05BDBB602C3B32F6007D4203 /* SceneDelegate.swift in Sources */,
+				C604355C2C56C3F40000EB8F /* NPCMonsterCellViewController.swift in Sources */,
 				21C04AF72C4DA34D00BC871F /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
