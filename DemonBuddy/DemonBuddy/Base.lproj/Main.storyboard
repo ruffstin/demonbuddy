@@ -1130,10 +1130,71 @@
                                 </subviews>
                                 <edgeInsets key="layoutMargins" top="50" left="20" bottom="50" right="20"/>
                             </stackView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MUe-W4-n95">
+                                <rect key="frame" x="27.666666666666657" y="338.66666666666669" width="300" height="164.66666666666669"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="t8J-cf-xjT">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="164.66666666666666"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Game Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9sD-2r-agC">
+                                                <rect key="frame" x="20" y="20" width="260" height="20.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Game Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3bW-V9-XHI">
+                                                <rect key="frame" x="20" y="58.333333333333314" width="260" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="W0M-Nz-VOZ">
+                                                <rect key="frame" x="20" y="110.33333333333331" width="260" height="34.333333333333343"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="257" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHS-f2-ab4">
+                                                        <rect key="frame" x="0.0" y="0.0" width="125" height="34.333333333333336"/>
+                                                        <color key="backgroundColor" name="Primary Color"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Create"/>
+                                                        <connections>
+                                                            <action selector="newGameCreatePressed:" destination="I2P-tM-0H3" eventType="touchUpInside" id="6a0-lf-9Hr"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CWp-BD-MTs">
+                                                        <rect key="frame" x="135" y="0.0" width="125" height="34.333333333333336"/>
+                                                        <color key="backgroundColor" name="Secondary Color"/>
+                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Cancel"/>
+                                                        <connections>
+                                                            <action selector="newGameCancelPressed:" destination="I2P-tM-0H3" eventType="touchUpInside" id="XVi-2T-edy"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="KcK-ZC-zLf"/>
+                                        </constraints>
+                                        <edgeInsets key="layoutMargins" top="20" left="20" bottom="20" right="20"/>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" name="Alternative Background"/>
+                                <constraints>
+                                    <constraint firstItem="t8J-cf-xjT" firstAttribute="centerX" secondItem="MUe-W4-n95" secondAttribute="centerX" id="3UE-2V-aQf"/>
+                                    <constraint firstItem="t8J-cf-xjT" firstAttribute="leading" secondItem="MUe-W4-n95" secondAttribute="leading" id="6WO-vQ-Vmw"/>
+                                    <constraint firstItem="t8J-cf-xjT" firstAttribute="top" secondItem="MUe-W4-n95" secondAttribute="top" id="8eV-Nb-jJP"/>
+                                    <constraint firstAttribute="bottom" secondItem="t8J-cf-xjT" secondAttribute="bottom" id="cZG-nk-Zv0"/>
+                                    <constraint firstItem="t8J-cf-xjT" firstAttribute="centerY" secondItem="MUe-W4-n95" secondAttribute="centerY" id="pjb-eK-hKS"/>
+                                    <constraint firstAttribute="trailing" secondItem="t8J-cf-xjT" secondAttribute="trailing" id="v87-AA-OB1"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Nxv-76-Umv"/>
                         <color key="backgroundColor" name="Background Color"/>
                         <constraints>
+                            <constraint firstItem="MUe-W4-n95" firstAttribute="centerX" secondItem="Tnl-bW-Ug8" secondAttribute="centerX" id="G2P-y5-ioG"/>
+                            <constraint firstItem="MUe-W4-n95" firstAttribute="centerY" secondItem="Tnl-bW-Ug8" secondAttribute="centerY" id="LMa-cm-DtQ"/>
                             <constraint firstItem="Nxv-76-Umv" firstAttribute="bottom" secondItem="WcF-IP-H5t" secondAttribute="bottom" id="LYX-IN-Xnt"/>
                             <constraint firstItem="WcF-IP-H5t" firstAttribute="top" secondItem="Nxv-76-Umv" secondAttribute="top" id="Lmu-c5-mDE"/>
                             <constraint firstItem="WcF-IP-H5t" firstAttribute="leading" secondItem="Nxv-76-Umv" secondAttribute="leading" id="S8v-2h-V0U"/>
@@ -1145,8 +1206,12 @@
                     <navigationItem key="navigationItem" id="9l2-Af-8VY"/>
                     <connections>
                         <outlet property="buttonsView" destination="gwo-dP-i6R" id="IWv-9z-zdp"/>
+                        <outlet property="createGameButtonStack" destination="W0M-Nz-VOZ" id="xNF-z7-rhy"/>
+                        <outlet property="createGameNameStackView" destination="t8J-cf-xjT" id="t3Z-u5-abo"/>
+                        <outlet property="createGameNameView" destination="MUe-W4-n95" id="VS5-TV-50H"/>
                         <outlet property="dateLabel" destination="hC0-PR-YZd" id="VI1-0T-blc"/>
                         <outlet property="gameNameDropdown" destination="wSR-99-63t" id="9of-ff-ptN"/>
+                        <outlet property="newGameTextInput" destination="3bW-V9-XHI" id="jWD-S6-xrd"/>
                         <outlet property="stackView" destination="WcF-IP-H5t" id="DgF-N1-399"/>
                         <outlet property="textView" destination="xfb-PJ-dhB" id="mS9-e9-MDS"/>
                         <outlet property="titleTextView" destination="ukf-gb-DJi" id="vlU-kk-4pJ"/>

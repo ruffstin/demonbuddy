@@ -37,6 +37,8 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var descSortSelected = false
     var gameFilterSelected = false
     
+    var gameNameOptions: [UIAction]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,7 +51,7 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         selectFiltersView.layer.cornerRadius = 10
         selectFiltersView.layer.masksToBounds = true
         
-        let gameNameOptions = [
+        gameNameOptions = [
             UIAction(title: "None")
             { _ in self.gameNameFilter.setTitle("None", for: .normal) }
         ]
