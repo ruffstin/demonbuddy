@@ -12,4 +12,5 @@ class NotesCell: UITableViewCell  {
     @IBOutlet weak var noteName: UILabel!
     
     @IBOutlet weak var noteGameName: UILabel!
+    
 }

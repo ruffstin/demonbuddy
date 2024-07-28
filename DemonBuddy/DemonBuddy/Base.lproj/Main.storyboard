@@ -318,24 +318,24 @@
                                             <constraint firstAttribute="height" constant="669" id="wbv-Cz-ywU"/>
                                         </constraints>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="noteCell" textLabel="GnP-tG-PxP" detailTextLabel="j2k-W1-3JB" style="IBUITableViewCellStyleSubtitle" id="ejY-bQ-6oB" customClass="NotesCell">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="noteCell" id="ejY-bQ-6oB" customClass="NotesCell" customModule="DemonBuddy">
                                                 <rect key="frame" x="0.0" y="50" width="371.66666666666669" height="43.666667938232422"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ejY-bQ-6oB" id="eQB-ij-EnJ">
                                                     <rect key="frame" x="0.0" y="0.0" width="341.33333333333337" height="43.666667938232422"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GnP-tG-PxP">
-                                                            <rect key="frame" x="20" y="6.0000000000000009" width="33" height="14.333333333333334"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBB-6C-trj">
+                                                            <rect key="frame" x="20" y="0.0" width="125" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Game Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="j2k-W1-3JB">
-                                                            <rect key="frame" x="20" y="22.333333333333336" width="69.333333333333329" height="14.333333333333334"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VSi-7N-buy">
+                                                            <rect key="frame" x="20" y="22" width="125" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -343,8 +343,8 @@
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" name="Background Color"/>
                                                 <connections>
-                                                    <outlet property="noteGameName" destination="j2k-W1-3JB" id="SLq-va-3YC"/>
-                                                    <outlet property="noteName" destination="GnP-tG-PxP" id="VUe-Jd-Ad7"/>
+                                                    <outlet property="noteGameName" destination="VSi-7N-buy" id="qlS-Jj-LIS"/>
+                                                    <outlet property="noteName" destination="vBB-6C-trj" id="OLE-iR-9IT"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -490,7 +490,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="addNotePressed:" destination="EfI-Cq-IrG" eventType="touchUpInside" id="EGE-dT-hYr"/>
-                                    <segue destination="I2P-tM-0H3" kind="presentation" id="uFT-nY-h91"/>
+                                    <segue destination="I2P-tM-0H3" kind="presentation" identifier="toCreateNote" id="uFT-nY-h91"/>
                                 </connections>
                             </button>
                         </subviews>

@@ -18,6 +18,8 @@ class NewNoteViewController: UIViewController {
     @IBOutlet weak var titleTextView: UITextField!
     @IBOutlet weak var gameNameDropdown: UIButton!
     
+    var delegate: UIViewController!
+    
     var note: NSManagedObject?
     
     override func viewDidLoad() {
@@ -41,8 +43,6 @@ class NewNoteViewController: UIViewController {
         stackView.addArrangedSubview(buttonsView)
         view.addSubview(stackView)
     }
-    
-    
     
     @IBAction func gameNamePressed(_ sender: Any) {
     }
@@ -79,8 +79,11 @@ class NewNoteViewController: UIViewController {
             note.setValue(date, forKey: "date")
             
             saveContext()
+            
+            let notesVC = delegate as! RefreshTable
+            notesVC.refreshTable()
+            
             self.dismiss(animated: true)
-            print("Note has been added")
         }
     }
     

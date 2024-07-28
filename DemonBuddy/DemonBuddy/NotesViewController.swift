@@ -9,9 +9,13 @@ import UIKit
 import CoreData
 import FirebaseAuth
 
-var notes: [NSManagedObject]!
+var notes: [NSManagedObject] = []
 
-class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+protocol RefreshTable {
+    func refreshTable()
+}
+
+class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, RefreshTable{
     
     // Outlets for views
     @IBOutlet weak var sortFiltersStackView: UIStackView!
@@ -60,29 +64,24 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        notes = retrieveNotes()
-        tableView.reloadData()
+        refreshTable()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return notes!.count
+        return notes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! NotesCell
-        let note = notes[indexPath.row]
-        //let row = indexPath.row
-        cell.noteName.text = (note.value(forKey: "title") as? String ?? "")
-        cell.noteGameName.text = (note.value(forKey: "gameName") as? String ?? "" )
-       // cell.noteGameName.text =
-        /*if let name = notes[row].value(forKey: "title") as? String {
-            cell.textLabel?.text = name
+        let row = indexPath.row
+        
+        if let name = notes[row].value(forKey: "title") as? String {
+            cell.noteName?.text = name
         }
         
         if let game = notes[row].value(forKey: "gameName") as? String {
-            cell.detailTextLabel?.text = game
-        }*/
+            cell.noteGameName?.text = game
+        }
         
         return cell
     }
@@ -148,7 +147,7 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     // Return all notes for the current user
-    func retrieveNotes() -> [NSManagedObject] {
+    func retrieveNotes() {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Note")
         var fetchedResults: [NSManagedObject]?
         
@@ -164,6 +163,17 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
             abort()
         }
     
-        return (fetchedResults)!
+        notes = fetchedResults!
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toCreateNote", let newNoteVC = segue.destination as? NewNoteViewController {
+            newNoteVC.delegate = self
+        }
+    }
+    
+    func refreshTable() {
+        retrieveNotes()
+        tableView.reloadData()
     }
 }
