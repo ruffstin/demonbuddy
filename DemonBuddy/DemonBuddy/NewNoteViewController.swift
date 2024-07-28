@@ -21,6 +21,7 @@ class NewNoteViewController: UIViewController {
     var delegate: UIViewController!
     
     var note: NSManagedObject?
+    var noteToEdit: NSManagedObject?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +43,18 @@ class NewNoteViewController: UIViewController {
         stackView.addArrangedSubview(textView)
         stackView.addArrangedSubview(buttonsView)
         view.addSubview(stackView)
+        
+        if noteToEdit != nil {
+            if let title = noteToEdit?.value(forKey: "title") as? String {
+                titleTextView.text = title
+            }
+            if let game = noteToEdit?.value(forKey: "gameName") as? String {
+                gameNameDropdown.setTitle(game, for: .normal)
+            }
+            if let text = noteToEdit?.value(forKey: "noteText") as? String {
+                textView.text = text
+            }
+        }
     }
     
     @IBAction func gameNamePressed(_ sender: Any) {
@@ -64,19 +77,27 @@ class NewNoteViewController: UIViewController {
             controller.addAction(UIAlertAction(title: "Ok", style: .default))
             present(controller, animated: true)
         } else {
-            // Create new Note instance
             let title = titleTextView.text
             let game = gameNameDropdown.title(for: .normal)
             let userID = Auth.auth().currentUser?.uid
             let noteText = textView.text
             let date = dateLabel.text
             
-            let note = NSEntityDescription.insertNewObject(forEntityName: "Note", into: context)
-            note.setValue(title, forKey: "title")
-            note.setValue(game, forKey: "gameName")
-            note.setValue(userID, forKey: "userID")
-            note.setValue(noteText, forKey: "noteText")
-            note.setValue(date, forKey: "date")
+            if noteToEdit != nil{
+                // Update existing Note instance
+                noteToEdit?.setValue(title, forKey:  "title")
+                noteToEdit?.setValue(game, forKey: "gameName")
+                noteToEdit?.setValue(date, forKey: "date")
+                noteToEdit?.setValue(noteText, forKey: "noteText")
+            } else {
+                // Create new Note instance
+                let note = NSEntityDescription.insertNewObject(forEntityName: "Note", into: context)
+                note.setValue(title, forKey: "title")
+                note.setValue(game, forKey: "gameName")
+                note.setValue(userID, forKey: "userID")
+                note.setValue(noteText, forKey: "noteText")
+                note.setValue(date, forKey: "date")
+            }
             
             saveContext()
             

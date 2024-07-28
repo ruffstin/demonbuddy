@@ -345,6 +345,7 @@
                                                 <connections>
                                                     <outlet property="noteGameName" destination="VSi-7N-buy" id="qlS-Jj-LIS"/>
                                                     <outlet property="noteName" destination="vBB-6C-trj" id="OLE-iR-9IT"/>
+                                                    <segue destination="I2P-tM-0H3" kind="presentation" identifier="toEditNote" id="BBV-ds-Atw"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -1377,6 +1378,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="IPc-Vi-pTd"/>
+        <segue reference="BBV-ds-Atw"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="DemonBuddy" width="1000" height="750"/>

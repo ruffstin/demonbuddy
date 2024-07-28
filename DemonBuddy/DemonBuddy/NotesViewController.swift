@@ -169,6 +169,9 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toCreateNote", let newNoteVC = segue.destination as? NewNoteViewController {
             newNoteVC.delegate = self
+        } else if segue.identifier == "toEditNote", let newNoteVC = segue.destination as? NewNoteViewController, let selectedNote = tableView.indexPathForSelectedRow?.row {
+            newNoteVC.delegate = self
+            newNoteVC.noteToEdit = notes[selectedNote]
         }
     }
     
