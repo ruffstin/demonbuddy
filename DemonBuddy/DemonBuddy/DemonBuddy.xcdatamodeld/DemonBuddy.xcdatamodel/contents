@@ -19,6 +19,10 @@
         <attribute name="userID" optional="YES" attributeType="String"/>
         <relationship name="spells" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SpellSheet" inverseName="caster" inverseEntity="SpellSheet"/>
     </entity>
+    <entity name="GameNames" representedClassName="GameNames" syncable="YES" codeGenerationType="class">
+        <attribute name="names" optional="YES" attributeType="Transformable"/>
+        <attribute name="userID" optional="YES" attributeType="String"/>
+    </entity>
     <entity name="Note" representedClassName="Note" syncable="YES" codeGenerationType="class">
         <attribute name="date" optional="YES" attributeType="String"/>
         <attribute name="gameName" optional="YES" attributeType="String"/>

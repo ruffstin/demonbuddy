@@ -27,7 +27,6 @@ class NewNoteViewController: UIViewController {
     
     var note: NSManagedObject?
     var noteToEdit: NSManagedObject?
-    var gameNameOptions: [UIAction]!
     var dimBackgroundView: UIView!
     
     override func viewDidLoad() {
@@ -40,13 +39,6 @@ class NewNoteViewController: UIViewController {
         dimBackgroundView.alpha = 0
         
         createGameNameView.alpha = 0
-        
-        gameNameOptions = [
-            UIAction(title: "None")
-            { _ in self.gameNameDropdown.setTitle("None", for: .normal) },
-            UIAction(title: "Create Game Name")
-            { _ in self.createNewGameName()}
-        ]
         
         updateGameNameMenu()
 
