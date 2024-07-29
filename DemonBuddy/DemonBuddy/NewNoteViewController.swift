@@ -28,9 +28,18 @@ class NewNoteViewController: UIViewController {
     var note: NSManagedObject?
     var noteToEdit: NSManagedObject?
     var gameNameOptions: [UIAction]!
+    var dimBackgroundView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        createGameNameView.isHidden = false
+        
+        dimBackgroundView = UIView(frame: self.view.bounds)
+        dimBackgroundView.backgroundColor = UIColor.black.withAlphaComponent(0.4)
+        dimBackgroundView.alpha = 0
+        
+        createGameNameView.alpha = 0
         
         gameNameOptions = [
             UIAction(title: "None")
@@ -51,6 +60,7 @@ class NewNoteViewController: UIViewController {
         createGameNameStackView.addArrangedSubview(createGameButtonStack)
         createGameNameView.addSubview(createGameNameStackView)
         view.addSubview(stackView)
+        view.addSubview(dimBackgroundView)
         view.addSubview(createGameNameView)
         
         if noteToEdit != nil {
@@ -124,7 +134,10 @@ class NewNoteViewController: UIViewController {
     }
     
     func createNewGameName() {
-        createGameNameView.isHidden = false
+        UIView.animate(withDuration: 0.4) {
+            self.dimBackgroundView.alpha = 1
+            self.createGameNameView.alpha = 1
+        }
     }
     
     @IBAction func newGameCreatePressed(_ sender: Any) {
@@ -134,12 +147,19 @@ class NewNoteViewController: UIViewController {
         self.gameNameDropdown.setTitle(newGameTextInput.text!, for: .normal)
         gameNameOptions.insert(newAction, at: gameNameOptions.count - 1)
         updateGameNameMenu()
-        createGameNameView.isHidden = true
+        newGameTextInput.text = nil
+        UIView.animate(withDuration: 0.4) {
+            self.dimBackgroundView.alpha = 0
+            self.createGameNameView.alpha = 0
+        }
     }
     
     @IBAction func newGameCancelPressed(_ sender: Any) {
         newGameTextInput.text = nil
-        createGameNameView.isHidden = true
+        UIView.animate(withDuration: 0.4) {
+            self.dimBackgroundView.alpha = 0
+            self.createGameNameView.alpha = 0
+        }
     }
     
     func saveContext () {

@@ -38,15 +38,24 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var gameFilterSelected = false
     
     var gameNameOptions: [UIAction]!
+    var dimBackgroundView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        selectFiltersView.isHidden = false
+        
+        dimBackgroundView = UIView(frame: self.view.bounds)
+        dimBackgroundView.backgroundColor = UIColor.black.withAlphaComponent(0.4)
+        dimBackgroundView.alpha = 0
+        
+        selectFiltersView.alpha = 0
         
         filtersStackView.addSubview(sortFiltersStackView)
         filtersStackView.addSubview(filterButtonsStackView)
         
         selectFiltersView.addSubview(filtersStackView)
         
+        view.addSubview(dimBackgroundView)
         view.addSubview(selectFiltersView)
         selectFiltersView.layer.cornerRadius = 10
         selectFiltersView.layer.masksToBounds = true
@@ -99,10 +108,9 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     @IBAction func filterPressed(_ sender: Any) {
-        if selectFiltersView.isHidden {
-            selectFiltersView.isHidden = false
-        } else {
-            selectFiltersView.isHidden = true
+        UIView.animate(withDuration: 0.4) {
+            self.dimBackgroundView.alpha = 1
+            self.selectFiltersView.alpha = 1
         }
     }
     
@@ -110,11 +118,17 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     @IBAction func filtersDonePressed(_ sender: Any) {
-        selectFiltersView.isHidden = true
+        UIView.animate(withDuration: 0.4) {
+            self.dimBackgroundView.alpha = 0
+            self.selectFiltersView.alpha = 0
+        }
     }
     
     @IBAction func filtersCancelPressed(_ sender: Any) {
-        selectFiltersView.isHidden = true
+        UIView.animate(withDuration: 0.4) {
+            self.dimBackgroundView.alpha = 0
+            self.selectFiltersView.alpha = 0
+        }
     }
     
     @IBAction func nameSortFilterPressed(_ sender: Any) {
@@ -151,21 +165,22 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     // Return all notes for the current user
     func retrieveNotes() {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Note")
-        var fetchedResults: [NSManagedObject]?
         
-//        if let user = Auth.auth().currentUser?.uid {
-//            let predicate = NSPredicate(format: "userID = \(user)")
-//            request.predicate = predicate
-//        }
+        if let user = Auth.auth().currentUser?.uid {
+            let predicate = NSPredicate(format: "userID == %@", user)
+            request.predicate = predicate
+        }
         
         do {
-            try fetchedResults = context.fetch(request) as? [NSManagedObject]
+            if let fetchedResults = try context.fetch(request) as? [NSManagedObject] {
+                notes = fetchedResults
+            } else {
+                notes = []
+            }
         } catch {
             print("Error occured while retrieving data")
             abort()
         }
-    
-        notes = fetchedResults!
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
