@@ -35,7 +35,6 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var nameSortSelected = false
     var gameSortSelected = false
     var descSortSelected = false
-    var gameFilterSelected = false
     
     var dimBackgroundView: UIView!
     
@@ -130,10 +129,39 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     @IBAction func filtersDonePressed(_ sender: Any) {
+        var sortBy: String!
+        if nameSortSelected {
+            sortBy = "title"
+        } else if gameSortSelected {
+            sortBy = "gameName"
+        }
+        
+        if gameNameFilter.titleLabel!.text != "Game Name" {
+            let predicate = NSPredicate(format: "gameName == %@", gameNameFilter.titleLabel!.text!)
+            retrieveNotes(otherPredicate: predicate, sortPredicateName: sortBy, ascOrder: !descSortSelected)
+        } else {
+            retrieveNotes(sortPredicateName: sortBy, ascOrder: !descSortSelected)
+        }
+        
+        tableView.reloadData()
+        
+        resetFilters()
+        
         UIView.animate(withDuration: 0.4) {
             self.dimBackgroundView.alpha = 0
             self.selectFiltersView.alpha = 0
         }
+    }
+    
+    func resetFilters() {
+        nameSortSelected = false
+        gameSortSelected = false
+        descSortSelected = false
+        gameNameFilter.setTitle("Game Name", for: .normal)
+        
+        nameSortFilter.backgroundColor = UIColor(named: "Secondary Color")
+        gameNameSortFilter.backgroundColor = UIColor(named: "Secondary Color")
+        orderSortFilter.setTitle("Asc", for: .normal)
     }
     
     @IBAction func filtersCancelPressed(_ sender: Any) {
@@ -170,17 +198,22 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
-    @IBAction func gameNameFilterPressed(_ sender: Any) {
-        gameFilterSelected = true
-    }
-    
     // Return all notes for the current user
-    func retrieveNotes() {
+    func retrieveNotes(otherPredicate: NSPredicate? = nil, sortPredicateName: String? = nil, ascOrder: Bool = true) {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Note")
         
         if let user = Auth.auth().currentUser?.uid {
-            let predicate = NSPredicate(format: "userID == %@", user)
-            request.predicate = predicate
+            let userPredicate = NSPredicate(format: "userID == %@", user)
+            if otherPredicate != nil {
+                let compoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [userPredicate, otherPredicate!])
+                request.predicate = compoundPredicate
+            } else {
+                request.predicate = userPredicate
+            }
+            if sortPredicateName != nil {
+                let sortPredicate = NSSortDescriptor(key: sortPredicateName, ascending: ascOrder)
+                request.sortDescriptors = [sortPredicate]
+            }
         }
         
         do {

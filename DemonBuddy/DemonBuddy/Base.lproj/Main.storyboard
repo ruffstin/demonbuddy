@@ -615,9 +615,6 @@
                                                 <buttonConfiguration key="configuration" style="plain" title="Game Name">
                                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
-                                                <connections>
-                                                    <action selector="gameNameFilterPressed:" destination="EfI-Cq-IrG" eventType="touchUpInside" id="rVK-80-ad7"/>
-                                                </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="3sM-b0-lSj">
                                                 <rect key="frame" x="20" y="204.66666666666669" width="321" height="50.333333333333343"/>
