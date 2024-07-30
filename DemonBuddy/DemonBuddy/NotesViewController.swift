@@ -9,7 +9,6 @@ import UIKit
 import CoreData
 import FirebaseAuth
 
-internal var gameNameOptions: [UIAction]!
 var notes: [NSManagedObject] = []
 
 protocol RefreshTable {
@@ -39,6 +38,8 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var gameFilterSelected = false
     
     var dimBackgroundView: UIView!
+    
+    var gameNameOptions: [UIAction]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,41 +78,15 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     // Checks if user has Notes if not then creates an entity to store them
     func populateGameNameOptions() {
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "GameNames")
-        let user = (Auth.auth().currentUser?.uid as? String)!
-        let predicate = NSPredicate(format: "userID == %@", user)
-        request.predicate = predicate
-        
-        do {
-            // Try to retrieve GameNames instance for the current user
-            if let fetchedResults = try context.fetch(request) as? [NSManagedObject],
-                let gameNamesForUser = fetchedResults.first {
-                if let listOfNames = gameNamesForUser.value(forKey: "names") as? [String] {
-                    gameNameOptions = []
-                    for name in listOfNames {
-                        gameNameOptions.append(UIAction(title: name) {
-                            _ in self.gameNameFilter.setTitle(name, for: .normal)
-                        })
-                    }
-                }
-            } else {
-                // Create a new GameNames instance for the current user
-                let user = Auth.auth().currentUser?.uid as? String
-                let gameName = NSEntityDescription.insertNewObject(forEntityName: "GameNames", into: context)
-                let defaultOptions = ["None",]
-                gameName.setValue(user, forKey: "userID")
-                gameName.setValue(defaultOptions, forKey: "names")
-                    
-                gameNameOptions = [
-                    UIAction(title: "None") {
-                    _ in self.gameNameFilter.setTitle("None", for: .normal)
-                }]
-                    
-                saveContext()
+        gameNameOptions = [
+            UIAction(title: "None") {
+                _ in self.gameNameFilter.setTitle("None", for: .normal)
             }
-        } catch {
-            print("Error occured while retrieving data")
-            abort()
+        ]
+        for name in gameNames {
+            gameNameOptions.append(UIAction(title: name) {
+                _ in self.gameNameFilter.setTitle(name, for: .normal)
+            })
         }
     }
     

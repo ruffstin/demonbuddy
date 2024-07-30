@@ -17,28 +17,15 @@ class NewNoteViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var titleTextView: UITextField!
     @IBOutlet weak var gameNameDropdown: UIButton!
-    @IBOutlet weak var createGameNameView: UIView!
-    @IBOutlet weak var createGameNameStackView: UIStackView!
-    @IBOutlet weak var createGameButtonStack: UIStackView!
-    
-    @IBOutlet weak var newGameTextInput: UITextField!
     
     var delegate: UIViewController!
     
     var note: NSManagedObject?
     var noteToEdit: NSManagedObject?
-    var dimBackgroundView: UIView!
+    var gameNameOptions: [UIAction]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        createGameNameView.isHidden = false
-        
-        dimBackgroundView = UIView(frame: self.view.bounds)
-        dimBackgroundView.backgroundColor = UIColor.black.withAlphaComponent(0.4)
-        dimBackgroundView.alpha = 0
-        
-        createGameNameView.alpha = 0
         
         updateGameNameMenu()
 
@@ -49,11 +36,7 @@ class NewNoteViewController: UIViewController {
         
         stackView.addArrangedSubview(textView)
         stackView.addArrangedSubview(buttonsView)
-        createGameNameStackView.addArrangedSubview(createGameButtonStack)
-        createGameNameView.addSubview(createGameNameStackView)
         view.addSubview(stackView)
-        view.addSubview(dimBackgroundView)
-        view.addSubview(createGameNameView)
         
         if noteToEdit != nil {
             if let title = noteToEdit?.value(forKey: "title") as? String {
@@ -69,12 +52,20 @@ class NewNoteViewController: UIViewController {
     }
     
     func updateGameNameMenu() {
+        gameNameOptions = [
+            UIAction(title: "None") {
+                _ in self.gameNameDropdown.setTitle("None", for: .normal)
+            }
+        ]
+        for name in gameNames {
+            gameNameOptions.append(UIAction(title: name) {
+                _ in self.gameNameDropdown.setTitle(name, for: .normal)
+            })
+        }
+        
         let menu = UIMenu(title: "Game Names", options: .displayInline, children: gameNameOptions)
         gameNameDropdown.menu = menu
         gameNameDropdown.showsMenuAsPrimaryAction = true
-    }
-    
-    @IBAction func gameNamePressed(_ sender: Any) {
     }
     
     // Dismiss the screen
@@ -122,35 +113,6 @@ class NewNoteViewController: UIViewController {
             notesVC.refreshTable()
             
             self.dismiss(animated: true)
-        }
-    }
-    
-    func createNewGameName() {
-        UIView.animate(withDuration: 0.4) {
-            self.dimBackgroundView.alpha = 1
-            self.createGameNameView.alpha = 1
-        }
-    }
-    
-    @IBAction func newGameCreatePressed(_ sender: Any) {
-        let newAction = UIAction(title: newGameTextInput.text!) {
-            _ in self.gameNameDropdown.setTitle(self.newGameTextInput.text!, for: .normal)
-        }
-        self.gameNameDropdown.setTitle(newGameTextInput.text!, for: .normal)
-        gameNameOptions.insert(newAction, at: gameNameOptions.count - 1)
-        updateGameNameMenu()
-        newGameTextInput.text = nil
-        UIView.animate(withDuration: 0.4) {
-            self.dimBackgroundView.alpha = 0
-            self.createGameNameView.alpha = 0
-        }
-    }
-    
-    @IBAction func newGameCancelPressed(_ sender: Any) {
-        newGameTextInput.text = nil
-        UIView.animate(withDuration: 0.4) {
-            self.dimBackgroundView.alpha = 0
-            self.createGameNameView.alpha = 0
         }
     }
     
