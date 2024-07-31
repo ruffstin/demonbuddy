@@ -30,7 +30,7 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var orderSortFilter: UIButton!
     @IBOutlet weak var gameNameFilter: UIButton!
     
-    let cellIdentifier = "noteCell"
+    let cellIdentifier = "creationCell"
     
     var nameSortSelected = false
     var gameSortSelected = false
@@ -94,15 +94,15 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! NotesCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! SavedCreationCell
         let row = indexPath.row
         
         if let name = notes[row].value(forKey: "title") as? String {
-            cell.noteName?.text = name
+            cell.creationName?.text = name
         }
         
         if let game = notes[row].value(forKey: "gameName") as? String {
-            cell.noteGameName?.text = game
+            cell.gameName?.text = game
         }
         
         return cell

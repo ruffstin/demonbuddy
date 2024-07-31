@@ -25,10 +25,9 @@
 		C604355C2C56C3F40000EB8F /* NPCMonsterCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C604355B2C56C3F40000EB8F /* NPCMonsterCellViewController.swift */; };
 		C6096D742C4DAE3800E93C81 /* CharactersCreatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6096D732C4DAE3800E93C81 /* CharactersCreatedViewController.swift */; };
 		C6096D762C4DB23000E93C81 /* CreatedMonstersorNPCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6096D752C4DB23000E93C81 /* CreatedMonstersorNPCViewController.swift */; };
-		C64215D02C5071B90094D596 /* CharacterViewTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64215CF2C5071B90094D596 /* CharacterViewTableCell.swift */; };
+		C656BA962C5ACA4500759F99 /* SavedCreationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C656BA952C5ACA4500759F99 /* SavedCreationCell.swift */; };
 		C696D6D92C5566DD0076029A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C696D6D82C5566DD0076029A /* FirebaseAuth */; };
 		C696D6DF2C558E390076029A /* NewCharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C696D6DE2C558E390076029A /* NewCharacterViewController.swift */; };
-		C696D6E12C5597C30076029A /* NotesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C696D6E02C5597C30076029A /* NotesCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,9 +52,8 @@
 		C604355B2C56C3F40000EB8F /* NPCMonsterCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NPCMonsterCellViewController.swift; sourceTree = "<group>"; };
 		C6096D732C4DAE3800E93C81 /* CharactersCreatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersCreatedViewController.swift; sourceTree = "<group>"; };
 		C6096D752C4DB23000E93C81 /* CreatedMonstersorNPCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatedMonstersorNPCViewController.swift; sourceTree = "<group>"; };
-		C64215CF2C5071B90094D596 /* CharacterViewTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewTableCell.swift; sourceTree = "<group>"; };
+		C656BA952C5ACA4500759F99 /* SavedCreationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedCreationCell.swift; sourceTree = "<group>"; };
 		C696D6DE2C558E390076029A /* NewCharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCharacterViewController.swift; sourceTree = "<group>"; };
-		C696D6E02C5597C30076029A /* NotesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +96,6 @@
 				05BC78CE2C40725B0076FE87 /* HomeViewController.swift */,
 				05BDBB632C3B32F6007D4203 /* Main.storyboard */,
 				C604355B2C56C3F40000EB8F /* NPCMonsterCellViewController.swift */,
-				C696D6E02C5597C30076029A /* NotesCell.swift */,
 				05B4BBBB2C52DA7800031121 /* NewNoteViewController.swift */,
 				21C04AF62C4DA34D00BC871F /* SettingsViewController.swift */,
 				05BDBB692C3B32F7007D4203 /* Assets.xcassets */,
@@ -107,11 +104,11 @@
 				05BDBB662C3B32F6007D4203 /* DemonBuddy.xcdatamodeld */,
 				05BC78C82C40605D0076FE87 /* GoogleService-Info.plist */,
 				C6096D732C4DAE3800E93C81 /* CharactersCreatedViewController.swift */,
-				C64215CF2C5071B90094D596 /* CharacterViewTableCell.swift */,
 				C6096D752C4DB23000E93C81 /* CreatedMonstersorNPCViewController.swift */,
 				05BC78F72C46B4620076FE87 /* NotesViewController.swift */,
 				C60435572C56AE750000EB8F /* SpellSheetViewController.swift */,
 				C60435592C56AF740000EB8F /* DiceRollerViewController.swift */,
+				C656BA952C5ACA4500759F99 /* SavedCreationCell.swift */,
 			);
 			path = DemonBuddy;
 			sourceTree = "<group>";
@@ -196,16 +193,15 @@
 			files = (
 				C6096D742C4DAE3800E93C81 /* CharactersCreatedViewController.swift in Sources */,
 				05BDBB5E2C3B32F6007D4203 /* AppDelegate.swift in Sources */,
-				C64215D02C5071B90094D596 /* CharacterViewTableCell.swift in Sources */,
 				05B4BBBC2C52DA7800031121 /* NewNoteViewController.swift in Sources */,
 				05BDBB682C3B32F6007D4203 /* DemonBuddy.xcdatamodeld in Sources */,
-				C696D6E12C5597C30076029A /* NotesCell.swift in Sources */,
 				C696D6DF2C558E390076029A /* NewCharacterViewController.swift in Sources */,
 				C6096D762C4DB23000E93C81 /* CreatedMonstersorNPCViewController.swift in Sources */,
 				05BC78A42C3DE1D70076FE87 /* RegisterViewController.swift in Sources */,
 				C60435582C56AE750000EB8F /* SpellSheetViewController.swift in Sources */,
 				05BC78F82C46B4620076FE87 /* NotesViewController.swift in Sources */,
 				05BC78A22C3DDE1C0076FE87 /* LoginViewController.swift in Sources */,
+				C656BA962C5ACA4500759F99 /* SavedCreationCell.swift in Sources */,
 				05BC78CF2C40725B0076FE87 /* HomeViewController.swift in Sources */,
 				C604355A2C56AF740000EB8F /* DiceRollerViewController.swift in Sources */,
 				05BDBB602C3B32F6007D4203 /* SceneDelegate.swift in Sources */,

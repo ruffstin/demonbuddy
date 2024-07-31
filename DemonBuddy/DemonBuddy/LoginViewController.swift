@@ -34,7 +34,7 @@ class LoginViewController: UIViewController {
         if !fieldsIncorrect(){
             Auth.auth().signIn(withEmail: emailInput.text!, password: passwordInput.text!) {
                 authResult, error in
-                if let error = error as NSError? {
+                if let _ = error as NSError? {
                     self.errorLabel.text = "Email or password is incorrect"
                 } else {
                     self.errorLabel.text = nil
