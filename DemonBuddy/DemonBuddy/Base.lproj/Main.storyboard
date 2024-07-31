@@ -679,7 +679,6 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="addNotePressed:" destination="EfI-Cq-IrG" eventType="touchUpInside" id="EGE-dT-hYr"/>
-                                    <segue destination="I2P-tM-0H3" kind="presentation" identifier="toCreateNote" id="uFT-nY-h91"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1651,7 +1650,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="IPc-Vi-pTd"/>
-        <segue reference="BBV-ds-Atw"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="DemonBuddy" width="1000" height="750"/>

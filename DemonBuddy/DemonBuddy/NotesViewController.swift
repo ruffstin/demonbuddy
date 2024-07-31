@@ -125,9 +125,6 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
-    @IBAction func addNotePressed(_ sender: Any) {
-    }
-    
     @IBAction func filtersDonePressed(_ sender: Any) {
         var sortBy: String!
         if nameSortSelected {
