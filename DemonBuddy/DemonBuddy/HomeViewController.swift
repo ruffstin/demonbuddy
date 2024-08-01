@@ -20,6 +20,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var gameNameTableView: UITableView!
     
+    
+    @IBOutlet weak var secretButton: UIButton!
+    
+    @IBOutlet weak var demonBuddyLine: UILabel!
+    
     var userGameNames: NSManagedObject!
     var dimBackgroundView: UIView!
     
@@ -41,6 +46,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         gameNameTableView.delegate = self
         gameNameTableView.dataSource = self
+        
+        demonBuddyLine.text = "What Infernal Magicks are we going to get up to today MASTER?"
         
         retrieveGameNames()
     }
