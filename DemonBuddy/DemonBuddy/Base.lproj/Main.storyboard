@@ -224,6 +224,9 @@
                                                 <color key="tintColor" systemColor="groupTableViewBackgroundColor"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Characters"/>
+                                                <connections>
+                                                    <segue destination="c4X-vN-JVi" kind="show" id="0Wp-ya-txE"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybv-tD-o29">
                                                 <rect key="frame" x="183.66666666666663" y="0.0" width="159.33333333333337" height="34.333333333333336"/>
@@ -231,6 +234,9 @@
                                                 <color key="tintColor" systemColor="groupTableViewBackgroundColor"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Monsters &amp; NPCs"/>
+                                                <connections>
+                                                    <segue destination="lDk-sc-AxI" kind="show" id="FAa-fW-4SB"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -419,7 +425,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wV3-Nw-ZBZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4089" y="-2"/>
+            <point key="canvasLocation" x="4087.7862595419847" y="-2.1126760563380285"/>
         </scene>
         <!--Dice Roller View Controller-->
         <scene sceneID="4M1-SP-8h9">
@@ -446,19 +452,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="c13-nD-j5x">
-                                <rect key="frame" x="0.66666666666665719" y="58.666666666666686" width="391.66666666666674" height="735"/>
+                                <rect key="frame" x="19.333333333333343" y="58.666666666666686" width="354.33333333333326" height="735"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="157" translatesAutoresizingMaskIntoConstraints="NO" id="nOo-Sv-xIc">
-                                        <rect key="frame" x="10" y="0.0" width="371.66666666666669" height="36"/>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="nOo-Sv-xIc">
+                                        <rect key="frame" x="10" y="0.0" width="334.33333333333331" height="36"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjh-3m-gZM">
-                                                <rect key="frame" x="0.0" y="0.0" width="107.33333333333333" height="36"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="77" height="36"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4xZ-3p-G95">
-                                                <rect key="frame" x="264.33333333333331" y="0.0" width="107.33333333333331" height="36"/>
+                                                <rect key="frame" x="226.99999999999997" y="0.0" width="107.33333333333334" height="36"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Filter / Sort">
                                                     <backgroundConfiguration key="background" cornerRadius="5">
@@ -473,7 +479,7 @@
                                         </subviews>
                                     </stackView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="SBT-IN-rty">
-                                        <rect key="frame" x="10" y="56" width="371.66666666666669" height="669"/>
+                                        <rect key="frame" x="10" y="56" width="334.33333333333331" height="669"/>
                                         <color key="backgroundColor" name="Background Color"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="669" id="wbv-Cz-ywU"/>
@@ -481,10 +487,10 @@
                                         <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="creationCell" id="ejY-bQ-6oB" customClass="SavedCreationCell" customModule="DemonBuddy" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="50" width="371.66666666666669" height="43.666667938232422"/>
+                                                <rect key="frame" x="0.0" y="50" width="334.33333333333331" height="43.666667938232422"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ejY-bQ-6oB" id="eQB-ij-EnJ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="341.33333333333337" height="43.666667938232422"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="304" height="43.666667938232422"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fiq-yw-FSl">
@@ -701,8 +707,8 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="aF9-5Y-9dw">
-                                                <rect key="frame" x="36" y="67" width="339.66666666666669" height="747"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="aF9-5Y-9dw">
+                                                <rect key="frame" x="36" y="67" width="339.66666666666669" height="671.33333333333337"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-rG-Uwk">
                                                         <rect key="frame" x="0.0" y="0.0" width="339.66666666666669" height="34"/>
@@ -1245,8 +1251,18 @@
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OPe-tZ-Ngd">
-                                                        <rect key="frame" x="0.0" y="637" width="339.66666666666669" height="110"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OPe-tZ-Ngd">
+                                                        <rect key="frame" x="0.0" y="637" width="339.66666666666669" height="34.333333333333371"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Upk-az-PgI">
+                                                                <rect key="frame" x="0.0" y="0.0" width="339.66666666666669" height="34.333333333333336"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="filled" title="Spells"/>
+                                                                <connections>
+                                                                    <segue destination="Wzq-Tf-2Fh" kind="show" id="LYF-rW-6Nk"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
@@ -1298,6 +1314,7 @@
                         <viewLayoutGuide key="safeArea" id="noc-KW-tnN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="cPy-wH-1rx"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OJp-o0-Wr3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1440,10 +1457,498 @@
             </objects>
             <point key="canvasLocation" x="2439" y="-2"/>
         </scene>
+        <!--Characters Created View Controller-->
+        <scene sceneID="Vhg-Od-Xsv">
+            <objects>
+                <viewController id="c4X-vN-JVi" customClass="CharactersCreatedViewController" customModule="DemonBuddy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UVs-iC-4ON">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="JdM-6b-h2y">
+                                <rect key="frame" x="12" y="58.666666666666686" width="369.33333333333331" height="735"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="w1O-rK-sNs">
+                                        <rect key="frame" x="10" y="0.0" width="349.33333333333331" height="36"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Characters" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FsK-XZ-Rwm">
+                                                <rect key="frame" x="0.0" y="0.0" width="142" height="36"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PwS-He-C79">
+                                                <rect key="frame" x="242.00000000000003" y="0.0" width="107.33333333333334" height="36"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Filter / Sort">
+                                                    <backgroundConfiguration key="background" cornerRadius="5">
+                                                        <color key="backgroundColor" name="DilutedDemonBloodColor"/>
+                                                    </backgroundConfiguration>
+                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="filterPressed:" destination="c4X-vN-JVi" eventType="touchUpInside" id="3hH-wr-bV0"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="c82-DM-bvC">
+                                        <rect key="frame" x="10" y="56" width="349.33333333333331" height="669"/>
+                                        <color key="backgroundColor" name="Background Color"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="669" id="iJb-dx-iZn"/>
+                                        </constraints>
+                                        <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="creationCell" id="GLZ-IY-qBs" customClass="SavedCreationCell" customModule="DemonBuddy" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="50" width="349.33333333333331" height="43.666667938232422"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GLZ-IY-qBs" id="8e7-Ex-AEk">
+                                                    <rect key="frame" x="0.0" y="0.0" width="319" height="43.666667938232422"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vYW-7y-sr6">
+                                                            <rect key="frame" x="20" y="0.0" width="94" height="40.666666666666664"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3b3-xt-o8v">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="94" height="20.333333333333332"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WdX-Mb-kEh">
+                                                                    <rect key="frame" x="0.0" y="20.333333333333336" width="94" height="20.333333333333336"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                </tableViewCellContentView>
+                                                <color key="backgroundColor" name="Background Color"/>
+                                                <connections>
+                                                    <outlet property="creationName" destination="3b3-xt-o8v" id="x4u-eN-3Bf"/>
+                                                    <outlet property="gameName" destination="WdX-Mb-kEh" id="bPa-El-eSP"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <sections/>
+                                    </tableView>
+                                </subviews>
+                                <edgeInsets key="layoutMargins" top="0.0" left="10" bottom="10" right="10"/>
+                            </stackView>
+                            <view hidden="YES" contentMode="scaleToFill" id="OWW-Vp-OqL">
+                                <rect key="frame" x="16" y="289" width="361" height="275"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="230" verticalHuggingPriority="230" horizontalCompressionResistancePriority="730" verticalCompressionResistancePriority="730" axis="vertical" distribution="equalSpacing" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="lRT-mo-3qu">
+                                        <rect key="frame" x="0.0" y="0.0" width="361" height="275"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Sort" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zdm-Jl-Jo3">
+                                                <rect key="frame" x="20" y="20" width="321" height="20.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Kp3-4U-pNy">
+                                                <rect key="frame" x="20" y="59" width="321" height="35"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4y-Ga-mI0">
+                                                        <rect key="frame" x="0.0" y="0.0" width="97" height="35"/>
+                                                        <color key="backgroundColor" name="DilutedDemonBloodColor"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Name">
+                                                            <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
+                                                            <color key="baseForegroundColor" systemColor="labelColor"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="nameSortFilterPressed:" destination="c4X-vN-JVi" eventType="touchUpInside" id="lzS-1F-TCY"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L8F-dq-BhZ">
+                                                        <rect key="frame" x="112" y="0.0" width="97" height="35"/>
+                                                        <color key="backgroundColor" name="DilutedDemonBloodColor"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Game Name">
+                                                            <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
+                                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="gameNameSortFilterPressed:" destination="c4X-vN-JVi" eventType="touchUpInside" id="8f2-ox-y4V"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="STE-CD-me1">
+                                                        <rect key="frame" x="224" y="0.0" width="97" height="35"/>
+                                                        <color key="backgroundColor" name="DilutedDemonBloodColor"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Asc">
+                                                            <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
+                                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="orderSortFilterPressed:" destination="c4X-vN-JVi" eventType="touchUpInside" id="FX9-JP-eDM"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="eN8-I0-Id8"/>
+                                                </constraints>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Filter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jRb-49-YjT">
+                                                <rect key="frame" x="20" y="112.66666666666669" width="321" height="20.333333333333343"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rha-Et-cvl">
+                                                <rect key="frame" x="20" y="151.66666666666669" width="321" height="34.333333333333343"/>
+                                                <color key="backgroundColor" name="DilutedDemonBloodColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Game Name">
+                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="5Vl-rf-puJ">
+                                                <rect key="frame" x="20" y="204.66666666666669" width="321" height="50.333333333333343"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7zm-8v-hhx">
+                                                        <rect key="frame" x="20" y="8" width="133" height="34.333333333333336"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Done">
+                                                            <backgroundConfiguration key="background">
+                                                                <color key="backgroundColor" name="PureDemonBloodColor"/>
+                                                            </backgroundConfiguration>
+                                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="filtersDonePressed:" destination="c4X-vN-JVi" eventType="touchUpInside" id="Jf3-lz-8eS"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bn3-cZ-VMU">
+                                                        <rect key="frame" x="168" y="8" width="133" height="34.333333333333336"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Cancel">
+                                                            <backgroundConfiguration key="background">
+                                                                <color key="backgroundColor" name="PureDemonBloodColor"/>
+                                                            </backgroundConfiguration>
+                                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="filtersCancelPressed:" destination="c4X-vN-JVi" eventType="touchUpInside" id="VPC-MT-tzY"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <edgeInsets key="layoutMargins" top="8" left="20" bottom="8" right="20"/>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="5Vl-rf-puJ" firstAttribute="centerX" secondItem="lRT-mo-3qu" secondAttribute="centerX" id="Dm2-hy-7Ue"/>
+                                            <constraint firstItem="Kp3-4U-pNy" firstAttribute="centerX" secondItem="lRT-mo-3qu" secondAttribute="centerX" id="zhs-nf-lRp"/>
+                                        </constraints>
+                                        <edgeInsets key="layoutMargins" top="20" left="20" bottom="20" right="20"/>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" name="Alternative Background"/>
+                                <constraints>
+                                    <constraint firstItem="lRT-mo-3qu" firstAttribute="centerY" secondItem="OWW-Vp-OqL" secondAttribute="centerY" id="1fd-gz-fjm"/>
+                                    <constraint firstItem="lRT-mo-3qu" firstAttribute="centerX" secondItem="OWW-Vp-OqL" secondAttribute="centerX" id="938-ys-zOK"/>
+                                    <constraint firstAttribute="trailing" secondItem="lRT-mo-3qu" secondAttribute="trailing" id="An7-r0-6kL"/>
+                                    <constraint firstAttribute="bottom" secondItem="lRT-mo-3qu" secondAttribute="bottom" id="HvB-Ll-6Xb"/>
+                                    <constraint firstItem="lRT-mo-3qu" firstAttribute="top" secondItem="OWW-Vp-OqL" secondAttribute="top" id="loJ-qN-C7z"/>
+                                    <constraint firstItem="lRT-mo-3qu" firstAttribute="leading" secondItem="OWW-Vp-OqL" secondAttribute="leading" id="pbT-Ep-4Nd"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Wvb-aD-Gjh">
+                                <rect key="frame" x="320" y="770" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="">
+                                    <imageReference key="image" image="plus" catalog="system" symbolScale="default"/>
+                                    <backgroundConfiguration key="background" cornerRadius="25">
+                                        <color key="backgroundColor" name="PureDemonBloodColor"/>
+                                    </backgroundConfiguration>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="7wq-90-HKY" kind="show" id="VnP-I4-fiZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="whQ-VG-4Dp"/>
+                        <color key="backgroundColor" name="Background Color"/>
+                        <constraints>
+                            <constraint firstItem="JdM-6b-h2y" firstAttribute="centerY" secondItem="UVs-iC-4ON" secondAttribute="centerY" id="Yhq-Wz-Pvg"/>
+                            <constraint firstItem="JdM-6b-h2y" firstAttribute="centerX" secondItem="UVs-iC-4ON" secondAttribute="centerX" id="g2J-To-KeS"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Pd4-iL-28w"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="filterButtonsStackView" destination="5Vl-rf-puJ" id="Uw5-NJ-0Ke"/>
+                        <outlet property="filtersStackView" destination="lRT-mo-3qu" id="iha-si-ipt"/>
+                        <outlet property="gameNameFilter" destination="Rha-Et-cvl" id="W6C-hA-0qV"/>
+                        <outlet property="gameNameSortFilter" destination="L8F-dq-BhZ" id="V80-Kt-X8n"/>
+                        <outlet property="nameSortFilter" destination="O4y-Ga-mI0" id="BLV-eC-oDg"/>
+                        <outlet property="orderSortFilter" destination="STE-CD-me1" id="qh2-RX-ryS"/>
+                        <outlet property="selectFiltersView" destination="OWW-Vp-OqL" id="EpT-6l-bEz"/>
+                        <outlet property="sortFiltersStackView" destination="Kp3-4U-pNy" id="k5N-rZ-Vzd"/>
+                        <outlet property="tableView" destination="c82-DM-bvC" id="yOr-dU-fvW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zGV-CU-tfH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2439" y="711"/>
+        </scene>
+        <!--Created MonstersorNPC View Controller-->
+        <scene sceneID="GBF-BS-QsZ">
+            <objects>
+                <viewController id="lDk-sc-AxI" customClass="CreatedMonstersorNPCViewController" customModule="DemonBuddy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ovB-GR-EPj">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="DwS-4Y-3zV">
+                                <rect key="frame" x="5.6666666666666572" y="58.666666666666686" width="381.66666666666674" height="735"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="cd4-cj-ETv">
+                                        <rect key="frame" x="10" y="0.0" width="361.66666666666669" height="36"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NPCs/Monsters" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mzn-Ak-AnL">
+                                                <rect key="frame" x="0.0" y="0.0" width="204.33333333333334" height="36"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tVn-hA-Rzb">
+                                                <rect key="frame" x="254.33333333333334" y="0.0" width="107.33333333333334" height="36"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Filter / Sort">
+                                                    <backgroundConfiguration key="background" cornerRadius="5">
+                                                        <color key="backgroundColor" name="DilutedDemonBloodColor"/>
+                                                    </backgroundConfiguration>
+                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="filterPressed:" destination="lDk-sc-AxI" eventType="touchUpInside" id="jcL-db-I3j"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="222-M9-cy1">
+                                        <rect key="frame" x="10" y="56" width="361.66666666666669" height="669"/>
+                                        <color key="backgroundColor" name="Background Color"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="669" id="dyP-U2-Fdr"/>
+                                        </constraints>
+                                        <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="creationCell" id="U7w-72-XXe" customClass="SavedCreationCell" customModule="DemonBuddy" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="50" width="361.66666666666669" height="43.666667938232422"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="U7w-72-XXe" id="zBe-Ko-KRP">
+                                                    <rect key="frame" x="0.0" y="0.0" width="331.33333333333337" height="43.666667938232422"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WpB-SV-vwk">
+                                                            <rect key="frame" x="20" y="0.0" width="94" height="40.666666666666664"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PqV-lt-zIv">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="94" height="20.333333333333332"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5P-9s-iyN">
+                                                                    <rect key="frame" x="0.0" y="20.333333333333336" width="94" height="20.333333333333336"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                </tableViewCellContentView>
+                                                <color key="backgroundColor" name="Background Color"/>
+                                                <connections>
+                                                    <outlet property="creationName" destination="PqV-lt-zIv" id="7TO-Lf-luc"/>
+                                                    <outlet property="gameName" destination="V5P-9s-iyN" id="5b0-lI-6gg"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <sections/>
+                                    </tableView>
+                                </subviews>
+                                <edgeInsets key="layoutMargins" top="0.0" left="10" bottom="10" right="10"/>
+                            </stackView>
+                            <view hidden="YES" contentMode="scaleToFill" id="k7H-df-N7C">
+                                <rect key="frame" x="16" y="289" width="361" height="275"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="230" verticalHuggingPriority="230" horizontalCompressionResistancePriority="730" verticalCompressionResistancePriority="730" axis="vertical" distribution="equalSpacing" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="acb-jH-0fk">
+                                        <rect key="frame" x="0.0" y="0.0" width="361" height="275"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Sort" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zNT-LV-SZa">
+                                                <rect key="frame" x="20" y="20" width="321" height="20.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="jy3-Eg-DFZ">
+                                                <rect key="frame" x="20" y="59" width="321" height="35"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jDd-Va-AJk">
+                                                        <rect key="frame" x="0.0" y="0.0" width="97" height="35"/>
+                                                        <color key="backgroundColor" name="DilutedDemonBloodColor"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Name">
+                                                            <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
+                                                            <color key="baseForegroundColor" systemColor="labelColor"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="nameSortFilterPressed:" destination="lDk-sc-AxI" eventType="touchUpInside" id="xsj-cy-bUl"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="led-ec-Ddb">
+                                                        <rect key="frame" x="112" y="0.0" width="97" height="35"/>
+                                                        <color key="backgroundColor" name="DilutedDemonBloodColor"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Game Name">
+                                                            <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
+                                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="gameNameSortFilterPressed:" destination="lDk-sc-AxI" eventType="touchUpInside" id="J8N-tH-Fwx"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Svh-Vi-k3Y">
+                                                        <rect key="frame" x="224" y="0.0" width="97" height="35"/>
+                                                        <color key="backgroundColor" name="DilutedDemonBloodColor"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Asc">
+                                                            <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
+                                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="orderSortFilterPressed:" destination="lDk-sc-AxI" eventType="touchUpInside" id="6dF-w6-8rm"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="JiW-8j-cUe"/>
+                                                </constraints>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Filter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lvv-gN-fSh">
+                                                <rect key="frame" x="20" y="112.66666666666669" width="321" height="20.333333333333343"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agX-ZW-xBx">
+                                                <rect key="frame" x="20" y="151.66666666666669" width="321" height="34.333333333333343"/>
+                                                <color key="backgroundColor" name="DilutedDemonBloodColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Game Name">
+                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="lNm-Or-tBH">
+                                                <rect key="frame" x="20" y="204.66666666666669" width="321" height="50.333333333333343"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XlI-c2-cob">
+                                                        <rect key="frame" x="20" y="8" width="133" height="34.333333333333336"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Done">
+                                                            <backgroundConfiguration key="background">
+                                                                <color key="backgroundColor" name="PureDemonBloodColor"/>
+                                                            </backgroundConfiguration>
+                                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="filtersDonePressed:" destination="lDk-sc-AxI" eventType="touchUpInside" id="eCo-ce-cKS"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BFO-eU-lp6">
+                                                        <rect key="frame" x="168" y="8" width="133" height="34.333333333333336"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Cancel">
+                                                            <backgroundConfiguration key="background">
+                                                                <color key="backgroundColor" name="PureDemonBloodColor"/>
+                                                            </backgroundConfiguration>
+                                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="filtersCancelPressed:" destination="lDk-sc-AxI" eventType="touchUpInside" id="qeH-ST-K9M"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <edgeInsets key="layoutMargins" top="8" left="20" bottom="8" right="20"/>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="jy3-Eg-DFZ" firstAttribute="centerX" secondItem="acb-jH-0fk" secondAttribute="centerX" id="DuL-t0-M94"/>
+                                            <constraint firstItem="lNm-Or-tBH" firstAttribute="centerX" secondItem="acb-jH-0fk" secondAttribute="centerX" id="u0F-jn-rtT"/>
+                                        </constraints>
+                                        <edgeInsets key="layoutMargins" top="20" left="20" bottom="20" right="20"/>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" name="Alternative Background"/>
+                                <constraints>
+                                    <constraint firstItem="acb-jH-0fk" firstAttribute="centerX" secondItem="k7H-df-N7C" secondAttribute="centerX" id="4BS-nX-icN"/>
+                                    <constraint firstItem="acb-jH-0fk" firstAttribute="top" secondItem="k7H-df-N7C" secondAttribute="top" id="5xo-pM-CjD"/>
+                                    <constraint firstAttribute="bottom" secondItem="acb-jH-0fk" secondAttribute="bottom" id="Kj9-0l-M4v"/>
+                                    <constraint firstAttribute="trailing" secondItem="acb-jH-0fk" secondAttribute="trailing" id="iwA-Qy-eXK"/>
+                                    <constraint firstItem="acb-jH-0fk" firstAttribute="centerY" secondItem="k7H-df-N7C" secondAttribute="centerY" id="vjN-y7-Kk6"/>
+                                    <constraint firstItem="acb-jH-0fk" firstAttribute="leading" secondItem="k7H-df-N7C" secondAttribute="leading" id="xdS-uW-UvS"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="2hc-BQ-RJy">
+                                <rect key="frame" x="320" y="770" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="">
+                                    <imageReference key="image" image="plus" catalog="system" symbolScale="default"/>
+                                    <backgroundConfiguration key="background" cornerRadius="25">
+                                        <color key="backgroundColor" name="PureDemonBloodColor"/>
+                                    </backgroundConfiguration>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="dM0-gA-qIP" kind="show" id="0qx-KA-ebt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ysd-sF-MPx"/>
+                        <color key="backgroundColor" name="Background Color"/>
+                        <constraints>
+                            <constraint firstItem="DwS-4Y-3zV" firstAttribute="centerY" secondItem="ovB-GR-EPj" secondAttribute="centerY" id="p8y-P1-n6U"/>
+                            <constraint firstItem="DwS-4Y-3zV" firstAttribute="centerX" secondItem="ovB-GR-EPj" secondAttribute="centerX" id="wn2-5Q-jp9"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="V2B-me-YJJ"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="filterButtonsStackView" destination="lNm-Or-tBH" id="IyY-BB-aXS"/>
+                        <outlet property="filtersStackView" destination="acb-jH-0fk" id="OUJ-5I-hbb"/>
+                        <outlet property="gameNameFilter" destination="agX-ZW-xBx" id="b6b-Xl-x3h"/>
+                        <outlet property="gameNameSortFilter" destination="led-ec-Ddb" id="piZ-UU-BMh"/>
+                        <outlet property="nameSortFilter" destination="jDd-Va-AJk" id="jqX-WR-bjs"/>
+                        <outlet property="orderSortFilter" destination="Svh-Vi-k3Y" id="dqF-01-XAO"/>
+                        <outlet property="selectFiltersView" destination="k7H-df-N7C" id="J5t-hs-beX"/>
+                        <outlet property="sortFiltersStackView" destination="jy3-Eg-DFZ" id="aQe-MA-Q7X"/>
+                        <outlet property="tableView" destination="222-M9-cy1" id="SwE-6J-AHm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VkD-lU-b9k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4088" y="711"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="IPc-Vi-pTd"/>
-        <segue reference="Vte-Ud-hEd"/>
+        <segue reference="BBV-ds-Atw"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="DemonBuddy" width="1000" height="750"/>
@@ -1478,7 +1983,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
