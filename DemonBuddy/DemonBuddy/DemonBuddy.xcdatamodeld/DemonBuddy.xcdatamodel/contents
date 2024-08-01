@@ -30,12 +30,16 @@
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="userID" optional="YES" attributeType="String"/>
     </entity>
-    <entity name="NPCorMonster" representedClassName="NPCorMonster" syncable="YES" codeGenerationType="class"/>
+    <entity name="NPCorMonster" representedClassName="NPCorMonster" syncable="YES" codeGenerationType="class">
+        <attribute name="gameName" optional="YES" attributeType="String"/>
+        <attribute name="userID" optional="YES" attributeType="String"/>
+    </entity>
     <entity name="SpellSheet" representedClassName="SpellSheet" syncable="YES" codeGenerationType="class">
         <attribute name="cantrip1" optional="YES" attributeType="String"/>
         <attribute name="cantrip2" optional="YES" attributeType="String"/>
         <attribute name="cantrip3" optional="YES" attributeType="String"/>
         <attribute name="cantrip4" optional="YES" attributeType="String"/>
+        <attribute name="gameName" optional="YES" attributeType="String"/>
         <attribute name="lvl1Spell1" optional="YES" attributeType="String"/>
         <attribute name="lvl1Spell1Prepared" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="lvl1Spell2" optional="YES" attributeType="String"/>
@@ -54,6 +58,7 @@
         <attribute name="maxSpellSlotsLvl7" optional="YES" attributeType="String"/>
         <attribute name="maxSpellSlotsLvl8" optional="YES" attributeType="String"/>
         <attribute name="maxSpellSlotsLvl9" optional="YES" attributeType="String"/>
+        <attribute name="userID" optional="YES" attributeType="String"/>
         <relationship name="caster" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Character" inverseName="spells" inverseEntity="Character"/>
     </entity>
 </model>

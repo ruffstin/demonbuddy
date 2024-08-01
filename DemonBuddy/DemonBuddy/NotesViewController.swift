@@ -156,8 +156,8 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         descSortSelected = false
         gameNameFilter.setTitle("Game Name", for: .normal)
         
-        nameSortFilter.backgroundColor = UIColor(named: "Secondary Color")
-        gameNameSortFilter.backgroundColor = UIColor(named: "Secondary Color")
+        nameSortFilter.backgroundColor = UIColor(named: "DilutedDemonBloodColor")
+        gameNameSortFilter.backgroundColor = UIColor(named: "DilutedDemonBloodColor")
         orderSortFilter.setTitle("Asc", for: .normal)
     }
     
@@ -171,18 +171,18 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBAction func nameSortFilterPressed(_ sender: Any) {
         nameSortSelected = !nameSortSelected
         if nameSortSelected {
-            nameSortFilter.backgroundColor = UIColor(named: "Primary Color")
+            nameSortFilter.backgroundColor = UIColor(named: "PureDemonBloodColor")
         } else {
-            nameSortFilter.backgroundColor = UIColor(named: "Secondary Color")
+            nameSortFilter.backgroundColor = UIColor(named: "DilutedDemonBloodColor")
         }
     }
     
     @IBAction func gameNameSortFilterPressed(_ sender: Any) {
         gameSortSelected = !gameSortSelected
         if gameSortSelected {
-            gameNameSortFilter.backgroundColor = UIColor(named: "Primary Color")
+            gameNameSortFilter.backgroundColor = UIColor(named: "PureDemonBloodColor")
         } else {
-            gameNameSortFilter.backgroundColor = UIColor(named: "Secondary Color")
+            gameNameSortFilter.backgroundColor = UIColor(named: "DilutedDemonBloodColor")
         }
     }
     

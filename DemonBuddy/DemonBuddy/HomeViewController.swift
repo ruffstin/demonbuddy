@@ -60,17 +60,59 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Update the user's game names list
-            if var listOfNames = userGameNames.value(forKey: "names") as? [String] {
-                listOfNames.remove(at: indexPath.row)
-                userGameNames.setValue(listOfNames, forKey: "names")
-                gameNames.remove(at: indexPath.row)
-            }
-            
-            gameNameTableView.deleteRows(at: [indexPath], with: .fade)
-            saveContext()
+            let controller = UIAlertController(
+                title: "Delete Game Name",
+                message: "Deleting game name will delete all associated Notes, Characters, and Monsters/NPCs",
+                preferredStyle: .alert
+            )
+            controller.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+            controller.addAction(UIAlertAction(title: "Delete", style: .destructive){
+                _ in
+                
+                // Delete game name and all associated content
+                if var listOfNames = self.userGameNames.value(forKey: "names") as? [String] {
+                    self.deleteGameNameAssociations(nameOfGame: listOfNames[indexPath.row])
+                    listOfNames.remove(at: indexPath.row)
+                    self.userGameNames.setValue(listOfNames, forKey: "names")
+                    gameNames.remove(at: indexPath.row)
+                }
+                
+                self.gameNameTableView.deleteRows(at: [indexPath], with: .fade)
+                saveContext()
+            })
+            present(controller, animated: true)
         }
         gameNameTableView.reloadData()
+    }
+    
+    func deleteGameNameAssociations(nameOfGame: String) {
+        let notesRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Note")
+        let charactersRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Character")
+        let npcsRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "NPCorMonster")
+        let spellsRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "SpellSheet")
+        
+        let deleteRequests: [NSFetchRequest] = [notesRequest, charactersRequest, npcsRequest, spellsRequest]
+        
+        // Create predicate to match entities to user and game name
+        let user = (Auth.auth().currentUser?.uid as? String)!
+        let userPredicate = NSPredicate(format: "userID == %@", user)
+        let gamePredicate = NSPredicate(format: "gameName == %@", nameOfGame)
+        let userAndGamePredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [userPredicate, gamePredicate])
+        
+        // For each entity request, get the matching instances and delete them
+        for deleteRequest in deleteRequests {
+            deleteRequest.predicate = userAndGamePredicate
+            do {
+                if let fetchedResults = try context.fetch(deleteRequest) as? [NSManagedObject] {
+                    for entity in fetchedResults {
+                        context.delete(entity)
+                        saveContext()
+                    }
+                }
+            } catch {
+                print("Could not delete entity")
+            }
+        }
     }
     
     func retrieveGameNames() {
@@ -109,16 +151,19 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     // Add the new name to CoreData and gameNames
     @IBAction func doneNamePressed(_ sender: Any) {
-        if var listOfNames = userGameNames.value(forKey: "names") as? [String] {
-            listOfNames.append(gameNameTextField.text!)
-            userGameNames.setValue(listOfNames, forKey: "names")
-            gameNames.append(gameNameTextField.text!)
+        if gameNameTextField.text != nil {
+            if var listOfNames = userGameNames.value(forKey: "names") as? [String] {
+                listOfNames.append(gameNameTextField.text!)
+                userGameNames.setValue(listOfNames, forKey: "names")
+                gameNames.append(gameNameTextField.text!)
+            }
+            
+            saveContext()
+            gameNameTableView.reloadData()
+            
+            gameNameTextField.text = nil
         }
         
-        saveContext()
-        gameNameTableView.reloadData()
-        
-        gameNameTextField.text = nil
         UIView.animate(withDuration: 0.4) {
             self.dimBackgroundView.alpha = 0
             self.createNameView.alpha = 0

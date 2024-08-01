@@ -261,7 +261,7 @@
                                             </tableView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZV-Lj-nXb">
                                                 <rect key="frame" x="0.0" y="210.00000000000006" width="343" height="34.333333333333343"/>
-                                                <color key="backgroundColor" name="Primary Color"/>
+                                                <color key="backgroundColor" name="PureDemonBloodColor"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Add Game Name">
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -300,7 +300,7 @@
                                 </items>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <toolbarAppearance key="standardAppearance">
-                                    <color key="backgroundColor" name="Primary Color"/>
+                                    <color key="backgroundColor" name="PureDemonBloodColor"/>
                                     <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </toolbarAppearance>
                             </toolbar>
@@ -326,7 +326,7 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T7C-4f-vKo">
                                                         <rect key="frame" x="0.0" y="0.0" width="125" height="34.333333333333336"/>
-                                                        <color key="backgroundColor" name="Primary Color"/>
+                                                        <color key="backgroundColor" name="PureDemonBloodColor"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Done">
                                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -337,7 +337,7 @@
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C5x-Ph-STo">
                                                         <rect key="frame" x="135" y="0.0" width="125" height="34.333333333333336"/>
-                                                        <color key="backgroundColor" name="Secondary Color"/>
+                                                        <color key="backgroundColor" name="DilutedDemonBloodColor"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Cancel">
                                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -457,7 +457,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Filter / Sort">
                                                     <backgroundConfiguration key="background" cornerRadius="5">
-                                                        <color key="backgroundColor" name="Secondary Color"/>
+                                                        <color key="backgroundColor" name="DilutedDemonBloodColor"/>
                                                     </backgroundConfiguration>
                                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
@@ -532,7 +532,7 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SLU-pO-Uk7">
                                                         <rect key="frame" x="0.0" y="0.0" width="97" height="35"/>
-                                                        <color key="backgroundColor" name="Secondary Color"/>
+                                                        <color key="backgroundColor" name="DilutedDemonBloodColor"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Name">
                                                             <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
@@ -544,7 +544,7 @@
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fcc-Og-vZs">
                                                         <rect key="frame" x="112" y="0.0" width="97" height="35"/>
-                                                        <color key="backgroundColor" name="Secondary Color"/>
+                                                        <color key="backgroundColor" name="DilutedDemonBloodColor"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Game Name">
                                                             <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
@@ -556,7 +556,7 @@
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LBi-rt-vlt">
                                                         <rect key="frame" x="224" y="0.0" width="97" height="35"/>
-                                                        <color key="backgroundColor" name="Secondary Color"/>
+                                                        <color key="backgroundColor" name="DilutedDemonBloodColor"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Asc">
                                                             <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
@@ -579,7 +579,7 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xPP-EI-vBH">
                                                 <rect key="frame" x="20" y="151.66666666666669" width="321" height="34.333333333333343"/>
-                                                <color key="backgroundColor" name="Secondary Color"/>
+                                                <color key="backgroundColor" name="DilutedDemonBloodColor"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Game Name">
                                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -593,7 +593,7 @@
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Done">
                                                             <backgroundConfiguration key="background">
-                                                                <color key="backgroundColor" name="Primary Color"/>
+                                                                <color key="backgroundColor" name="PureDemonBloodColor"/>
                                                             </backgroundConfiguration>
                                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
@@ -606,7 +606,7 @@
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Cancel">
                                                             <backgroundConfiguration key="background">
-                                                                <color key="backgroundColor" name="Primary Color"/>
+                                                                <color key="backgroundColor" name="PureDemonBloodColor"/>
                                                             </backgroundConfiguration>
                                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
@@ -642,12 +642,12 @@
                                 <buttonConfiguration key="configuration" style="plain" title="">
                                     <imageReference key="image" image="plus" catalog="system" symbolScale="default"/>
                                     <backgroundConfiguration key="background" cornerRadius="25">
-                                        <color key="backgroundColor" name="Primary Color"/>
+                                        <color key="backgroundColor" name="PureDemonBloodColor"/>
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="addNotePressed:" destination="EfI-Cq-IrG" eventType="touchUpInside" id="EGE-dT-hYr"/>
+                                    <segue destination="I2P-tM-0H3" kind="presentation" identifier="toCreateNote" id="Vte-Ud-hEd"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -681,14 +681,14 @@
         <scene sceneID="shh-i2-sSQ">
             <objects>
                 <viewController id="7wq-90-HKY" customClass="NewCharacterViewController" customModule="DemonBuddy" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="ZNi-il-vbd">
+                    <view key="view" contentMode="scaleToFill" id="ZNi-il-vbd">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VnC-OR-rG5">
-                                <rect key="frame" x="0.0" y="44" width="393" height="808"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VnC-OR-rG5">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6po-m6-gyk">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6po-m6-gyk">
                                         <rect key="frame" x="-8" y="0.0" width="401" height="2000"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Game Name" textAlignment="center" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="dqe-7c-CYU">
@@ -1351,7 +1351,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="258.66666666666669" height="34.333333333333336"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Done">
-                                                    <color key="baseBackgroundColor" name="Primary Color"/>
+                                                    <color key="baseBackgroundColor" name="PureDemonBloodColor"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="donePressed:" destination="I2P-tM-0H3" eventType="touchUpInside" id="t61-qz-4Yr"/>
@@ -1361,7 +1361,7 @@
                                                 <rect key="frame" x="268.66666666666669" y="0.0" width="46.333333333333314" height="34.333333333333336"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" image="xmark" catalog="system">
-                                                    <color key="baseBackgroundColor" name="Secondary Color"/>
+                                                    <color key="baseBackgroundColor" name="DilutedDemonBloodColor"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="cancelNote:" destination="I2P-tM-0H3" eventType="touchUpInside" id="gO6-mV-eLj"/>
@@ -1438,6 +1438,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="IPc-Vi-pTd"/>
+        <segue reference="Vte-Ud-hEd"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="DemonBuddy" width="1000" height="750"/>
@@ -1453,11 +1454,14 @@
         <namedColor name="Background Color">
             <color red="0.82745098039215681" green="0.82745098039215681" blue="0.82745098039215681" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="DilutedDemonBloodColor">
+            <color red="0.84705882352941175" green="0.74901960784313726" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Primary Color">
             <color red="0.57647058823529407" green="0.4392156862745098" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="Secondary Color">
-            <color red="0.84705882352941175" green="0.74901960784313726" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="PureDemonBloodColor">
+            <color red="0.57647058823529407" green="0.4392156862745098" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="groupTableViewBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1469,7 +1473,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
