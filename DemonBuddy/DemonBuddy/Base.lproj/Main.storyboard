@@ -213,24 +213,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Q2z-9x-ciD">
-                                <rect key="frame" x="25" y="245.66666666666663" width="343" height="361"/>
+                                <rect key="frame" x="25" y="274.66666666666663" width="343" height="302.66666666666663"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Wc-KO-uHe">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="unU-O3-WEq">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="34.333333333333336"/>
-                                        <color key="backgroundColor" name="Primary Color"/>
-                                        <color key="tintColor" systemColor="groupTableViewBackgroundColor"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Characters"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybv-tD-o29">
-                                        <rect key="frame" x="0.0" y="58.333333333333343" width="343" height="34.333333333333343"/>
-                                        <color key="backgroundColor" name="Primary Color"/>
-                                        <color key="tintColor" systemColor="groupTableViewBackgroundColor"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Monsters &amp; NPCs"/>
-                                    </button>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Wc-KO-uHe">
+                                                <rect key="frame" x="0.0" y="0.0" width="159.66666666666666" height="34.333333333333336"/>
+                                                <color key="backgroundColor" name="Primary Color"/>
+                                                <color key="tintColor" systemColor="groupTableViewBackgroundColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Characters"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybv-tD-o29">
+                                                <rect key="frame" x="183.66666666666663" y="0.0" width="159.33333333333337" height="34.333333333333336"/>
+                                                <color key="backgroundColor" name="Primary Color"/>
+                                                <color key="tintColor" systemColor="groupTableViewBackgroundColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Monsters &amp; NPCs"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gkS-tR-DqL">
-                                        <rect key="frame" x="0.0" y="116.66666666666664" width="343" height="244.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="58.333333333333329" width="343" height="244.33333333333337"/>
                                         <subviews>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="brY-si-gcS">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="200"/>
@@ -240,10 +245,10 @@
                                                 </constraints>
                                                 <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="gameNameCell" textLabel="Jch-P7-cI7" style="IBUITableViewCellStyleDefault" id="KQR-mP-Qcx">
+                                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="gameNameCell" textLabel="Jch-P7-cI7" style="IBUITableViewCellStyleDefault" id="KQR-mP-Qcx">
                                                         <rect key="frame" x="0.0" y="50" width="343" height="43.666667938232422"/>
                                                         <autoresizingMask key="autoresizingMask"/>
-                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KQR-mP-Qcx" id="3g9-1Q-tRu">
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KQR-mP-Qcx" id="3g9-1Q-tRu">
                                                             <rect key="frame" x="0.0" y="0.0" width="343" height="43.666667938232422"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
@@ -260,7 +265,7 @@
                                                 </prototypes>
                                             </tableView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZV-Lj-nXb">
-                                                <rect key="frame" x="0.0" y="210.00000000000006" width="343" height="34.333333333333343"/>
+                                                <rect key="frame" x="0.0" y="210" width="343" height="34.333333333333343"/>
                                                 <color key="backgroundColor" name="PureDemonBloodColor"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Add Game Name">
@@ -681,14 +686,14 @@
         <scene sceneID="shh-i2-sSQ">
             <objects>
                 <viewController id="7wq-90-HKY" customClass="NewCharacterViewController" customModule="DemonBuddy" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ZNi-il-vbd">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="ZNi-il-vbd">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VnC-OR-rG5">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VnC-OR-rG5">
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6po-m6-gyk">
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6po-m6-gyk">
                                         <rect key="frame" x="-8" y="0.0" width="401" height="2000"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Game Name" textAlignment="center" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="dqe-7c-CYU">
