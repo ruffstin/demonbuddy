@@ -24,6 +24,7 @@
 		C604355A2C56AF740000EB8F /* DiceRollerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60435592C56AF740000EB8F /* DiceRollerViewController.swift */; };
 		C6096D742C4DAE3800E93C81 /* CharactersCreatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6096D732C4DAE3800E93C81 /* CharactersCreatedViewController.swift */; };
 		C6096D762C4DB23000E93C81 /* CreatedMonstersorNPCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6096D752C4DB23000E93C81 /* CreatedMonstersorNPCViewController.swift */; };
+		C638177C2C61510B00D6BC2D /* NewNPCMonsterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C638177B2C61510B00D6BC2D /* NewNPCMonsterViewController.swift */; };
 		C656BA962C5ACA4500759F99 /* SavedCreationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C656BA952C5ACA4500759F99 /* SavedCreationCell.swift */; };
 		C696D6D92C5566DD0076029A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C696D6D82C5566DD0076029A /* FirebaseAuth */; };
 		C696D6DF2C558E390076029A /* NewCharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C696D6DE2C558E390076029A /* NewCharacterViewController.swift */; };
@@ -50,6 +51,7 @@
 		C60435592C56AF740000EB8F /* DiceRollerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceRollerViewController.swift; sourceTree = "<group>"; };
 		C6096D732C4DAE3800E93C81 /* CharactersCreatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersCreatedViewController.swift; sourceTree = "<group>"; };
 		C6096D752C4DB23000E93C81 /* CreatedMonstersorNPCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatedMonstersorNPCViewController.swift; sourceTree = "<group>"; };
+		C638177B2C61510B00D6BC2D /* NewNPCMonsterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNPCMonsterViewController.swift; sourceTree = "<group>"; };
 		C656BA952C5ACA4500759F99 /* SavedCreationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedCreationCell.swift; sourceTree = "<group>"; };
 		C696D6DE2C558E390076029A /* NewCharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCharacterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,6 +108,7 @@
 				C60435572C56AE750000EB8F /* SpellSheetViewController.swift */,
 				C60435592C56AF740000EB8F /* DiceRollerViewController.swift */,
 				C656BA952C5ACA4500759F99 /* SavedCreationCell.swift */,
+				C638177B2C61510B00D6BC2D /* NewNPCMonsterViewController.swift */,
 			);
 			path = DemonBuddy;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 				C60435582C56AE750000EB8F /* SpellSheetViewController.swift in Sources */,
 				05BC78F82C46B4620076FE87 /* NotesViewController.swift in Sources */,
 				05BC78A22C3DDE1C0076FE87 /* LoginViewController.swift in Sources */,
+				C638177C2C61510B00D6BC2D /* NewNPCMonsterViewController.swift in Sources */,
 				C656BA962C5ACA4500759F99 /* SavedCreationCell.swift in Sources */,
 				05BC78CF2C40725B0076FE87 /* HomeViewController.swift in Sources */,
 				C604355A2C56AF740000EB8F /* DiceRollerViewController.swift in Sources */,

@@ -31,8 +31,26 @@
         <attribute name="userID" optional="YES" attributeType="String"/>
     </entity>
     <entity name="NPCorMonster" representedClassName="NPCorMonster" syncable="YES" codeGenerationType="class">
+        <attribute name="actions" optional="YES" attributeType="String"/>
+        <attribute name="armorClass" optional="YES" attributeType="String"/>
+        <attribute name="challengeRating" optional="YES" attributeType="String"/>
+        <attribute name="charisma" optional="YES" attributeType="String"/>
+        <attribute name="constitution" optional="YES" attributeType="String"/>
+        <attribute name="creatureFeatures" optional="YES" attributeType="String"/>
+        <attribute name="creatureName" optional="YES" attributeType="String"/>
+        <attribute name="dexterity" optional="YES" attributeType="String"/>
         <attribute name="gameName" optional="YES" attributeType="String"/>
+        <attribute name="hitPoints" optional="YES" attributeType="String"/>
+        <attribute name="intelligence" optional="YES" attributeType="String"/>
+        <attribute name="items" optional="YES" attributeType="String"/>
+        <attribute name="languages" optional="YES" attributeType="String"/>
+        <attribute name="senses" optional="YES" attributeType="String"/>
+        <attribute name="skills" optional="YES" attributeType="String"/>
+        <attribute name="speed" optional="YES" attributeType="String"/>
+        <attribute name="strength" optional="YES" attributeType="String"/>
         <attribute name="userID" optional="YES" attributeType="String"/>
+        <attribute name="wisdom" optional="YES" attributeType="String"/>
+        <attribute name="xp" optional="YES" attributeType="String"/>
     </entity>
     <entity name="SpellSheet" representedClassName="SpellSheet" syncable="YES" codeGenerationType="class">
         <attribute name="cantrip1" optional="YES" attributeType="String"/>

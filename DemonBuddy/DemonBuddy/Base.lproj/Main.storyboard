@@ -2478,6 +2478,7 @@
                                                 <connections>
                                                     <outlet property="creationName" destination="PqV-lt-zIv" id="7TO-Lf-luc"/>
                                                     <outlet property="gameName" destination="V5P-9s-iyN" id="5b0-lI-6gg"/>
+                                                    <segue destination="P66-vp-oe7" kind="show" identifier="editMonsterOrNpc" id="dEV-zc-lGw"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -2619,7 +2620,7 @@
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="P66-vp-oe7" kind="show" id="qsn-fO-fKv"/>
+                                    <segue destination="P66-vp-oe7" kind="show" identifier="creatMonsterOrNpc" id="qsn-fO-fKv"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2652,7 +2653,7 @@
         <!--NewNPC Monster View Controller-->
         <scene sceneID="fSG-xD-zlE">
             <objects>
-                <viewController id="P66-vp-oe7" customClass="NewNPCMonsterViewController" sceneMemberID="viewController">
+                <viewController id="P66-vp-oe7" customClass="NewNPCMonsterViewController" customModule="DemonBuddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R2x-oi-gdK">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3011,6 +3012,9 @@
                                                         <color key="tintColor" name="PureDemonBloodColor"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="filled" title="Save"/>
+                                                        <connections>
+                                                            <action selector="savePressed:" destination="P66-vp-oe7" eventType="touchUpInside" id="dFB-bB-D2q"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -3050,15 +3054,37 @@
                     </view>
                     <navigationItem key="navigationItem" id="Vv2-HV-Bs9"/>
                     <size key="freeformSize" width="393" height="852"/>
+                    <connections>
+                        <outlet property="actions" destination="Afu-1A-UHl" id="jXQ-hA-dkT"/>
+                        <outlet property="armorClass" destination="4aA-2w-AdE" id="iiR-Ag-shW"/>
+                        <outlet property="challengeRating" destination="6La-pw-wYm" id="kA6-MW-yhU"/>
+                        <outlet property="charisma" destination="f0x-5G-1F9" id="lbK-Sr-8hz"/>
+                        <outlet property="constitution" destination="g74-fm-F0D" id="i55-V5-7QF"/>
+                        <outlet property="creatureFeatures" destination="6Le-kz-cle" id="ceg-a4-yPS"/>
+                        <outlet property="creatureNameText" destination="3iX-La-DGQ" id="eze-Lv-dCJ"/>
+                        <outlet property="dexterity" destination="5gh-px-3iS" id="PhV-w1-oIb"/>
+                        <outlet property="gameName" destination="xkb-ri-Bth" id="Yae-Sc-QOu"/>
+                        <outlet property="hitPoints" destination="IoE-PC-Hbq" id="n4B-Kx-xEw"/>
+                        <outlet property="intelligence" destination="5Iw-Op-cnv" id="JKO-fO-wEN"/>
+                        <outlet property="items" destination="24u-bR-fjb" id="3AI-wH-9J6"/>
+                        <outlet property="languages" destination="ndK-xk-6Gs" id="3qw-MA-t3a"/>
+                        <outlet property="senses" destination="wfQ-31-QJ4" id="mLM-jX-zDe"/>
+                        <outlet property="skills" destination="xrX-Z2-FEV" id="WtR-Ju-jr3"/>
+                        <outlet property="speed" destination="0YJ-Vd-mYN" id="Nya-sL-4aW"/>
+                        <outlet property="strength" destination="e5Q-Z3-RAz" id="w8A-z4-ldp"/>
+                        <outlet property="wisdom" destination="UFU-Rq-nYW" id="SVv-L2-wLm"/>
+                        <outlet property="xpToEarn" destination="QDg-Bt-XOt" id="FSe-ec-65E"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7JQ-xL-LlS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4089" y="1430"/>
+            <point key="canvasLocation" x="4087.7862595419847" y="1429.5774647887324"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="dEV-zc-lGw"/>
         <segue reference="IPc-Vi-pTd"/>
-        <segue reference="BBV-ds-Atw"/>
+        <segue reference="Vte-Ud-hEd"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="DemonBuddy" width="1000" height="750"/>
