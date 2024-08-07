@@ -526,107 +526,136 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="d4c-yz-wrB">
-                                <rect key="frame" x="16" y="55" width="2352" height="493.33333333333326"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="100" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="d4c-yz-wrB">
+                                <rect key="frame" x="26.666666666666657" y="150.33333333333331" width="340" height="551.33333333333348"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVs-dt-GTw">
-                                        <rect key="frame" x="0.0" y="0.0" width="2352" height="20.333333333333332"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="340" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yax-6E-PnP">
-                                        <rect key="frame" x="0.0" y="20.333333333333329" width="2352" height="127.99999999999999"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Yax-6E-PnP">
+                                        <rect key="frame" x="0.0" y="0.0" width="340" height="128"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="AIz-lT-ohu"/>
+                                        </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="usA-FA-YbO">
-                                        <rect key="frame" x="0.0" y="148.33333333333334" width="2352" height="34.333333333333343"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Vm-IK-vXd">
+                                        <rect key="frame" x="0.0" y="127.99999999999996" width="340" height="34.333333333333329"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="ROLL">
+                                            <color key="baseBackgroundColor" name="PureDemonBloodColor"/>
+                                        </buttonConfiguration>
                                     </button>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="356-F3-GYR">
-                                        <rect key="frame" x="0.0" y="182.66666666666666" width="2352" height="127.99999999999997"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="356-F3-GYR">
+                                        <rect key="frame" x="0.0" y="162.33333333333337" width="340" height="226.66666666666663"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t1O-G8-uhR">
-                                                <rect key="frame" x="0.0" y="0.0" width="960" height="128"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="d4" translatesAutoresizingMaskIntoConstraints="NO" id="t1O-G8-uhR">
+                                                <rect key="frame" x="0.0" y="0.0" width="56.666666666666664" height="226.66666666666666"/>
                                             </imageView>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ktg-F4-Otc">
-                                                <rect key="frame" x="960" y="0.0" width="128" height="128"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ktg-F4-Otc">
+                                                <rect key="frame" x="56.666666666666657" y="0.0" width="56.666666666666657" height="226.66666666666666"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DIa-On-evD">
-                                                <rect key="frame" x="1088" y="0.0" width="960" height="128"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="perspective-dice-six-faces-five" translatesAutoresizingMaskIntoConstraints="NO" id="eDy-Gc-q0B">
+                                                <rect key="frame" x="113.33333333333333" y="0.0" width="56.666666666666671" height="226.66666666666666"/>
                                             </imageView>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eLX-jN-PhJ">
-                                                <rect key="frame" x="2048" y="0.0" width="32" height="128"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" horizontalCompressionResistancePriority="740" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eLX-jN-PhJ">
+                                                <rect key="frame" x="170" y="0.0" width="56.666666666666657" height="226.66666666666666"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HZw-dB-PPt">
-                                                <rect key="frame" x="2080" y="0.0" width="240" height="128"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dice-eight-faces-eight" translatesAutoresizingMaskIntoConstraints="NO" id="TIg-vZ-S3J">
+                                                <rect key="frame" x="226.66666666666669" y="0.0" width="56.666666666666686" height="226.66666666666666"/>
                                             </imageView>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TnW-2H-EaB">
-                                                <rect key="frame" x="2320" y="0.0" width="32" height="128"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" horizontalCompressionResistancePriority="740" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TnW-2H-EaB">
+                                                <rect key="frame" x="283.33333333333331" y="0.0" width="56.666666666666686" height="226.66666666666666"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="91C-8j-lqg">
-                                        <rect key="frame" x="0.0" y="310.66666666666669" width="2352" height="128"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Krp-OI-CIZ">
+                                        <rect key="frame" x="0.0" y="389" width="340" height="70"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hko-ED-HdA">
-                                                <rect key="frame" x="0.0" y="0.0" width="816" height="128"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="d10" translatesAutoresizingMaskIntoConstraints="NO" id="zo2-za-75S">
+                                                <rect key="frame" x="0.0" y="0.0" width="56.666666666666664" height="70"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="70" id="26p-cb-cqr"/>
+                                                    <constraint firstAttribute="width" constant="70" id="ecc-Cx-Llv"/>
+                                                </constraints>
                                             </imageView>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L90-vK-WEY">
-                                                <rect key="frame" x="816" y="0.0" width="32" height="128"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9gn-pj-kIV">
+                                                <rect key="frame" x="56.666666666666657" y="0.0" width="56.666666666666657" height="70"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4mY-MF-Uei">
-                                                <rect key="frame" x="848" y="0.0" width="720" height="128"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="d12" translatesAutoresizingMaskIntoConstraints="NO" id="aPs-lG-Kmq">
+                                                <rect key="frame" x="113.33333333333333" y="0.0" width="56.666666666666671" height="70"/>
                                             </imageView>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X8R-bY-A9q">
-                                                <rect key="frame" x="1568" y="0.0" width="32" height="128"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" horizontalCompressionResistancePriority="740" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q0T-fK-kKR">
+                                                <rect key="frame" x="170" y="0.0" width="56.666666666666657" height="70"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BqY-YQ-eGS">
-                                                <rect key="frame" x="1600" y="0.0" width="720" height="128"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dice-twenty-faces-twenty" translatesAutoresizingMaskIntoConstraints="NO" id="E7i-ap-b0B">
+                                                <rect key="frame" x="226.66666666666669" y="0.0" width="56.666666666666686" height="70"/>
                                             </imageView>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7vG-NZ-g4J">
-                                                <rect key="frame" x="2320" y="0.0" width="32" height="128"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" horizontalCompressionResistancePriority="740" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fbd-N7-3pK">
+                                                <rect key="frame" x="283.33333333333331" y="0.0" width="56.666666666666686" height="70"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YBt-qv-kdZ">
-                                        <rect key="frame" x="0.0" y="438.66666666666669" width="2352" height="20.333333333333314"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YBt-qv-kdZ">
+                                        <rect key="frame" x="0.0" y="459" width="340" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ia2-jh-QkG">
-                                        <rect key="frame" x="0.0" y="459" width="2352" height="34.333333333333314"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ia2-jh-QkG">
+                                        <rect key="frame" x="0.0" y="459" width="340" height="92.333333333333371"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5HF-He-sJ7">
-                                                <rect key="frame" x="0.0" y="0.0" width="1176" height="34.333333333333336"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oSO-jB-Pe8">
+                                                <rect key="frame" x="0.0" y="0.0" width="170" height="92.333333333333329"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Characters">
+                                                    <color key="baseBackgroundColor" name="DilutedDemonBloodColor"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <segue destination="c4X-vN-JVi" kind="show" id="7tu-Qd-nB5"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pgv-JO-zV5">
-                                                <rect key="frame" x="1176" y="0.0" width="1176" height="34.333333333333336"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zmE-QQ-0wA">
+                                                <rect key="frame" x="170" y="0.0" width="170" height="92.333333333333329"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="NPCs/Monsters">
+                                                    <color key="baseBackgroundColor" name="DilutedDemonBloodColor"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <segue destination="lDk-sc-AxI" kind="show" id="Re2-iQ-jX1"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="356-F3-GYR" firstAttribute="centerY" secondItem="d4c-yz-wrB" secondAttribute="centerY" id="5bI-7l-UkI"/>
+                                    <constraint firstAttribute="width" constant="340" id="FeH-1e-ux2"/>
+                                    <constraint firstItem="356-F3-GYR" firstAttribute="top" secondItem="Yax-6E-PnP" secondAttribute="bottom" constant="34.333333333333314" id="JMP-QL-xVF"/>
+                                    <constraint firstItem="Ia2-jh-QkG" firstAttribute="top" secondItem="d4c-yz-wrB" secondAttribute="top" constant="459" id="Tjg-B3-bmc"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eSe-hL-uPX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="d4c-yz-wrB" firstAttribute="centerX" secondItem="w15-Yc-LfP" secondAttribute="centerX" id="IBy-Aj-P8C"/>
+                            <constraint firstItem="d4c-yz-wrB" firstAttribute="centerY" secondItem="w15-Yc-LfP" secondAttribute="centerY" id="iPz-BV-DVh"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="oGQ-uT-F9P"/>
                 </viewController>
@@ -2883,16 +2912,16 @@
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QDg-Bt-XOt">
-                                                                <rect key="frame" x="137.66666666666669" y="0.0" width="50" height="34"/>
+                                                                <rect key="frame" x="137.66666666666669" y="0.0" width="100" height="34"/>
                                                                 <color key="backgroundColor" red="0.57647058819999997" green="0.43921568630000002" blue="0.85882352939999995" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="50" id="ND6-E2-31T"/>
+                                                                    <constraint firstAttribute="width" constant="100" id="ND6-E2-31T"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvg-P6-nx2">
-                                                                <rect key="frame" x="197.66666666666669" y="0.0" width="142.33333333333331" height="34"/>
+                                                                <rect key="frame" x="247.66666666666666" y="0.0" width="92.333333333333343" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -3183,15 +3212,23 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="dEV-zc-lGw"/>
+        <segue reference="Re2-iQ-jX1"/>
+        <segue reference="7tu-Qd-nB5"/>
         <segue reference="IPc-Vi-pTd"/>
         <segue reference="Vte-Ud-hEd"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="DemonBuddy" width="1000" height="750"/>
+        <image name="d10" width="512" height="512"/>
+        <image name="d12" width="512" height="512"/>
+        <image name="d4" width="512" height="512"/>
         <image name="dice" catalog="system" width="128" height="116"/>
+        <image name="dice-eight-faces-eight" width="512" height="512"/>
+        <image name="dice-twenty-faces-twenty" width="512" height="512"/>
         <image name="gearshape" catalog="system" width="128" height="123"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="list.clipboard" catalog="system" width="98" height="128"/>
+        <image name="perspective-dice-six-faces-five" width="512" height="512"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="radioOff" width="512" height="512"/>
         <image name="radioOn" width="512" height="512"/>
