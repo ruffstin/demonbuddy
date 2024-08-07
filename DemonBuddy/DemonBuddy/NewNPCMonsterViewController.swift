@@ -49,38 +49,67 @@ class NewNPCMonsterViewController: UIViewController {
         
         if monsterOrNpcToEdit != nil {
             
-            // fill in with appropriate values
+            // gamename would be edited per Joseph's implementation
             
-            /*
-             creatureNameText
-             hitPoints
-             armorClass
-             speed
-             challengeRating
-             xpToEarn
-             strength
-             constitution
-             dexterity
-             intelligence
-             charisma
-             skills
-             senses
-             languages
-             creatureFeatures
-             actions
-             items
-             
-             
-             
-             if let title = noteToEdit?.value(forKey: "title") as? String {
-             titleTextView.text = title
-             }
-             if let game = noteToEdit?.value(forKey: "gameName") as? String {
-             gameNameDropdown.setTitle(game, for: .normal)
-             }
-             if let text = noteToEdit?.value(forKey: "noteText") as? String {
-             textView.text = text
-             }*/
+            // date is not acounted for *yet*
+            
+            if let game = monsterOrNpcToEdit?.value(forKey: "gameName") as? String {
+                gameName.text = game
+            }
+            if let creatureName = monsterOrNpcToEdit?.value(forKey: "creatureName") as? String {
+                creatureNameText.text = creatureName
+            }
+            if let hitPointsValue = monsterOrNpcToEdit?.value(forKey: "hitPoints") as? String {
+                hitPoints.text = hitPointsValue
+            }
+            if let armorClassValue = monsterOrNpcToEdit?.value(forKey: "armorClass") as? String {
+                armorClass.text = armorClassValue
+            }
+            if let speedValue = monsterOrNpcToEdit?.value(forKey: "speed") as? String {
+                speed.text = speedValue
+            }
+            if let challengeRatingValue = monsterOrNpcToEdit?.value(forKey: "challengeRating") as? String {
+                challengeRating.text = challengeRatingValue
+            }
+            if let xpValue = monsterOrNpcToEdit?.value(forKey: "xp") as? String {
+                xpToEarn.text = xpValue
+            }
+            if let strengthValue = monsterOrNpcToEdit?.value(forKey: "strength") as? String {
+                strength.text = strengthValue
+            }
+            if let constitutionValue = monsterOrNpcToEdit?.value(forKey: "constitution") as? String {
+                constitution.text = constitutionValue
+            }
+            if let dexterityValue = monsterOrNpcToEdit?.value(forKey: "dexterity") as? String {
+                dexterity.text = dexterityValue
+            }
+            if let intelligenceValue = monsterOrNpcToEdit?.value(forKey: "intelligence") as? String {
+                intelligence.text = intelligenceValue
+            }
+            if let wisdomValue = monsterOrNpcToEdit?.value(forKey: "wisdom") as? String {
+                wisdom.text = wisdomValue
+            }
+            if let charismaValue = monsterOrNpcToEdit?.value(forKey: "charisma") as? String {
+                charisma.text = charismaValue
+            }
+            if let skillsValue = monsterOrNpcToEdit?.value(forKey: "skills") as? String {
+                skills.text = skillsValue
+            }
+            if let sensesValue = monsterOrNpcToEdit?.value(forKey: "senses") as? String {
+                senses.text = sensesValue
+            }
+            if let languagesValue = monsterOrNpcToEdit?.value(forKey: "languages") as? String {
+                languages.text = languagesValue
+            }
+            if let creatureFeaturesValue = monsterOrNpcToEdit?.value(forKey: "creatureFeatures") as? String {
+                creatureFeatures.text = creatureFeaturesValue
+            }
+            if let actionsValue = monsterOrNpcToEdit?.value(forKey: "actions") as? String {
+                actions.text = actionsValue
+            }
+            if let itemsValue = monsterOrNpcToEdit?.value(forKey: "items") as? String {
+                items.text = itemsValue
+            }
         }
     }
     
@@ -103,7 +132,16 @@ class NewNPCMonsterViewController: UIViewController {
     
     // Create NPC or Monster
     @IBAction func savePressed(_ sender: Any) {
-        
+        if ((titleTextView.text?.isEmpty) == nil) {
+            let controller = UIAlertController(
+                title: "Missing Title",
+                message: "Input a title",
+                preferredStyle: .alert
+            )
+            
+            controller.addAction(UIAlertAction(title: "Ok", style: .default))
+            present(controller, animated: true)
+        } else {
         // add npc VS Monster?
         let userID = Auth.auth().currentUser?.uid
         let game = gameName.text // will be changed per Joseph's implementation?
@@ -192,7 +230,7 @@ class NewNPCMonsterViewController: UIViewController {
         monstersAndNpcVC.refreshMonsters()
         
         self.dismiss(animated: true)
-        //}
+        }
     }
 
     func saveContext () {
