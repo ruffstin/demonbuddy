@@ -3,21 +3,50 @@
     <entity name="Character" representedClassName="Character" syncable="YES" codeGenerationType="class">
         <attribute name="alignment" optional="YES" attributeType="String"/>
         <attribute name="armorClass" optional="YES" attributeType="String"/>
-        <attribute name="classAndSubclass" optional="YES" attributeType="String"/>
+        <attribute name="attacks" optional="YES" attributeType="String"/>
+        <attribute name="charClass" optional="YES" attributeType="String"/>
+        <attribute name="charisma" optional="YES" attributeType="String"/>
+        <attribute name="charismaMod" optional="YES" attributeType="String"/>
+        <attribute name="charismaSaveProfBonus" optional="YES" attributeType="String"/>
+        <attribute name="charSubClass" optional="YES" attributeType="String"/>
+        <attribute name="conSaveProfBonus" optional="YES" attributeType="String"/>
+        <attribute name="constitution" optional="YES" attributeType="String"/>
+        <attribute name="constitutionMod" optional="YES" attributeType="String"/>
+        <attribute name="copper" optional="YES" attributeType="String"/>
         <attribute name="currentHealthPoints" optional="YES" attributeType="String"/>
+        <attribute name="currentHitDice" optional="YES" attributeType="String"/>
+        <attribute name="currHealthPoints" optional="YES" attributeType="String"/>
         <attribute name="currHitDice" optional="YES" attributeType="String"/>
+        <attribute name="dexSaveProfBonus" optional="YES" attributeType="String"/>
+        <attribute name="dexterity" optional="YES" attributeType="String"/>
+        <attribute name="electrum" optional="YES" attributeType="String"/>
         <attribute name="experiencePoints" optional="YES" attributeType="String"/>
+        <attribute name="featuresAndTraits" optional="YES" attributeType="String"/>
         <attribute name="gameName" optional="YES" attributeType="String"/>
+        <attribute name="gold" optional="YES" attributeType="String"/>
         <attribute name="healthPoints" optional="YES" attributeType="String"/>
         <attribute name="hitDice" optional="YES" attributeType="String"/>
         <attribute name="inspiration" optional="YES" attributeType="String"/>
+        <attribute name="intelligence" optional="YES" attributeType="String"/>
+        <attribute name="intelligenceMod" optional="YES" attributeType="String"/>
+        <attribute name="intelligenceSaveProfBonus" optional="YES" attributeType="String"/>
+        <attribute name="items" optional="YES" attributeType="String"/>
         <attribute name="level" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="platinum" optional="YES" attributeType="String"/>
         <attribute name="proficiencyBonus" optional="YES" attributeType="String"/>
         <attribute name="race" optional="YES" attributeType="String"/>
+        <attribute name="silver" optional="YES" attributeType="String"/>
+        <attribute name="skills" optional="YES" attributeType="String"/>
         <attribute name="speed" optional="YES" attributeType="String"/>
+        <attribute name="strength" optional="YES" attributeType="String"/>
+        <attribute name="strengthMod" optional="YES" attributeType="String"/>
+        <attribute name="strSaveProfBonus" optional="YES" attributeType="String"/>
+        <attribute name="subRace" optional="YES" attributeType="String"/>
         <attribute name="userID" optional="YES" attributeType="String"/>
-        <relationship name="spells" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SpellSheet" inverseName="caster" inverseEntity="SpellSheet"/>
+        <attribute name="wisdom" optional="YES" attributeType="String"/>
+        <attribute name="wisdomMod" optional="YES" attributeType="String"/>
+        <attribute name="wisSaveProfBonus" optional="YES" attributeType="String"/>
     </entity>
     <entity name="GameNames" representedClassName="GameNames" syncable="YES" codeGenerationType="class">
         <attribute name="names" optional="YES" attributeType="Transformable"/>
@@ -77,6 +106,9 @@
         <attribute name="maxSpellSlotsLvl8" optional="YES" attributeType="String"/>
         <attribute name="maxSpellSlotsLvl9" optional="YES" attributeType="String"/>
         <attribute name="userID" optional="YES" attributeType="String"/>
-        <relationship name="caster" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Character" inverseName="spells" inverseEntity="Character"/>
+    </entity>
+    <entity name="UserName" representedClassName="UserName" syncable="YES" codeGenerationType="class">
+        <attribute name="userID" optional="YES" attributeType="String"/>
+        <attribute name="userName" optional="YES" attributeType="String"/>
     </entity>
 </model>

@@ -41,7 +41,6 @@ class NewNPCMonsterViewController: UIViewController {
     var monsterOrNpcToEdit: NSManagedObject?
     var gameNameOptions: [UIAction]!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,9 +49,6 @@ class NewNPCMonsterViewController: UIViewController {
         if monsterOrNpcToEdit != nil {
             
             // gamename would be edited per Joseph's implementation
-            
-            // date is not acounted for *yet*
-            
             if let game = monsterOrNpcToEdit?.value(forKey: "gameName") as? String {
                 gameName.text = game
             }
@@ -297,7 +293,6 @@ class NewNPCMonsterViewController: UIViewController {
                 monstersAndNpcVC.refreshMonsters()
             }
             
-            //self.dismiss(animated: true) // need to adjust this so we don't get rid of the screen but refresh the save button
         }
 
 
