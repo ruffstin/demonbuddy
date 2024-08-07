@@ -297,7 +297,7 @@ class NewNPCMonsterViewController: UIViewController {
                 monstersAndNpcVC.refreshMonsters()
             }
             
-            self.dismiss(animated: true) // need to adjust this so we don't get rid of the screen but refresh the save button
+            //self.dismiss(animated: true) // need to adjust this so we don't get rid of the screen but refresh the save button
         }
 
 
