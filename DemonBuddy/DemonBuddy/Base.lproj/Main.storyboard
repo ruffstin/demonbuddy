@@ -529,24 +529,21 @@
                             <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="100" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="d4c-yz-wrB">
                                 <rect key="frame" x="26.666666666666657" y="150.33333333333331" width="340" height="551.33333333333348"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVs-dt-GTw">
-                                        <rect key="frame" x="0.0" y="0.0" width="340" height="0.0"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Yax-6E-PnP">
                                         <rect key="frame" x="0.0" y="0.0" width="340" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="128" id="AIz-lT-ohu"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Vm-IK-vXd">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Kf-ak-5UJ">
                                         <rect key="frame" x="0.0" y="127.99999999999996" width="340" height="34.333333333333329"/>
+                                        <color key="backgroundColor" name="PureDemonBloodColor"/>
+                                        <color key="tintColor" systemColor="secondarySystemBackgroundColor"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="ROLL">
-                                            <color key="baseBackgroundColor" name="PureDemonBloodColor"/>
-                                        </buttonConfiguration>
+                                        <buttonConfiguration key="configuration" style="plain" title="ROLL"/>
+                                        <connections>
+                                            <action selector="rollButtonClicked:" destination="iW7-Tv-tKS" eventType="touchUpInside" id="dUz-VQ-RPJ"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="356-F3-GYR">
                                         <rect key="frame" x="0.0" y="162.33333333333337" width="340" height="226.66666666666663"/>
@@ -554,7 +551,7 @@
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="d4" translatesAutoresizingMaskIntoConstraints="NO" id="t1O-G8-uhR">
                                                 <rect key="frame" x="0.0" y="0.0" width="56.666666666666664" height="226.66666666666666"/>
                                             </imageView>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ktg-F4-Otc">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ktg-F4-Otc">
                                                 <rect key="frame" x="56.666666666666657" y="0.0" width="56.666666666666657" height="226.66666666666666"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -562,7 +559,7 @@
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="perspective-dice-six-faces-five" translatesAutoresizingMaskIntoConstraints="NO" id="eDy-Gc-q0B">
                                                 <rect key="frame" x="113.33333333333333" y="0.0" width="56.666666666666671" height="226.66666666666666"/>
                                             </imageView>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" horizontalCompressionResistancePriority="740" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eLX-jN-PhJ">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" horizontalCompressionResistancePriority="740" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eLX-jN-PhJ">
                                                 <rect key="frame" x="170" y="0.0" width="56.666666666666657" height="226.66666666666666"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -570,7 +567,7 @@
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dice-eight-faces-eight" translatesAutoresizingMaskIntoConstraints="NO" id="TIg-vZ-S3J">
                                                 <rect key="frame" x="226.66666666666669" y="0.0" width="56.666666666666686" height="226.66666666666666"/>
                                             </imageView>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" horizontalCompressionResistancePriority="740" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TnW-2H-EaB">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" horizontalCompressionResistancePriority="740" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TnW-2H-EaB">
                                                 <rect key="frame" x="283.33333333333331" y="0.0" width="56.666666666666686" height="226.66666666666666"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -587,7 +584,7 @@
                                                     <constraint firstAttribute="width" constant="70" id="ecc-Cx-Llv"/>
                                                 </constraints>
                                             </imageView>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9gn-pj-kIV">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9gn-pj-kIV">
                                                 <rect key="frame" x="56.666666666666657" y="0.0" width="56.666666666666657" height="70"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -595,7 +592,7 @@
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="d12" translatesAutoresizingMaskIntoConstraints="NO" id="aPs-lG-Kmq">
                                                 <rect key="frame" x="113.33333333333333" y="0.0" width="56.666666666666671" height="70"/>
                                             </imageView>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" horizontalCompressionResistancePriority="740" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q0T-fK-kKR">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" horizontalCompressionResistancePriority="740" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q0T-fK-kKR">
                                                 <rect key="frame" x="170" y="0.0" width="56.666666666666657" height="70"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -603,7 +600,7 @@
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dice-twenty-faces-twenty" translatesAutoresizingMaskIntoConstraints="NO" id="E7i-ap-b0B">
                                                 <rect key="frame" x="226.66666666666669" y="0.0" width="56.666666666666686" height="70"/>
                                             </imageView>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" horizontalCompressionResistancePriority="740" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fbd-N7-3pK">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" horizontalCompressionResistancePriority="740" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fbd-N7-3pK">
                                                 <rect key="frame" x="283.33333333333331" y="0.0" width="56.666666666666686" height="70"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -649,15 +646,52 @@
                                     <constraint firstItem="Ia2-jh-QkG" firstAttribute="top" secondItem="d4c-yz-wrB" secondAttribute="top" constant="459" id="Tjg-B3-bmc"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVs-dt-GTw">
+                                <rect key="frame" x="26.666666666666657" y="121" width="340" height="20"/>
+                                <color key="backgroundColor" name="DilutedDemonBloodColor"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="eTS-P9-rIG"/>
+                                    <constraint firstAttribute="width" constant="340" id="sDY-Gx-X9V"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="waJ-MZ-I7B">
+                                <rect key="frame" x="291" y="63" width="75" height="34.333333333333343"/>
+                                <color key="backgroundColor" name="DilutedDemonBloodColor"/>
+                                <color key="tintColor" name="PureDemonBloodColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="RESET"/>
+                                <connections>
+                                    <action selector="resetButtonpressed:" destination="iW7-Tv-tKS" eventType="touchUpInside" id="4zG-lV-sJK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eSe-hL-uPX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="waJ-MZ-I7B" firstAttribute="top" secondItem="eSe-hL-uPX" secondAttribute="top" constant="19" id="6TE-G6-ass"/>
                             <constraint firstItem="d4c-yz-wrB" firstAttribute="centerX" secondItem="w15-Yc-LfP" secondAttribute="centerX" id="IBy-Aj-P8C"/>
+                            <constraint firstItem="rVs-dt-GTw" firstAttribute="top" secondItem="eSe-hL-uPX" secondAttribute="top" constant="77" id="XML-rw-r1k"/>
                             <constraint firstItem="d4c-yz-wrB" firstAttribute="centerY" secondItem="w15-Yc-LfP" secondAttribute="centerY" id="iPz-BV-DVh"/>
+                            <constraint firstItem="rVs-dt-GTw" firstAttribute="centerX" secondItem="w15-Yc-LfP" secondAttribute="centerX" id="k8c-8l-kXI"/>
+                            <constraint firstItem="waJ-MZ-I7B" firstAttribute="leading" secondItem="eSe-hL-uPX" secondAttribute="leading" constant="291" id="kvJ-9T-nai"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="oGQ-uT-F9P"/>
+                    <connections>
+                        <outlet property="d10Num" destination="9gn-pj-kIV" id="o3L-Pb-Pfe"/>
+                        <outlet property="d12Num" destination="Q0T-fK-kKR" id="Y57-bb-Qpw"/>
+                        <outlet property="d20Num" destination="fbd-N7-3pK" id="4Fk-N6-3Hu"/>
+                        <outlet property="d4Num" destination="ktg-F4-Otc" id="4Rt-8e-24U"/>
+                        <outlet property="d6Num" destination="eLX-jN-PhJ" id="XPh-o5-dcd"/>
+                        <outlet property="d8Num" destination="TnW-2H-EaB" id="RDi-6T-lvA"/>
+                        <outlet property="reset" destination="waJ-MZ-I7B" id="ZCd-L9-T5Y"/>
+                        <outlet property="rollButton" destination="6Kf-ak-5UJ" id="Hq6-J2-B6c"/>
+                        <outlet property="totalNum" destination="rVs-dt-GTw" id="OoT-0r-VDJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TCD-KC-SIl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -3221,8 +3255,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="qsn-fO-fKv"/>
-        <segue reference="FAa-fW-4SB"/>
-        <segue reference="0Wp-ya-txE"/>
+        <segue reference="Re2-iQ-jX1"/>
+        <segue reference="7tu-Qd-nB5"/>
         <segue reference="IPc-Vi-pTd"/>
         <segue reference="BBV-ds-Atw"/>
         <segue reference="bff-6O-SsZ"/>
@@ -3264,6 +3298,9 @@
         </systemColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

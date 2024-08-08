@@ -9,21 +9,79 @@ import UIKit
 
 class DiceRollerViewController: UIViewController {
 
+    @IBOutlet weak var d4Num: UITextField!
+    @IBOutlet weak var d6Num: UITextField!
+    @IBOutlet weak var d8Num: UITextField!
+    @IBOutlet weak var d10Num: UITextField!
+    @IBOutlet weak var d12Num: UITextField!
+    @IBOutlet weak var d20Num: UITextField!
+
+    @IBOutlet weak var rollButton: UIButton!
+    
+    @IBOutlet weak var totalNum: UILabel!
+        
+    @IBOutlet weak var reset: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        reset.isEnabled = false
+        reset.isHidden = true
     }
     
+    let diceSides = [4, 6, 8, 10, 12, 20]
+    var diceTextFields : [UITextField] {[d4Num, d6Num, d8Num, d10Num, d12Num, d20Num]}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func rollButtonClicked(_ sender: Any) {
+        for textField in diceTextFields {
+                    if let text = textField.text, Int(text) == nil {
+                        showAlert()
+                        return
+                    }
+                }
+                  
+            var totalRolled = 0
+            
+            for (index, textField) in diceTextFields.enumerated() {
+                if let text = textField.text, let numberOfRolls = Int(text) {
+                    let sides = diceSides[index]
+                    if numberOfRolls > 0 {
+                        for _ in 1...numberOfRolls {
+                            let roll = Int.random(in: 1...sides)
+                            totalRolled += roll
+                        }
+                    }
+                }
+            }
+        
+        
+        if (totalRolled > 0) {
+            totalNum.text = "Total: \(totalRolled)"
+            reset.isEnabled = true
+            reset.isHidden = false
+        }
     }
-    */
-
+    
+    
+    // clean out the dice tray and reset the num of values
+    @IBAction func resetButtonpressed(_ sender: Any) {
+        d4Num.text = "0"
+        d6Num.text = "0"
+        d8Num.text = "0"
+        d10Num.text = "0"
+        d12Num.text = "0"
+        d20Num.text = "0"
+        totalNum.text = "Total:"
+        // clear our the tray itself/hide images here
+        
+        
+        reset.isEnabled = false
+        reset.isHidden = true
+    }
+    
+    func showAlert() {
+            let alert = UIAlertController(title: "Invalid Input", message: "Please enter valid integers in all fields.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+        }
+    
 }
