@@ -28,6 +28,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     var userGameNames: NSManagedObject!
     var dimBackgroundView: UIView!
     
+    var secretCount = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,7 +49,15 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         gameNameTableView.delegate = self
         gameNameTableView.dataSource = self
         
+        
+        // if (username entity exists for user)
+        /*
+         var user = "username", else var user = "MASTER"
+         */
+        
         demonBuddyLine.text = "What Infernal Magicks are we going to get up to today MASTER?"
+        
+        secretCount = 0;
         
         retrieveGameNames()
     }
@@ -183,6 +193,26 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             self.createNameView.alpha = 0
         }
     }
+    
+    
+    
+    @IBAction func secretButtonPressed(_ sender: Any) {
+        secretCount += 1
+        
+        if (secretCount >= 4 && secretCount < 8) {
+            // change textline
+        } else if (secretCount >= 8 && secretCount < 16) {
+            // change line display alert
+            
+            // play sound if you want too
+        } else {
+            // What have you done...
+        }
+        
+    }
+    
+    
+    
     
     @IBAction func logoutPressed(_ sender: Any) {
         do {

@@ -106,10 +106,11 @@ class NewCharacterViewController: UIViewController {
             attacks,
             chaMod,
             chaScore,
+            chaSaveProfBonus,
             charClass,
+            charSubclass,
             charGameName,
             charName,
-            charSubclass,
             conMod,
             conScore,
             conSaveProfBonus,
@@ -133,13 +134,13 @@ class NewCharacterViewController: UIViewController {
             platinum,
             profBonus,
             race,
+            subRace,
             silver,
             skills,
             speed,
             strMod,
             strScore,
             strSaveProfBonus,
-            subRace,
             tempHp,
             wisMod,
             wisScore,
@@ -154,46 +155,48 @@ class NewCharacterViewController: UIViewController {
         "alignment",
         "armorClass",
         "attacks",
-        "charClass",
-        "charisma",
         "charismaMod",
+        "charisma",
         "charismaSaveProfBonus",
+        "charClass",
         "charSubClass",
-        "conSaveProfBonus",
+        "gameName",
+        "name",
+        "constitutionMod",
         "constitution",
+        "conSaveProfBonus",
         "copper",
         "currentHealthPoints",
         "currentHitDice",
-        "dexSaveProfBonus",
+        "dexterityMod",
         "dexterity",
+        "dexSaveProfBonus",
         "electrum",
-        "experiencePoints",
         "featuresAndTraits",
-        "gameName",
         "gold",
-        "healthPoints",
         "hitDice",
+        "healthPoints",
         "inspiration",
-        "intelligence",
         "intelligenceMod",
+        "intelligence",
         "intelligenceSaveProfBonus",
         "items",
         "level",
-        "name",
         "platinum",
         "proficiencyBonus",
         "race",
+        "subRace",
         "silver",
         "skills",
         "speed",
-        "strength",
         "strengthMod",
+        "strength",
         "strSaveProfBonus",
-        "subRace",
         "tempHp",
-        "wisdom",
         "wisdomMod",
-        "wisSaveProfBonus"
+        "wisdom",
+        "wisSaveProfBonus",
+        "experiencePoints"
     ]
 
     
@@ -203,10 +206,14 @@ class NewCharacterViewController: UIViewController {
     var characterToEdit: NSManagedObject?
     var gameNameOptions: [UIAction]!
     
+    @IBOutlet weak var spellButton: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        spellButton.isHidden = true
+        spellButton.isEnabled = false
         
         // updateGameNameMenu()
         
@@ -218,6 +225,8 @@ class NewCharacterViewController: UIViewController {
                     textFieldOutlets[index].text = textToInput
                 }
             }
+            spellButton.isHidden = false
+            spellButton.isEnabled = true
         }
     }
     
@@ -238,28 +247,30 @@ class NewCharacterViewController: UIViewController {
             "Alignment",
             "Armor Class",
             "Attacks",
-            "Character Class",
-            "Charisma",
             "Charisma Mod",
+            "Charisma",
             "Charisma Save Prof Bonus",
+            "Character Class",
             "Character Subclass",
-            "Constitution Save Prof Bonus",
+            
+            "Game Name",
+            "ConstitutionMod",
             "Constitution",
+            "Constitution Save Prof Bonus",
             "Copper",
             "Current Health Points",
             "Current Hit Dice",
-            "Dexterity Save Prof Bonus",
+            "Dexterity Mod",
             "Dexterity",
+            "Dexterity Save Prof Bonus",
             "Electrum",
-            "Experience Points",
             "Features and Traits",
-            "Game Name",
             "Gold",
-            "Health Points",
             "Hit Dice",
+            "Health Points",
             "Inspiration",
-            "Intelligence",
             "Intelligence Mod",
+            "Intelligence",
             "Intelligence Save Prof Bonus",
             "Items",
             "Level",
@@ -267,18 +278,18 @@ class NewCharacterViewController: UIViewController {
             "Platinum",
             "Proficiency Bonus",
             "Race",
+            "Subrace",
             "Silver",
             "Skills",
             "Speed",
-            "Strength",
             "Strength Mod",
+            "Strength",
             "Strength Save Prof Bonus",
-            "Subrace",
             "Temporary HP",
-            "Wisdom",
             "Wisdom Mod",
-            "Wisdom Save Prof Bonus"
-
+            "Wisdom",
+            "Wisdom Save Prof Bonus",
+            "Experience Points"
         ]
         
         for (index, field) in textFieldOutlets.enumerated() {
@@ -306,6 +317,8 @@ class NewCharacterViewController: UIViewController {
             for (index, key) in attributes.enumerated() {
                     character.setValue(textFieldOutlets[index].text, forKey: key)
                 }
+            spellButton.isHidden = false
+            spellButton.isEnabled = true
         }
         
         saveContext()

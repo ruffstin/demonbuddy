@@ -17,6 +17,7 @@
         <attribute name="currentHitDice" optional="YES" attributeType="String"/>
         <attribute name="dexSaveProfBonus" optional="YES" attributeType="String"/>
         <attribute name="dexterity" optional="YES" attributeType="String"/>
+        <attribute name="dexterityMod" optional="YES" attributeType="String"/>
         <attribute name="electrum" optional="YES" attributeType="String"/>
         <attribute name="experiencePoints" optional="YES" attributeType="String"/>
         <attribute name="featuresAndTraits" optional="YES" attributeType="String"/>
@@ -105,6 +106,9 @@
         <attribute name="maxSpellSlotsLvl8" optional="YES" attributeType="String"/>
         <attribute name="maxSpellSlotsLvl9" optional="YES" attributeType="String"/>
         <attribute name="userID" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="TestSpell" representedClassName="TestSpell" syncable="YES" codeGenerationType="class">
+        <attribute name="spell" optional="YES" attributeType="String"/>
     </entity>
     <entity name="UserName" representedClassName="UserName" syncable="YES" codeGenerationType="class">
         <attribute name="userID" optional="YES" attributeType="String"/>

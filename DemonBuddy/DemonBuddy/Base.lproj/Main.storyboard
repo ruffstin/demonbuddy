@@ -222,6 +222,9 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="174" height="114"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="transparent_demon_image-2"/>
+                                                <connections>
+                                                    <action selector="secretButtonPressed:" destination="zln-re-epi" eventType="touchUpInside" id="Ssc-LH-hmA"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="What Infernal Magicks are we going to get up to today MASTER?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXX-4e-MtY">
                                                 <rect key="frame" x="224" y="0.0" width="119" height="114"/>
@@ -444,9 +447,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="hpQ-iI-Y9G">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="hpQ-iI-Y9G">
                                 <rect key="frame" x="0.0" y="761" width="393" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem title="Home Button" image="house" catalog="system" id="xtA-pA-p2u"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="uoS-1M-yzk"/>
@@ -502,15 +504,29 @@
                                 <rect key="frame" x="242" y="288" width="118" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </slider>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTe-Nh-uhg">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTe-Nh-uhg">
                                 <rect key="frame" x="82" y="535" width="229" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Restore to Default Settings"/>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DemonBuddy" translatesAutoresizingMaskIntoConstraints="NO" id="TgN-NA-6fr">
+                                <rect key="frame" x="64" y="578" width="265" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="k0s-Zw-HlU"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JIV-gw-sIO"/>
                         <color key="backgroundColor" name="Background Color"/>
+                        <constraints>
+                            <constraint firstItem="TgN-NA-6fr" firstAttribute="centerX" secondItem="hpQ-iI-Y9G" secondAttribute="centerX" id="3vH-Nn-5T6"/>
+                            <constraint firstItem="TgN-NA-6fr" firstAttribute="centerX" secondItem="MdO-yy-KhW" secondAttribute="centerX" id="DiU-JV-f3h"/>
+                            <constraint firstItem="TgN-NA-6fr" firstAttribute="leading" secondItem="JIV-gw-sIO" secondAttribute="leading" constant="64" id="M5W-Ei-cpD"/>
+                            <constraint firstItem="TgN-NA-6fr" firstAttribute="top" secondItem="dTe-Nh-uhg" secondAttribute="bottom" constant="8" id="Pw4-Ni-Peb"/>
+                            <constraint firstItem="hpQ-iI-Y9G" firstAttribute="top" secondItem="TgN-NA-6fr" secondAttribute="bottom" constant="83" id="jAf-mk-4BU"/>
+                            <constraint firstItem="TgN-NA-6fr" firstAttribute="centerX" secondItem="dTe-Nh-uhg" secondAttribute="centerX" id="pGt-er-co4"/>
+                            <constraint firstAttribute="bottom" secondItem="TgN-NA-6fr" secondAttribute="bottom" constant="174" id="v9Q-3F-7uk"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="FgD-mj-Grf"/>
                 </viewController>
@@ -2177,6 +2193,7 @@
                         <outlet property="silver" destination="hQc-nN-jnq" id="clt-ek-Vmp"/>
                         <outlet property="skills" destination="F6o-S0-wWZ" id="xPr-yk-Kpx"/>
                         <outlet property="speed" destination="1TA-kX-Rwa" id="JU3-hd-gEe"/>
+                        <outlet property="spellButton" destination="Kux-gm-vTf" id="aZk-Np-D7C"/>
                         <outlet property="strMod" destination="wxZ-zx-4gy" id="j87-Gf-MRa"/>
                         <outlet property="strSaveProf" destination="aSU-L3-vLc" id="j6z-xY-FTd"/>
                         <outlet property="strSaveProfBonus" destination="vFm-E0-Pra" id="mUy-tE-KNr"/>
@@ -2201,6 +2218,28 @@
                     <view key="view" contentMode="scaleToFill" id="kg0-Db-LjK">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8I5-gg-oaL">
+                                <rect key="frame" x="148" y="111" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aVr-Cz-Llj">
+                                <rect key="frame" x="26" y="162" width="155" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.57647058819999997" green="0.43921568630000002" blue="0.85882352939999995" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I9F-9G-h8L">
+                                <rect key="frame" x="204" y="162" width="155" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.57647058819999997" green="0.43921568630000002" blue="0.85882352939999995" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="noc-KW-tnN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -2208,7 +2247,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OJp-o0-Wr3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1601" y="1429"/>
+            <point key="canvasLocation" x="1600.7633587786258" y="1428.8732394366198"/>
         </scene>
         <!--New Note View Controller-->
         <scene sceneID="BZR-RS-FvB">
@@ -3255,8 +3294,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="qsn-fO-fKv"/>
-        <segue reference="Re2-iQ-jX1"/>
-        <segue reference="7tu-Qd-nB5"/>
+        <segue reference="FAa-fW-4SB"/>
+        <segue reference="0Wp-ya-txE"/>
         <segue reference="IPc-Vi-pTd"/>
         <segue reference="BBV-ds-Atw"/>
         <segue reference="bff-6O-SsZ"/>
