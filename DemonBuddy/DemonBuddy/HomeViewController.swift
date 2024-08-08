@@ -158,7 +158,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     // Add the new name to CoreData and gameNames
     @IBAction func doneNamePressed(_ sender: Any) {
-        if gameNameTextField.text != nil {
+        if let text = gameNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines), !text.isEmpty {
             if var listOfNames = userGameNames.value(forKey: "names") as? [String] {
                 listOfNames.append(gameNameTextField.text!)
                 userGameNames.setValue(listOfNames, forKey: "names")
@@ -167,9 +167,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             saveContext()
             gameNameTableView.reloadData()
-            
-            gameNameTextField.text = nil
         }
+        gameNameTextField.text = nil
         
         UIView.animate(withDuration: 0.4) {
             self.dimBackgroundView.alpha = 0
