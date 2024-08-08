@@ -47,6 +47,7 @@
         <attribute name="wisdom" optional="YES" attributeType="String"/>
         <attribute name="wisdomMod" optional="YES" attributeType="String"/>
         <attribute name="wisSaveProfBonus" optional="YES" attributeType="String"/>
+        <relationship name="spells" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TestSpell" inverseName="caster" inverseEntity="TestSpell"/>
     </entity>
     <entity name="GameNames" representedClassName="GameNames" syncable="YES" codeGenerationType="class">
         <attribute name="names" optional="YES" attributeType="Transformable"/>
@@ -106,9 +107,11 @@
         <attribute name="maxSpellSlotsLvl8" optional="YES" attributeType="String"/>
         <attribute name="maxSpellSlotsLvl9" optional="YES" attributeType="String"/>
         <attribute name="userID" optional="YES" attributeType="String"/>
+        <relationship name="caster" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Character"/>
     </entity>
     <entity name="TestSpell" representedClassName="TestSpell" syncable="YES" codeGenerationType="class">
         <attribute name="spell" optional="YES" attributeType="String"/>
+        <relationship name="caster" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Character" inverseName="spells" inverseEntity="Character"/>
     </entity>
     <entity name="UserName" representedClassName="UserName" syncable="YES" codeGenerationType="class">
         <attribute name="userID" optional="YES" attributeType="String"/>

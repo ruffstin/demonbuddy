@@ -148,8 +148,6 @@ class NewCharacterViewController: UIViewController {
             xP
         ]
     }
-
-
     
     let attributes: [String] = [
         "alignment",
