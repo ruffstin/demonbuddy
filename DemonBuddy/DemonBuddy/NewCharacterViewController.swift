@@ -14,7 +14,7 @@ protocol CharacterCreationDelegate: UIViewController {
 }
 
 class NewCharacterViewController: UIViewController {
-    
+
     @IBOutlet weak var charName: UITextField!
     @IBOutlet weak var charGameName: UITextField!
     @IBOutlet weak var race: UITextField!
@@ -26,7 +26,7 @@ class NewCharacterViewController: UIViewController {
     @IBOutlet weak var level: UITextField!
     @IBOutlet weak var profBonus: UITextField!
     @IBOutlet weak var alignment: UITextField!
-    @IBOutlet weak var ArmorClass: UITextField!
+    @IBOutlet weak var armorClass: UITextField!
     @IBOutlet weak var speed: UITextField!
     
     @IBOutlet weak var strScore: UITextField!
@@ -84,10 +84,6 @@ class NewCharacterViewController: UIViewController {
 
     @IBOutlet weak var skills: UITextField!
     
-    /*
-     add attacks code here
-     
-     */
     // for now so I can create an entity I have just the attacks textbox
     @IBOutlet weak var attacks: UITextField!
     
@@ -100,6 +96,106 @@ class NewCharacterViewController: UIViewController {
     @IBOutlet weak var featuresAndTraits: UITextField!
     
     @IBOutlet weak var items: UITextField!
+    
+    
+    // Array for UITextFields
+    var textFieldOutlets: [UITextField] {
+        return [
+            alignment,
+            armorClass,
+            attacks,
+            chaMod,
+            chaScore,
+            charClass,
+            charGameName,
+            charName,
+            charSubclass,
+            conMod,
+            conScore,
+            conSaveProfBonus,
+            copper,
+            currHP,
+            currHitDice,
+            dexMod,
+            dexScore,
+            dexSaveProfBonus,
+            electrum,
+            featuresAndTraits,
+            gold,
+            hitDice,
+            hp,
+            inspiration,
+            intMod,
+            intScore,
+            intSaveProfBonus,
+            items,
+            level,
+            platinum,
+            profBonus,
+            race,
+            silver,
+            skills,
+            speed,
+            strMod,
+            strScore,
+            strSaveProfBonus,
+            subRace,
+            tempHp,
+            wisMod,
+            wisScore,
+            wisSaveProfBonus,
+            xP
+        ]
+    }
+
+
+    
+    let attributes: [String] = [
+        "alignment",
+        "armorClass",
+        "attacks",
+        "charClass",
+        "charisma",
+        "charismaMod",
+        "charismaSaveProfBonus",
+        "charSubClass",
+        "conSaveProfBonus",
+        "constitution",
+        "copper",
+        "currentHealthPoints",
+        "currentHitDice",
+        "dexSaveProfBonus",
+        "dexterity",
+        "electrum",
+        "experiencePoints",
+        "featuresAndTraits",
+        "gameName",
+        "gold",
+        "healthPoints",
+        "hitDice",
+        "inspiration",
+        "intelligence",
+        "intelligenceMod",
+        "intelligenceSaveProfBonus",
+        "items",
+        "level",
+        "name",
+        "platinum",
+        "proficiencyBonus",
+        "race",
+        "silver",
+        "skills",
+        "speed",
+        "strength",
+        "strengthMod",
+        "strSaveProfBonus",
+        "subRace",
+        "tempHp",
+        "wisdom",
+        "wisdomMod",
+        "wisSaveProfBonus"
+    ]
+
     
     var delegate: UIViewController!
 
@@ -116,18 +212,101 @@ class NewCharacterViewController: UIViewController {
         
         if characterToEdit != nil {
             // retrieve all information from core data
+            // gamename would be edited per Joseph's implementation
+            for (index, key) in attributes.enumerated() {
+                if let textToInput = characterToEdit?.value(forKey: key) as? String {
+                    textFieldOutlets[index].text = textToInput
+                }
+            }
         }
     }
     
 
     @IBAction func saveButtonPressed(_ sender: Any) {
-        // Save to Core Data
-        let character = NSEntityDescription.insertNewObject(forEntityName: "Character", into: context)
-        character.setValue(charName.text, forKey: "name")
-        character.setValue(charGameName.text, forKey: "gameName")
-        if let userID = Auth.auth().currentUser?.uid {
-                    character.setValue(userID, forKey: "userID")
+        func showAlert(forMissingField fieldName: String) {
+            let controller = UIAlertController(
+                title: "Missing \(fieldName)",
+                message: "Please input a value for \(fieldName).",
+                preferredStyle: .alert
+            )
+            
+            controller.addAction(UIAlertAction(title: "Ok", style: .default))
+            present(controller, animated: true)
+        }
+        
+        let fieldNames: [String] = [
+            "Alignment",
+            "Armor Class",
+            "Attacks",
+            "Character Class",
+            "Charisma",
+            "Charisma Mod",
+            "Charisma Save Prof Bonus",
+            "Character Subclass",
+            "Constitution Save Prof Bonus",
+            "Constitution",
+            "Copper",
+            "Current Health Points",
+            "Current Hit Dice",
+            "Dexterity Save Prof Bonus",
+            "Dexterity",
+            "Electrum",
+            "Experience Points",
+            "Features and Traits",
+            "Game Name",
+            "Gold",
+            "Health Points",
+            "Hit Dice",
+            "Inspiration",
+            "Intelligence",
+            "Intelligence Mod",
+            "Intelligence Save Prof Bonus",
+            "Items",
+            "Level",
+            "Name",
+            "Platinum",
+            "Proficiency Bonus",
+            "Race",
+            "Silver",
+            "Skills",
+            "Speed",
+            "Strength",
+            "Strength Mod",
+            "Strength Save Prof Bonus",
+            "Subrace",
+            "Temporary HP",
+            "Wisdom",
+            "Wisdom Mod",
+            "Wisdom Save Prof Bonus"
+
+        ]
+        
+        for (index, field) in textFieldOutlets.enumerated() {
+            if let text = field.text, text.isEmpty {
+                showAlert(forMissingField: fieldNames[index])
+                return
+            }
+        }
+        
+        
+        // All required fields are present, proceed with entity creation
+        let userID = Auth.auth().currentUser?.uid
+        
+        
+        if let characterToEdit = characterToEdit {
+            // Update existing character instance
+            for (index, key) in attributes.enumerated() {
+                characterToEdit.setValue(textFieldOutlets[index].text, forKey: key)
+            }
+            
+        } else {
+            // Create a new Character instance
+            let character = NSEntityDescription.insertNewObject(forEntityName: "Character", into: context)
+            character.setValue(userID, forKey: "userID")
+            for (index, key) in attributes.enumerated() {
+                    character.setValue(textFieldOutlets[index].text, forKey: key)
                 }
+        }
         
         saveContext()
         

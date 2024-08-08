@@ -15,8 +15,6 @@
         <attribute name="copper" optional="YES" attributeType="String"/>
         <attribute name="currentHealthPoints" optional="YES" attributeType="String"/>
         <attribute name="currentHitDice" optional="YES" attributeType="String"/>
-        <attribute name="currHealthPoints" optional="YES" attributeType="String"/>
-        <attribute name="currHitDice" optional="YES" attributeType="String"/>
         <attribute name="dexSaveProfBonus" optional="YES" attributeType="String"/>
         <attribute name="dexterity" optional="YES" attributeType="String"/>
         <attribute name="electrum" optional="YES" attributeType="String"/>
@@ -43,6 +41,7 @@
         <attribute name="strengthMod" optional="YES" attributeType="String"/>
         <attribute name="strSaveProfBonus" optional="YES" attributeType="String"/>
         <attribute name="subRace" optional="YES" attributeType="String"/>
+        <attribute name="tempHp" optional="YES" attributeType="String"/>
         <attribute name="userID" optional="YES" attributeType="String"/>
         <attribute name="wisdom" optional="YES" attributeType="String"/>
         <attribute name="wisdomMod" optional="YES" attributeType="String"/>

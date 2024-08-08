@@ -2096,8 +2096,8 @@
                     <navigationItem key="navigationItem" id="Lyh-pX-LPX"/>
                     <size key="freeformSize" width="393" height="852"/>
                     <connections>
-                        <outlet property="ArmorClass" destination="l1e-bz-USi" id="Ohv-CS-o94"/>
                         <outlet property="alignment" destination="9Xn-Lb-1dH" id="ryh-av-ygE"/>
+                        <outlet property="armorClass" destination="l1e-bz-USi" id="nVj-GJ-Ks0"/>
                         <outlet property="attacks" destination="wB7-e4-Hnr" id="mvY-sH-R8R"/>
                         <outlet property="chaMod" destination="Och-Zm-5ak" id="4b9-bw-Sp1"/>
                         <outlet property="chaSaveProf" destination="s2W-nw-5gf" id="PAN-9X-LhD"/>
