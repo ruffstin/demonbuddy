@@ -16,7 +16,6 @@ protocol CharacterCreationDelegate: UIViewController {
 class NewCharacterViewController: UIViewController {
 
     @IBOutlet weak var charName: UITextField!
-    @IBOutlet weak var charGameName: UITextField!
     @IBOutlet weak var race: UITextField!
     @IBOutlet weak var subRace: UITextField!
     @IBOutlet weak var charClass: UITextField!
@@ -109,7 +108,6 @@ class NewCharacterViewController: UIViewController {
             chaSaveProfBonus,
             charClass,
             charSubclass,
-            charGameName,
             charName,
             conMod,
             conScore,
@@ -158,7 +156,6 @@ class NewCharacterViewController: UIViewController {
         "charismaSaveProfBonus",
         "charClass",
         "charSubClass",
-        "gameName",
         "name",
         "constitutionMod",
         "constitution",
@@ -202,7 +199,9 @@ class NewCharacterViewController: UIViewController {
 
     var character: NSManagedObject?
     var characterToEdit: NSManagedObject?
+    
     var gameNameOptions: [UIAction]!
+    @IBOutlet weak var gameNameDropdown: UIButton!
     
     @IBOutlet weak var spellButton: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -213,7 +212,7 @@ class NewCharacterViewController: UIViewController {
         spellButton.isHidden = true
         spellButton.isEnabled = false
         
-        // updateGameNameMenu()
+        updateGameNameMenu()
         
         if characterToEdit != nil {
             // retrieve all information from core data
@@ -222,6 +221,9 @@ class NewCharacterViewController: UIViewController {
                 if let textToInput = characterToEdit?.value(forKey: key) as? String {
                     textFieldOutlets[index].text = textToInput
                 }
+            }
+            if let game = characterToEdit?.value(forKey: "gameName") as? String {
+                gameNameDropdown.setTitle(game, for: .normal)
             }
             spellButton.isHidden = false
             spellButton.isEnabled = true
@@ -250,8 +252,6 @@ class NewCharacterViewController: UIViewController {
             "Charisma Save Prof Bonus",
             "Character Class",
             "Character Subclass",
-            
-            "Game Name",
             "ConstitutionMod",
             "Constitution",
             "Constitution Save Prof Bonus",
@@ -297,7 +297,6 @@ class NewCharacterViewController: UIViewController {
             }
         }
         
-        
         // All required fields are present, proceed with entity creation
         let userID = Auth.auth().currentUser?.uid
         
@@ -307,14 +306,15 @@ class NewCharacterViewController: UIViewController {
             for (index, key) in attributes.enumerated() {
                 characterToEdit.setValue(textFieldOutlets[index].text, forKey: key)
             }
-            
+            characterToEdit.setValue(gameNameDropdown.titleLabel!.text, forKey: "gameName")
         } else {
             // Create a new Character instance
             let character = NSEntityDescription.insertNewObject(forEntityName: "Character", into: context)
             character.setValue(userID, forKey: "userID")
             for (index, key) in attributes.enumerated() {
-                    character.setValue(textFieldOutlets[index].text, forKey: key)
-                }
+                character.setValue(textFieldOutlets[index].text, forKey: key)
+            }
+            character.setValue(gameNameDropdown.titleLabel!.text, forKey: "gameName")
             spellButton.isHidden = false
             spellButton.isEnabled = true
         }
@@ -326,22 +326,22 @@ class NewCharacterViewController: UIViewController {
         }
     }
     
-    /*func updateGameNameMenu() {
-     gameNameOptions = [
-     UIAction(title: "None") {
-     _ in self.gameNameDropdown.setTitle("None", for: .normal)
-     }
-     ]
-     for name in gameNames {
-     gameNameOptions.append(UIAction(title: name) {
-     _ in self.gameNameDropdown.setTitle(name, for: .normal)
-     })
-     }
+    func updateGameNameMenu() {
+        gameNameOptions = [
+            UIAction(title: "None") {
+                _ in self.gameNameDropdown.setTitle("None", for: .normal)
+            }
+        ]
+        for name in gameNames {
+            gameNameOptions.append(UIAction(title: name) {
+                _ in self.gameNameDropdown.setTitle(name, for: .normal)
+            })
+        }
      
-     let menu = UIMenu(title: "Game Names", options: .displayInline, children: gameNameOptions)
-     gameNameDropdown.menu = menu
-     gameNameDropdown.showsMenuAsPrimaryAction = true
-     }*/
+        let menu = UIMenu(title: "Game Names", options: .displayInline, children: gameNameOptions)
+        gameNameDropdown.menu = menu
+        gameNameDropdown.showsMenuAsPrimaryAction = true
+    }
     
     
     func saveContext () {
