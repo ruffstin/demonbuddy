@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import CoreData
 
 class RegisterViewController: UIViewController {
 
@@ -36,7 +37,6 @@ class RegisterViewController: UIViewController {
         }
     }
     
-    
     @IBAction func registerPressed(_ sender: Any) {
         if !fieldsIncorrect(){
             Auth.auth().createUser(withEmail: emailInput.text!, password: passwordInput.text!) {
@@ -57,6 +57,10 @@ class RegisterViewController: UIViewController {
                     }
                 } else {
                     self.errorLabel.text = nil
+                    let userID = Auth.auth().currentUser?.uid
+                    let userName = NSEntityDescription.insertNewObject(forEntityName: "UserName", into: context)
+                    userName.setValue(userID, forKey: "userID")
+                    userName.setValue(self.usernameInput.text, forKey: "userName")
                 }
             }
         }

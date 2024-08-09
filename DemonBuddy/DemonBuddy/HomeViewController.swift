@@ -49,17 +49,40 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         gameNameTableView.delegate = self
         gameNameTableView.dataSource = self
         
+        grabUserName()
         
-        // if (username entity exists for user)
-        /*
-         var user = "username", else var user = "MASTER"
-         */
-        
-        demonBuddyLine.text = "What Infernal Magicks are we going to get up to today MASTER?"
-        
-        secretCount = 0;
         
         retrieveGameNames()
+    }
+    
+   /* override func viewWillAppear() {
+        super.viewWillAppear(<#Bool#>)
+        
+        secretCount = 0;
+    }*/ // WORK ON LATER? NEED TO REUPDATE SECRET COUNT TO 0 WHEN RETURNING TO HOME SCREEN!
+    
+    func grabUserName() {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "UserName")
+        
+        var userName = "MASTER"
+        let user = (Auth.auth().currentUser?.uid as? String)!
+        let predicate = NSPredicate(format: "userID == %@", user)
+        request.predicate = predicate
+        
+        do {
+            let results = try context.fetch(request)
+            
+            if let userNameEntity = results.first as? NSManagedObject {
+                if let coreUser = userNameEntity.value(forKey: "userName") as? String {
+                    userName = coreUser
+                    userName = "nothingpulledfromcoredata"
+                }
+            }
+        } catch {
+            print("Could not find UserName")
+        }
+        
+        demonBuddyLine.text = "What Infernal Magicks are we going to get up to today \(userName)?"
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -200,13 +223,15 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         secretCount += 1
         
         if (secretCount >= 4 && secretCount < 8) {
-            // change textline
-        } else if (secretCount >= 8 && secretCount < 16) {
-            // change line display alert
+            demonBuddyLine.text = "WAIT! If you keep doing that you will summon them... the... the masters..."
+        } else if (secretCount >= 8 && secretCount < 12) {
+            demonBuddyLine.text = "THEY ARE HERE THEY ARE HERE???!!!"
+            
+            // display alert
             
             // play sound if you want too
-        } else {
-            // What have you done...
+        } else if (secretCount > 12) {
+            demonBuddyLine.text = "What have you done...."
         }
         
     }
