@@ -47,7 +47,7 @@
         <attribute name="wisdom" optional="YES" attributeType="String"/>
         <attribute name="wisdomMod" optional="YES" attributeType="String"/>
         <attribute name="wisSaveProfBonus" optional="YES" attributeType="String"/>
-        <relationship name="spells" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TestSpell" inverseName="caster" inverseEntity="TestSpell"/>
+        <relationship name="spells" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SpellSheet" inverseName="caster" inverseEntity="SpellSheet"/>
     </entity>
     <entity name="GameNames" representedClassName="GameNames" syncable="YES" codeGenerationType="class">
         <attribute name="names" optional="YES" attributeType="Transformable"/>
@@ -83,20 +83,17 @@
         <attribute name="xp" optional="YES" attributeType="String"/>
     </entity>
     <entity name="SpellSheet" representedClassName="SpellSheet" syncable="YES" codeGenerationType="class">
-        <attribute name="cantrip1" optional="YES" attributeType="String"/>
-        <attribute name="cantrip2" optional="YES" attributeType="String"/>
-        <attribute name="cantrip3" optional="YES" attributeType="String"/>
-        <attribute name="cantrip4" optional="YES" attributeType="String"/>
+        <attribute name="cantrips0" optional="YES" attributeType="String"/>
         <attribute name="gameName" optional="YES" attributeType="String"/>
-        <attribute name="lvl1Spell1" optional="YES" attributeType="String"/>
-        <attribute name="lvl1Spell1Prepared" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="lvl1Spell2" optional="YES" attributeType="String"/>
-        <attribute name="lvl1Spell3" optional="YES" attributeType="String"/>
-        <attribute name="lvl1Spell4" optional="YES" attributeType="String"/>
-        <attribute name="lvl2Spell1" optional="YES" attributeType="String"/>
-        <attribute name="lvl2Spell2" optional="YES" attributeType="String"/>
-        <attribute name="lvl2Spell3" optional="YES" attributeType="String"/>
-        <attribute name="lvl2Spell4" optional="YES" attributeType="String"/>
+        <attribute name="level1Spells" optional="YES" attributeType="String"/>
+        <attribute name="level2Spells" optional="YES" attributeType="String"/>
+        <attribute name="level3Spells" optional="YES" attributeType="String"/>
+        <attribute name="level4Spells" optional="YES" attributeType="String"/>
+        <attribute name="level5Spells" optional="YES" attributeType="String"/>
+        <attribute name="level6Spells" optional="YES" attributeType="String"/>
+        <attribute name="level7Spells" optional="YES" attributeType="String"/>
+        <attribute name="level8Spells" optional="YES" attributeType="String"/>
+        <attribute name="level9Spells" optional="YES" attributeType="String"/>
         <attribute name="maxSpellSlotsLvl1" optional="YES" attributeType="String"/>
         <attribute name="maxSpellSlotsLvl2" optional="YES" attributeType="String"/>
         <attribute name="maxSpellSlotsLvl3" optional="YES" attributeType="String"/>
@@ -106,11 +103,11 @@
         <attribute name="maxSpellSlotsLvl7" optional="YES" attributeType="String"/>
         <attribute name="maxSpellSlotsLvl8" optional="YES" attributeType="String"/>
         <attribute name="maxSpellSlotsLvl9" optional="YES" attributeType="String"/>
+        <attribute name="spellAttackBonus" optional="YES" attributeType="String"/>
+        <attribute name="spellCastingAbility" optional="YES" attributeType="String"/>
+        <attribute name="spellcastingClass" optional="YES" attributeType="String"/>
+        <attribute name="spellSaveDC" optional="YES" attributeType="String"/>
         <attribute name="userID" optional="YES" attributeType="String"/>
-        <relationship name="caster" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Character"/>
-    </entity>
-    <entity name="TestSpell" representedClassName="TestSpell" syncable="YES" codeGenerationType="class">
-        <attribute name="spell" optional="YES" attributeType="String"/>
         <relationship name="caster" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Character" inverseName="spells" inverseEntity="Character"/>
     </entity>
     <entity name="UserName" representedClassName="UserName" syncable="YES" codeGenerationType="class">

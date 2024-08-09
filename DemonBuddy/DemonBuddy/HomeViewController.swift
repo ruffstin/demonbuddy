@@ -51,21 +51,25 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         grabUserName()
         
-        
         retrieveGameNames()
     }
     
-   /* override func viewWillAppear() {
-        super.viewWillAppear(<#Bool#>)
-        
-        secretCount = 0;
-    }*/ // WORK ON LATER? NEED TO REUPDATE SECRET COUNT TO 0 WHEN RETURNING TO HOME SCREEN!
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+            
+        secretCount = 0
+        grabUserName()
+    }
     
     func grabUserName() {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "UserName")
         
         var userName = "MASTER"
-        let user = (Auth.auth().currentUser?.uid as? String)!
+        guard let user = Auth.auth().currentUser?.uid else {
+                print("No current user logged in.")
+                return
+            }
+        
         let predicate = NSPredicate(format: "userID == %@", user)
         request.predicate = predicate
         
@@ -75,7 +79,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             if let userNameEntity = results.first as? NSManagedObject {
                 if let coreUser = userNameEntity.value(forKey: "userName") as? String {
                     userName = coreUser
-                    userName = "nothingpulledfromcoredata"
                 }
             }
         } catch {
@@ -224,19 +227,34 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         if (secretCount >= 4 && secretCount < 8) {
             demonBuddyLine.text = "WAIT! If you keep doing that you will summon them... the... the masters..."
-        } else if (secretCount >= 8 && secretCount < 12) {
+        } else if (secretCount >= 8 && secretCount < 10) {
             demonBuddyLine.text = "THEY ARE HERE THEY ARE HERE???!!!"
             
-            // display alert
+            let lordsOfHell = ["Mark Mills, The Dungeon Master, the one behind the screen", "Mihir Arora, the Mad Moon Druid, shapeshifting vanguard", "Joseph Artega, the Fallen Ranger, hunter of Underdark", "Diem-Quynh Nguyen, the Valor bard, commander of the devil army"]
             
-            // play sound if you want too
+            showNamesAlert(on: self, hellSpawn: lordsOfHell)
+            
+            // play sound HERE if you want too
+            
         } else if (secretCount > 12) {
             demonBuddyLine.text = "What have you done...."
         }
         
     }
     
-    
+    func showNamesAlert(on viewController: UIViewController, hellSpawn: [String]) {
+        // Create a message string by joining names with new lines
+        let message = hellSpawn.joined(separator: "\n")
+        
+        // Create the alert controller
+        let alert = UIAlertController(title: "THE LORDS OF HELL", message: message, preferredStyle: .alert)
+        
+        // Add a "Close" button
+        alert.addAction(UIAlertAction(title: "Flee", style: .cancel, handler: nil))
+        
+        // Present the alert on the provided view controller
+        viewController.present(alert, animated: true, completion: nil)
+    }
     
     
     @IBAction func logoutPressed(_ sender: Any) {

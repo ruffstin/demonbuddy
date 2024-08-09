@@ -11,11 +11,9 @@ import FirebaseAuth
 
 class SpellSheetViewController: UIViewController {
 
-    @IBOutlet weak var testSpell: UITextField!
     
     /*
      insert all outlets here
-     
      */
     
     /*
@@ -41,7 +39,7 @@ class SpellSheetViewController: UIViewController {
 
         
         /*
-         if spell sheet existed beforehand -> fill in values
+         if caster has spellsheet -> fill in values
          for (index, key) in attributes.enumerated() {
              if let textToInput = spellSheetToEdit?.value(forKey: key) as? String {
                  textFieldOutlets[index].text = textToInput
@@ -50,9 +48,7 @@ class SpellSheetViewController: UIViewController {
          */
     }
     
-    @IBAction func savetest(_ sender: Any) {
-        
-    }
+
     
     @IBAction func saveButtonPressed(_ sender: Any) {
         func showAlert(forMissingField fieldName: String) {
@@ -65,6 +61,7 @@ class SpellSheetViewController: UIViewController {
             controller.addAction(UIAlertAction(title: "Ok", style: .default))
             present(controller, animated: true)
         }
+        
         /*
          list of all fieldNames
          let fieldNames: [String] = []
@@ -80,7 +77,9 @@ class SpellSheetViewController: UIViewController {
          */
         
         /*
-         create/save spellsheet
+         if caster does not have spellsheet create one,
+         
+         else update values
          */
     }
     

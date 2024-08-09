@@ -343,95 +343,6 @@ class NewCharacterViewController: UIViewController {
      gameNameDropdown.showsMenuAsPrimaryAction = true
      }*/
     
-    /*
-    // Toy Code for implementing calculating the User's Modifiers
-    func calculateModifier(for stat: Int) -> Int {
-        return Int(floor(Double(stat - 10) / 2.0))
-    }
-     
-     // Loop from 1 to 20 and print the stat and its modifier
-     for stat in 1...20 {
-         let modifier = calculateModifier(for: stat)
-         // if >= 0 then add a plus sign to the print statement
-         print("Stat: \(stat), Modifier: \(modifier)")
-     }
-
-     // Define skills and their corresponding abilities
-     let skills: [String: String] = [
-         "Athletics": "Strength",
-         "Acrobatics": "Dexterity",
-         "Sleight of Hand": "Dexterity",
-         "Stealth": "Dexterity",
-         "Arcana": "Intelligence",
-         "History": "Intelligence",
-         "Investigation": "Intelligence",
-         "Nature": "Intelligence",
-         "Religion": "Intelligence",
-         "Animal Handling": "Wisdom",
-         "Insight": "Wisdom",
-         "Medicine": "Wisdom",
-         "Perception": "Wisdom",
-         "Survival": "Wisdom",
-         "Deception": "Charisma",
-         "Intimidation": "Charisma",
-         "Performance": "Charisma",
-         "Persuasion": "Charisma"
-     ]
-
-     // Example proficiency bonus
-     let proficiencyBonus = 2
-
-     // Example proficiency status for skills (True = proficient, False = not proficient)
-     let proficiencyStatus: [String: Bool] = [
-         "Athletics": true,
-         "Acrobatics": false,
-         "Sleight of Hand": true,
-         "Stealth": false,
-         "Arcana": true,
-         "History": false,
-         "Investigation": true,
-         "Nature": false,
-         "Religion": false,
-         "Animal Handling": true,
-         "Insight": false,
-         "Medicine": true,
-         "Perception": false,
-         "Survival": true,
-         "Deception": false,
-         "Intimidation": true,
-         "Performance": false,
-         "Persuasion": true
-     ]
-
-     // Example stats
-     let stats: [String: Int] = [
-         "Strength": 15,
-         "Dexterity": 14,
-         "Intelligence": 12,
-         "Wisdom": 13,
-         "Charisma": 10
-     ]
-
-     // Function to calculate skill modifier
-     func calculateSkillModifier(for skill: String) -> Int {
-         guard let ability = skills[skill], let stat = stats[ability] else {
-             return 0
-         }
-         let baseModifier = calculateModifier(for: stat)
-         if proficiencyStatus[skill] == true {
-             return baseModifier + proficiencyBonus
-         } else {
-             return baseModifier
-         }
-     }
-
-     // Loop through skills and print their modifiers
-     for skill in skills.keys {
-         let skillModifier = calculateSkillModifier(for: skill)
-         print("Skill: \(skill), Modifier: \(skillModifier)")
-     }
-
-    */
     
     func saveContext () {
         if context.hasChanges {
@@ -443,5 +354,4 @@ class NewCharacterViewController: UIViewController {
             }
         }
     }
-    
 }

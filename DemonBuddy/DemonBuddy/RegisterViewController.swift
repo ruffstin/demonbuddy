@@ -57,11 +57,25 @@ class RegisterViewController: UIViewController {
                     }
                 } else {
                     self.errorLabel.text = nil
-                    let userID = Auth.auth().currentUser?.uid
-                    let userName = NSEntityDescription.insertNewObject(forEntityName: "UserName", into: context)
-                    userName.setValue(userID, forKey: "userID")
-                    userName.setValue(self.usernameInput.text, forKey: "userName")
                 }
+                
+                /*
+                let userID = Auth.auth().currentUser?.uid
+                let userName = NSEntityDescription.insertNewObject(forEntityName: "UserName", into: context)
+                userName.setValue(userID, forKey: "userID")
+                userName.setValue(self.usernameInput.text, forKey: "userName")
+                self.saveContext()*/
+            }
+        }
+    }
+    
+    func saveContext () {
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                let nserror = error as NSError
+                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
     }
@@ -88,5 +102,4 @@ class RegisterViewController: UIViewController {
         
         return false
     }
-    
 }
