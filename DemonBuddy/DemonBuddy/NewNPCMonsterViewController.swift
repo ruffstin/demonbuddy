@@ -12,7 +12,6 @@ import FirebaseAuth
 class NewNPCMonsterViewController: UIViewController {
     
     let textFieldKeys: [String] = [
-        "gameName",
         "creatureName",
         "hitPoints",
         "armorClass",
@@ -33,7 +32,8 @@ class NewNPCMonsterViewController: UIViewController {
         "items"
     ]
     
-    @IBOutlet weak var gameName: UITextField! // could be adjusted to Joseph's implementation game name
+    @IBOutlet weak var gameNameDropdown: UIButton!
+    
     @IBOutlet weak var creatureNameText: UITextField!
     @IBOutlet weak var hitPoints: UITextField!
     
@@ -66,7 +66,7 @@ class NewNPCMonsterViewController: UIViewController {
     // Array of UITextFields
         var textFieldOutlets: [UITextField] {
             return [
-                gameName, creatureNameText, hitPoints,
+                creatureNameText, hitPoints,
                 armorClass, speed,
                 challengeRating, xpToEarn,
                 strength, constitution, dexterity,
@@ -79,7 +79,7 @@ class NewNPCMonsterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //updateGameNameMenu()
+        updateGameNameMenu()
         
         if monsterOrNpcToEdit != nil {
             
@@ -93,22 +93,22 @@ class NewNPCMonsterViewController: UIViewController {
         }
     }
     
-    /*func updateGameNameMenu() {
-     gameNameOptions = [
-     UIAction(title: "None") {
-     _ in self.gameNameDropdown.setTitle("None", for: .normal)
-     }
-     ]
-     for name in gameNames {
-     gameNameOptions.append(UIAction(title: name) {
-     _ in self.gameNameDropdown.setTitle(name, for: .normal)
-     })
-     }
+    func updateGameNameMenu() {
+        gameNameOptions = [
+            UIAction(title: "None") {
+                _ in self.gameNameDropdown.setTitle("None", for: .normal)
+            }
+        ]
+        for name in gameNames {
+            gameNameOptions.append(UIAction(title: name) {
+                _ in self.gameNameDropdown.setTitle(name, for: .normal)
+            })
+        }
      
-     let menu = UIMenu(title: "Game Names", options: .displayInline, children: gameNameOptions)
-     gameNameDropdown.menu = menu
-     gameNameDropdown.showsMenuAsPrimaryAction = true
-     }*/
+        let menu = UIMenu(title: "Game Names", options: .displayInline, children: gameNameOptions)
+        gameNameDropdown.menu = menu
+        gameNameDropdown.showsMenuAsPrimaryAction = true
+    }
     
     // Create NPC or Monster
     @IBAction func savePressed(_ sender: Any) {
@@ -125,7 +125,6 @@ class NewNPCMonsterViewController: UIViewController {
             }
             
         let fieldNames: [String] = [
-            "Game Name",
             "Creature Name",
             "Hit Points",
             "Armor Class",
@@ -162,6 +161,7 @@ class NewNPCMonsterViewController: UIViewController {
                 for (index, key) in textFieldKeys.enumerated() {
                     monsterOrNpcToEdit.setValue(textFieldOutlets[index].text, forKey: key)
                 }
+                monsterOrNpcToEdit.setValue(gameNameDropdown.titleLabel!.text, forKey: "gameName")
 
             } else {
                 // Create new NPC/Monster instance
@@ -169,7 +169,8 @@ class NewNPCMonsterViewController: UIViewController {
                 monsterOrNpc.setValue(userID, forKey: "userID")
                 for (index, key) in textFieldKeys.enumerated() {
                         monsterOrNpc.setValue(textFieldOutlets[index].text, forKey: key)
-                    }
+                }
+                monsterOrNpc.setValue(gameNameDropdown.titleLabel!.text, forKey: "gameName")
             }
             
             saveContext()
