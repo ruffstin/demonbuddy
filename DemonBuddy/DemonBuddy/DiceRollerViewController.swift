@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import AVFoundation
+import AudioToolbox
 
 class DiceRollerViewController: UIViewController {
 
@@ -22,6 +24,12 @@ class DiceRollerViewController: UIViewController {
         
     @IBOutlet weak var reset: UIButton!
     
+    // setting variables passed in from settingsVC
+    var audioPlayer: AVAudioPlayer?
+    var soundFlag: Bool!
+    var vibrationFlag: Bool!
+    var delegate: UIViewController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         reset.isEnabled = false
@@ -32,12 +40,28 @@ class DiceRollerViewController: UIViewController {
     var diceTextFields : [UITextField] {[d4Num, d6Num, d8Num, d10Num, d12Num, d20Num]}
 
     @IBAction func rollButtonClicked(_ sender: Any) {
+        
         for textField in diceTextFields {
-                    if let text = textField.text, Int(text) == nil {
-                        showAlert()
-                        return
-                    }
-                }
+            if let text = textField.text, Int(text) == nil {
+                showAlert()
+                return
+            }
+        }
+        
+        //issue, the sound will only play if the user intializes the settings by clicking on the settings tab so, upon logging in or going to the home screen I need to intialize these flags and send them to DiceRoller VC for the sound to work
+//        if soundFlag {
+//            playSound(named: "dice-142528")
+//            //print("sound on")
+//        } else {
+//            print("sound off")
+//        }
+//        
+//        if vibrationFlag{
+//            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+//            //print("vib on")
+//        } else {
+//            print("vib off")
+//        }
                   
             var totalRolled = 0
             
@@ -60,7 +84,7 @@ class DiceRollerViewController: UIViewController {
             reset.isHidden = false
         }
     }
-    
+
     
     // clean out the dice tray and reset the num of values
     @IBAction func resetButtonpressed(_ sender: Any) {
@@ -83,5 +107,20 @@ class DiceRollerViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             present(alert, animated: true, completion: nil)
         }
+    
+    
+    func playSound(named soundName: String){
+        guard let soundURL = Bundle.main.url(forResource: soundName, withExtension: "mp3") else {
+                //print("Unable to find sound file \(soundName)")
+                return
+            }
+
+            do {
+                audioPlayer = try AVAudioPlayer(contentsOf: soundURL)
+                audioPlayer?.play()
+            } catch {
+                print("Failed to play sound: \(error.localizedDescription)")
+            }
+    }
     
 }

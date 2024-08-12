@@ -209,11 +209,11 @@
             <objects>
                 <viewController id="zln-re-epi" customClass="HomeViewController" customModule="DemonBuddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w0v-Mc-enE">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Q2z-9x-ciD">
-                                <rect key="frame" x="25" y="205.66666666666666" width="343" height="440.66666666666674"/>
+                                <rect key="frame" x="25" y="200.66666666666666" width="343" height="440.66666666666674"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="w2g-rT-Fo8">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="114"/>
@@ -305,7 +305,7 @@
                                 </subviews>
                             </stackView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="Opl-4y-2IT">
-                                <rect key="frame" x="0.0" y="758" width="393" height="44"/>
+                                <rect key="frame" x="0.0" y="748" width="393" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem title="Home Button" image="house" catalog="system" id="a5s-mC-CFO"/>
@@ -335,7 +335,7 @@
                                 </toolbarAppearance>
                             </toolbar>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="diO-xc-c3Y">
-                                <rect key="frame" x="46.666666666666657" y="343.66666666666669" width="300" height="164.66666666666669"/>
+                                <rect key="frame" x="46.666666666666657" y="338.66666666666669" width="300" height="164.66666666666669"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="qyn-mg-IeS">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="164.66666666666666"/>
@@ -437,7 +437,7 @@
             <objects>
                 <viewController id="kog-i5-Lgd" customClass="SettingsViewController" customModule="DemonBuddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MdO-yy-KhW">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uCI-ma-9tS">
@@ -448,13 +448,25 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="hpQ-iI-Y9G">
-                                <rect key="frame" x="0.0" y="761" width="393" height="44"/>
+                                <rect key="frame" x="0.0" y="751" width="393" height="44"/>
                                 <items>
-                                    <barButtonItem title="Home Button" image="house" catalog="system" id="xtA-pA-p2u"/>
+                                    <barButtonItem title="Home Button" image="house" catalog="system" id="xtA-pA-p2u">
+                                        <connections>
+                                            <segue destination="zln-re-epi" kind="show" identifier="settingsToHomeSegue" id="TPu-u2-ydr"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="uoS-1M-yzk"/>
-                                    <barButtonItem title="Play Button" image="dice" catalog="system" id="r3f-hQ-lLG"/>
+                                    <barButtonItem title="Play Button" image="dice" catalog="system" id="r3f-hQ-lLG">
+                                        <connections>
+                                            <segue destination="iW7-Tv-tKS" kind="show" identifier="settingsToPlaySegue" id="4mq-OB-WkP"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="BFH-6Y-pF7"/>
-                                    <barButtonItem title="Notes Button" image="list.clipboard" catalog="system" id="DCX-5i-222"/>
+                                    <barButtonItem title="Notes Button" image="list.clipboard" catalog="system" id="DCX-5i-222">
+                                        <connections>
+                                            <segue destination="EfI-Cq-IrG" kind="show" identifier="settingsToNotesSegue" id="9QN-iW-I28"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="6DP-07-spU"/>
                                     <barButtonItem title="Settings Button" image="gearshape" catalog="system" id="NRK-tR-4eE"/>
                                 </items>
@@ -485,12 +497,36 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Of1-Zz-TMb">
-                                <rect key="frame" x="242" y="384" width="118" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTe-Nh-uhg">
+                                <rect key="frame" x="82" y="525" width="229" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Restore to Default Settings"/>
+                                <connections>
+                                    <action selector="defaultButtonPressed:" destination="kog-i5-Lgd" eventType="touchUpInside" id="U4O-Wp-BP7"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DemonBuddy" translatesAutoresizingMaskIntoConstraints="NO" id="TgN-NA-6fr">
+                                <rect key="frame" x="64" y="568" width="265" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="k0s-Zw-HlU"/>
+                                </constraints>
+                            </imageView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nHU-6s-3qi" userLabel="soundSwitch">
+                                <rect key="frame" x="278" y="283" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </slider>
+                                <connections>
+                                    <action selector="soundSwitchPressed:" destination="kog-i5-Lgd" eventType="valueChanged" id="uRg-we-oKL"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LkN-ob-jgh" userLabel="vibrationSwitch">
+                                <rect key="frame" x="278" y="383" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="vibrationSwitchPressed:" destination="kog-i5-Lgd" eventType="valueChanged" id="Nyc-BR-WUM"/>
+                                </connections>
+                            </switch>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bih-XA-7pd">
-                                <rect key="frame" x="270" y="189" width="41" height="30"/>
+                                <rect key="frame" x="259" y="189" width="103" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <menu key="menu" id="uYB-dR-fvJ">
                                     <children>
@@ -499,22 +535,8 @@
                                     </children>
                                 </menu>
                                 <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="833-JQ-aVU">
-                                <rect key="frame" x="242" y="288" width="118" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </slider>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTe-Nh-uhg">
-                                <rect key="frame" x="82" y="535" width="229" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Restore to Default Settings"/>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DemonBuddy" translatesAutoresizingMaskIntoConstraints="NO" id="TgN-NA-6fr">
-                                <rect key="frame" x="64" y="578" width="265" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="k0s-Zw-HlU"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JIV-gw-sIO"/>
                         <color key="backgroundColor" name="Background Color"/>
@@ -530,6 +552,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="FgD-mj-Grf"/>
+                    <connections>
+                        <outlet property="colorPopupMenu" destination="bih-XA-7pd" id="kzw-Ae-G9z"/>
+                        <outlet property="soundSwitch" destination="nHU-6s-3qi" id="01Y-2O-WbX"/>
+                        <outlet property="vibrationSwitch" destination="LkN-ob-jgh" id="f2O-fF-mKB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wV3-Nw-ZBZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -540,11 +567,11 @@
             <objects>
                 <viewController id="iW7-Tv-tKS" customClass="DiceRollerViewController" customModule="DemonBuddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w15-Yc-LfP">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="100" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="d4c-yz-wrB">
-                                <rect key="frame" x="26.666666666666657" y="150.33333333333331" width="340" height="551.33333333333348"/>
+                                <rect key="frame" x="26.666666666666657" y="145.33333333333331" width="340" height="551.33333333333348"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Yax-6E-PnP">
                                         <rect key="frame" x="0.0" y="0.0" width="340" height="128"/>
@@ -664,7 +691,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVs-dt-GTw">
-                                <rect key="frame" x="26.666666666666657" y="121" width="340" height="20"/>
+                                <rect key="frame" x="26.666666666666657" y="77" width="340" height="20"/>
                                 <color key="backgroundColor" name="DilutedDemonBloodColor"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -676,7 +703,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="waJ-MZ-I7B">
-                                <rect key="frame" x="291" y="63" width="75" height="34.333333333333343"/>
+                                <rect key="frame" x="291" y="19.000000000000004" width="75" height="34.333333333333343"/>
                                 <color key="backgroundColor" name="DilutedDemonBloodColor"/>
                                 <color key="tintColor" name="PureDemonBloodColor"/>
                                 <state key="normal" title="Button"/>
@@ -719,11 +746,11 @@
             <objects>
                 <viewController id="EfI-Cq-IrG" customClass="NotesViewController" customModule="DemonBuddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3qa-7g-3Ej">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="c13-nD-j5x">
-                                <rect key="frame" x="19.333333333333343" y="58.666666666666686" width="354.33333333333326" height="735"/>
+                                <rect key="frame" x="19.333333333333343" y="53.666666666666686" width="354.33333333333326" height="735"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="nOo-Sv-xIc">
                                         <rect key="frame" x="10" y="0.0" width="334.33333333333331" height="36"/>
@@ -964,11 +991,11 @@
             <objects>
                 <viewController id="7wq-90-HKY" customClass="NewCharacterViewController" customModule="DemonBuddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZNi-il-vbd">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VnC-OR-rG5">
-                                <rect key="frame" x="0.0" y="44" width="393" height="759"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="793"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6po-m6-gyk">
                                         <rect key="frame" x="0.0" y="0.0" width="331.33333333333331" height="2500"/>
@@ -1005,7 +1032,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hVI-hr-qUA">
-                                                        <rect key="frame" x="0.0" y="49.000000000000014" width="340" height="34"/>
+                                                        <rect key="frame" x="0.0" y="49" width="340" height="34"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Race:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NB8-nm-FUL">
                                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="34"/>
@@ -1026,7 +1053,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="kXo-n8-n8m">
-                                                        <rect key="frame" x="0.0" y="98.000000000000014" width="340" height="33.999999999999986"/>
+                                                        <rect key="frame" x="0.0" y="98" width="340" height="34"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subrace:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPT-5k-AzY">
                                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="34"/>
@@ -1265,7 +1292,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="8SH-uN-RNU">
-                                                        <rect key="frame" x="0.0" y="441.00000000000006" width="340" height="40.666666666666686"/>
+                                                        <rect key="frame" x="0.0" y="441" width="340" height="40.666666666666686"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STR Mod:" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1x9-ar-FUJ">
                                                                 <rect key="frame" x="0.0" y="0.0" width="42" height="40.666666666666664"/>
@@ -2219,7 +2246,7 @@
             <objects>
                 <viewController id="Wzq-Tf-2Fh" customClass="SpellSheetViewController" customModule="DemonBuddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kg0-Db-LjK">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aVr-Cz-Llj">
@@ -2474,11 +2501,11 @@
             <objects>
                 <viewController id="c4X-vN-JVi" customClass="CharactersCreatedViewController" customModule="DemonBuddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UVs-iC-4ON">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="JdM-6b-h2y">
-                                <rect key="frame" x="12" y="58.666666666666686" width="369.33333333333331" height="735"/>
+                                <rect key="frame" x="12" y="53.666666666666686" width="369.33333333333331" height="735"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="w1O-rK-sNs">
                                         <rect key="frame" x="10" y="0.0" width="349.33333333333331" height="36"/>
@@ -2719,11 +2746,11 @@
             <objects>
                 <viewController id="lDk-sc-AxI" customClass="CreatedMonstersorNPCViewController" customModule="DemonBuddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ovB-GR-EPj">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="DwS-4Y-3zV">
-                                <rect key="frame" x="5.6666666666666572" y="58.666666666666686" width="381.66666666666674" height="735"/>
+                                <rect key="frame" x="5.6666666666666572" y="53.666666666666686" width="381.66666666666674" height="735"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="cd4-cj-ETv">
                                         <rect key="frame" x="10" y="0.0" width="361.66666666666669" height="36"/>
@@ -2964,11 +2991,11 @@
             <objects>
                 <viewController id="P66-vp-oe7" customClass="NewNPCMonsterViewController" customModule="DemonBuddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R2x-oi-gdK">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KRa-Of-DFY">
-                                <rect key="frame" x="0.0" y="44" width="393" height="759"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="793"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="94K-sA-ENK">
                                         <rect key="frame" x="0.0" y="0.0" width="331.33333333333331" height="2500"/>
@@ -3002,7 +3029,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9HR-f4-fQr">
-                                                        <rect key="frame" x="0.0" y="49.000000000000014" width="340" height="34"/>
+                                                        <rect key="frame" x="0.0" y="49" width="340" height="34"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hit Points:" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1k-JB-Q9Q">
                                                                 <rect key="frame" x="0.0" y="0.0" width="78" height="34"/>
@@ -3032,7 +3059,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uOf-pq-f17">
-                                                        <rect key="frame" x="0.0" y="98.000000000000014" width="340" height="33.999999999999986"/>
+                                                        <rect key="frame" x="0.0" y="98" width="340" height="34"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Armor Class:" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukF-Io-eMn">
                                                                 <rect key="frame" x="0.0" y="0.0" width="79.666666666666671" height="34"/>
@@ -3111,7 +3138,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4ML-zd-MqH">
-                                                        <rect key="frame" x="0.0" y="200.33333333333337" width="340" height="34"/>
+                                                        <rect key="frame" x="0.0" y="200.33333333333334" width="340" height="34"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STR:" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EjI-FD-yrT">
                                                                 <rect key="frame" x="0.0" y="0.0" width="42" height="34"/>
@@ -3244,7 +3271,7 @@
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senses:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ut-Cx-yDv">
-                                                        <rect key="frame" x="0.0" y="452.33333333333331" width="340" height="24"/>
+                                                        <rect key="frame" x="0.0" y="452.33333333333337" width="340" height="24"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -3400,6 +3427,9 @@
         <segue reference="IPc-Vi-pTd"/>
         <segue reference="BBV-ds-Atw"/>
         <segue reference="bff-6O-SsZ"/>
+        <segue reference="9QN-iW-I28"/>
+        <segue reference="4mq-OB-WkP"/>
+        <segue reference="TPu-u2-ydr"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="DemonBuddy" width="1000" height="750"/>
