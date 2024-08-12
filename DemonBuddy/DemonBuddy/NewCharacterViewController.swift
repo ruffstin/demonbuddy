@@ -63,7 +63,8 @@ class NewCharacterViewController: UIViewController {
     @IBOutlet weak var deathSaveFail2: UIButton!
     @IBOutlet weak var deathSaveFail3: UIButton!
     
-    // how to save whether they have proficiency or not in core data?
+    // these 6 buttons are here in the case we wish to expand our app in the future adding
+    // QoL calculation bonus' to the user.
     @IBOutlet weak var strSaveProf: UIButton!
     @IBOutlet weak var conSaveProf: UIButton!
     @IBOutlet weak var wisSaveProf: UIButton!
@@ -205,13 +206,19 @@ class NewCharacterViewController: UIViewController {
     @IBOutlet weak var spellButton: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
     
-    var deathSave1F = false
-    var deathSave2F = false
-    var deathSave3F = false
-    var deathSave1S = false
-    var deathSave2S = false
-    var deathSave3S = false
+    // arrays for deathSaveBooleans, first 3 are fails, last 3 are successes,
+    var deathSaveBooleans = [false, false, false, false, false, false]
 
+    lazy var deathSaveButtons: [UIButton] = [deathSaveFail1, deathSaveFail2, deathSaveFail3, deathSaveSucc1, deathSaveSucc2, deathSaveSucc3]
+    
+    let deathSaveAttrib : [String] = [
+        "deathSaveFail1",
+        "deathSaveFail2",
+        "deathSaveFail3",
+        "deathSaveSucc1",
+        "deathSaveSucc2",
+        "deathSaveSucc3"
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -223,7 +230,6 @@ class NewCharacterViewController: UIViewController {
         
         if characterToEdit != nil {
             // retrieve all information from core data
-            // gamename would be edited per Joseph's implementation
             for (index, key) in attributes.enumerated() {
                 if let textToInput = characterToEdit?.value(forKey: key) as? String {
                     textFieldOutlets[index].text = textToInput
@@ -239,15 +245,39 @@ class NewCharacterViewController: UIViewController {
         }
     }
     
+    // function to change the buttons view upon entering a created character
     func setUpDeathSaves() {
-        // check the value, set the image false/true whether false or true accordingly
-        // set the boolean true/false as well
+        for (index, key) in deathSaveAttrib.enumerated() {
+            if let boolVal = characterToEdit?.value(forKey: key) as? Bool {
+                deathSaveBooleans[index] = boolVal
+                
+                var imageName: String
+                
+                if (boolVal) {
+                    imageName = "radioOn"
+                } else {
+                    imageName = "radioOff"
+                }
+                
+                deathSaveButtons[index].setImage(UIImage(named: imageName), for: .normal)
+            }
+        }
         
-        //characterToEdit
     }
     
     
-    // @IBAction func deathSave pressed, if pressed switch image, and switch bool value
+    // code to change the button
+    @IBAction func deathSavePressed(_ sender:  UIButton) {
+        if let index = deathSaveButtons.firstIndex(of: sender) {
+            // Toggle the corresponding boolean value
+            deathSaveBooleans[index].toggle()
+                
+            // Update the button image based on the new boolean value
+            let newImageName = deathSaveBooleans[index] ? "radioOn" : "radioOff"
+            sender.setImage(UIImage(named: newImageName), for: .normal)
+        }
+        
+    }
 
     @IBAction func saveButtonPressed(_ sender: Any) {
         func showAlert(forMissingField fieldName: String) {
@@ -327,7 +357,10 @@ class NewCharacterViewController: UIViewController {
             characterToEdit.setValue(gameNameDropdown.titleLabel!.text, forKey: "gameName")
             
             
-            // set the values of the booleans
+            for (index, key) in deathSaveAttrib.enumerated() {
+                characterToEdit.setValue(deathSaveBooleans[index], forKey: key)
+            }
+
             
         } else {
             // Create a new Character instance
@@ -340,9 +373,9 @@ class NewCharacterViewController: UIViewController {
             spellButton.isHidden = false
             spellButton.isEnabled = true
             
-            
-            // set the values of the booleans
-
+            for (index, key) in deathSaveAttrib.enumerated() {
+                character.setValue(deathSaveBooleans[index], forKey: key)
+            }
         }
         
         saveContext()

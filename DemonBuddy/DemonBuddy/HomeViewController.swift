@@ -78,7 +78,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             if let userNameEntity = results.first as? NSManagedObject {
                 if let coreUser = userNameEntity.value(forKey: "userName") as? String {
-                    userName = coreUser
+                    userName = coreUser // EDIT THIS CODE HERE! @MARK
                 }
             }
         } catch {
