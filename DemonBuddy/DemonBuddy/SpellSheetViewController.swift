@@ -10,25 +10,60 @@ import CoreData
 import FirebaseAuth
 
 class SpellSheetViewController: UIViewController {
+    
+    @IBOutlet weak var cantrips: UITextField!
+    @IBOutlet weak var level1Spells: UITextField!
+    @IBOutlet weak var level2Spells: UITextField!
+    @IBOutlet weak var level3Spells: UITextField!
+    @IBOutlet weak var level4Spells: UITextField!
+    @IBOutlet weak var level5Spells: UITextField!
+    @IBOutlet weak var level6Spells: UITextField!
+    @IBOutlet weak var level7Spells: UITextField!
+    @IBOutlet weak var level8Spells: UITextField!
+    @IBOutlet weak var level9Spells: UITextField!
+    @IBOutlet weak var level1SpellSlots: UITextField!
+    @IBOutlet weak var level2SpellSlots: UITextField!
+    @IBOutlet weak var level3SpellSlots: UITextField!
+    @IBOutlet weak var level4SpellSlots: UITextField!
+    @IBOutlet weak var level5SpellSlots: UITextField!
+    @IBOutlet weak var level6SpellSlots: UITextField!
+    @IBOutlet weak var level7SpellSlots: UITextField!
+    @IBOutlet weak var level8SpellSlots: UITextField!
+    @IBOutlet weak var level9SpellSlots: UITextField!
+    @IBOutlet weak var spellAttackBonus: UITextField!
+    @IBOutlet weak var spellCastingAbility: UITextField!
+    @IBOutlet weak var spellCastingClass: UITextField!
+    @IBOutlet weak var spellSaveDC: UITextField!
 
     
-    /*
-     insert all outlets here
-     */
+    var spellSheetOutlets: [UITextField] {
+        return [
+            cantrips, level1Spells, level2Spells, level3Spells, level4Spells,
+            level5Spells, level6Spells, level7Spells, level8Spells, level9Spells,
+            level1SpellSlots, level2SpellSlots, level3SpellSlots, level4SpellSlots,
+            level5SpellSlots, level6SpellSlots, level7SpellSlots, level8SpellSlots,
+            level9SpellSlots, spellAttackBonus, spellCastingAbility, spellCastingClass,
+            spellSaveDC
+        ]
+    }
     
-    /*
-     array for the outlets
-     */
-    
-    /*
-     array for the attributes
-     */
+    let spellSheetAttributes: [String] = [
+        "cantrips", "level1Spells", "level2Spells", "level3Spells", "level4Spells",
+        "level5Spells", "level6Spells", "level7Spells", "level8Spells", "level9Spells",
+        "level1SpellSlots", "level2SpellSlots", "level3SpellSlots", "level4SpellSlots",
+        "level5SpellSlots", "level6SpellSlots", "level7SpellSlots", "level8SpellSlots",
+        "level9SpellSlots", "spellAttackBonus", "spellCastingAbility", "spellCastingClass",
+        "spellSaveDC"
+    ]
+
     
     /*
      delegate (if needed)
      spellSheetToEdit
      
      */
+    
+    
     
     var delegate: UIViewController!
     

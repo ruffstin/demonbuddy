@@ -58,7 +58,7 @@
         <attribute name="wisdom" optional="YES" attributeType="String"/>
         <attribute name="wisdomMod" optional="YES" attributeType="String"/>
         <attribute name="wisSaveProfBonus" optional="YES" attributeType="String"/>
-        <relationship name="spells" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SpellSheet" inverseName="caster" inverseEntity="SpellSheet"/>
+        <relationship name="spellSheet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SpellSheet" inverseName="character" inverseEntity="SpellSheet"/>
     </entity>
     <entity name="GameNames" representedClassName="GameNames" syncable="YES" codeGenerationType="class">
         <attribute name="names" optional="YES" attributeType="Transformable"/>
@@ -95,31 +95,30 @@
     </entity>
     <entity name="SpellSheet" representedClassName="SpellSheet" syncable="YES" codeGenerationType="class">
         <attribute name="cantrips0" optional="YES" attributeType="String"/>
-        <attribute name="gameName" optional="YES" attributeType="String"/>
         <attribute name="level1Spells" optional="YES" attributeType="String"/>
+        <attribute name="level1SpellSlots" optional="YES" attributeType="String"/>
         <attribute name="level2Spells" optional="YES" attributeType="String"/>
+        <attribute name="level2SpellSlots" optional="YES" attributeType="String"/>
         <attribute name="level3Spells" optional="YES" attributeType="String"/>
+        <attribute name="level3SpellSlots" optional="YES" attributeType="String"/>
         <attribute name="level4Spells" optional="YES" attributeType="String"/>
+        <attribute name="level4SpellSlots" optional="YES" attributeType="String"/>
         <attribute name="level5Spells" optional="YES" attributeType="String"/>
+        <attribute name="level5SpellSlots" optional="YES" attributeType="String"/>
         <attribute name="level6Spells" optional="YES" attributeType="String"/>
+        <attribute name="level6SpellSlots" optional="YES" attributeType="String"/>
         <attribute name="level7Spells" optional="YES" attributeType="String"/>
+        <attribute name="level7SpellSlots" optional="YES" attributeType="String"/>
         <attribute name="level8Spells" optional="YES" attributeType="String"/>
+        <attribute name="level8SpellSlots" optional="YES" attributeType="String"/>
         <attribute name="level9Spells" optional="YES" attributeType="String"/>
-        <attribute name="maxSpellSlotsLvl1" optional="YES" attributeType="String"/>
-        <attribute name="maxSpellSlotsLvl2" optional="YES" attributeType="String"/>
-        <attribute name="maxSpellSlotsLvl3" optional="YES" attributeType="String"/>
-        <attribute name="maxSpellSlotsLvl4" optional="YES" attributeType="String"/>
-        <attribute name="maxSpellSlotsLvl5" optional="YES" attributeType="String"/>
-        <attribute name="maxSpellSlotsLvl6" optional="YES" attributeType="String"/>
-        <attribute name="maxSpellSlotsLvl7" optional="YES" attributeType="String"/>
-        <attribute name="maxSpellSlotsLvl8" optional="YES" attributeType="String"/>
-        <attribute name="maxSpellSlotsLvl9" optional="YES" attributeType="String"/>
+        <attribute name="level9SpellSlots" optional="YES" attributeType="String"/>
         <attribute name="spellAttackBonus" optional="YES" attributeType="String"/>
         <attribute name="spellCastingAbility" optional="YES" attributeType="String"/>
         <attribute name="spellcastingClass" optional="YES" attributeType="String"/>
         <attribute name="spellSaveDC" optional="YES" attributeType="String"/>
         <attribute name="userID" optional="YES" attributeType="String"/>
-        <relationship name="caster" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Character" inverseName="spells" inverseEntity="Character"/>
+        <relationship name="character" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Character" inverseName="spellSheet" inverseEntity="Character"/>
     </entity>
     <entity name="UserName" representedClassName="UserName" syncable="YES" codeGenerationType="class">
         <attribute name="userID" optional="YES" attributeType="String"/>
