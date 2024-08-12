@@ -197,7 +197,6 @@ class NewCharacterViewController: UIViewController {
     
     var delegate: UIViewController!
 
-    var character: NSManagedObject?
     var characterToEdit: NSManagedObject?
     
     var gameNameOptions: [UIAction]!
@@ -262,7 +261,6 @@ class NewCharacterViewController: UIViewController {
                 deathSaveButtons[index].setImage(UIImage(named: imageName), for: .normal)
             }
         }
-        
     }
     
     
@@ -376,6 +374,8 @@ class NewCharacterViewController: UIViewController {
             for (index, key) in deathSaveAttrib.enumerated() {
                 character.setValue(deathSaveBooleans[index], forKey: key)
             }
+            
+            characterToEdit = character
         }
         
         saveContext()
@@ -401,6 +401,20 @@ class NewCharacterViewController: UIViewController {
         gameNameDropdown.menu = menu
         gameNameDropdown.showsMenuAsPrimaryAction = true
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "castSpells" {
+            if let spellSheetVC = segue.destination as? SpellSheetViewController {
+                if let characterToPass = characterToEdit as? Character {
+                    spellSheetVC.character = characterToPass
+                } else {
+                    // Handle the case where characterToEdit couldn't be cast to Character
+                    print("Error: characterToEdit is not of type Character")
+                }
+            }
+        }
+    }
+    
     
     
     func saveContext () {

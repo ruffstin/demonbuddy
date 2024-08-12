@@ -62,7 +62,10 @@ class DiceRollerViewController: UIViewController {
 //        } else {
 //            print("vib off")
 //        }
-                  
+           
+        //ANIMATION GOES HERE!!
+        
+        
             var totalRolled = 0
             
             for (index, textField) in diceTextFields.enumerated() {

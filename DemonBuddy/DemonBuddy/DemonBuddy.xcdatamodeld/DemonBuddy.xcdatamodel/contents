@@ -58,7 +58,7 @@
         <attribute name="wisdom" optional="YES" attributeType="String"/>
         <attribute name="wisdomMod" optional="YES" attributeType="String"/>
         <attribute name="wisSaveProfBonus" optional="YES" attributeType="String"/>
-        <relationship name="spellSheet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SpellSheet" inverseName="character" inverseEntity="SpellSheet"/>
+        <relationship name="spellSheet" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="SpellSheet" inverseName="character" inverseEntity="SpellSheet"/>
     </entity>
     <entity name="GameNames" representedClassName="GameNames" syncable="YES" codeGenerationType="class">
         <attribute name="names" optional="YES" attributeType="Transformable"/>

@@ -55,32 +55,23 @@ class SpellSheetViewController: UIViewController {
         "level9SpellSlots", "spellAttackBonus", "spellCastingAbility", "spellCastingClass",
         "spellSaveDC"
     ]
-
-    
-    /*
-     delegate (if needed)
-     spellSheetToEdit
-     
-     */
     
     
+    var character: Character!
     
-    var delegate: UIViewController!
-    
-    var caster: NSManagedObject?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        /*
-         if caster has spellsheet -> fill in values
-         for (index, key) in attributes.enumerated() {
-             if let textToInput = spellSheetToEdit?.value(forKey: key) as? String {
-                 textFieldOutlets[index].text = textToInput
-             }
-         }
-         */
+        // if we properly segued from a character page
+        if let character = character {
+            // if said character has a saved spellSheet fill in the values
+            if let spellSheet = character.spellSheet {
+                for (index, value) in spellSheetAttributes.enumerated() {
+                    spellSheetOutlets[index].text = value
+                }
+            }
+        }
     }
     
 
@@ -97,28 +88,41 @@ class SpellSheetViewController: UIViewController {
             present(controller, animated: true)
         }
         
-        /*
-         list of all fieldNames
-         let fieldNames: [String] = []
-         
-         
-         // display error
-         for (index, field) in textFieldOutlets.enumerated() {
-             if let text = field.text, text.isEmpty {
-                 showAlert(forMissingField: fieldNames[index])
-                 return
-             }
-         }
-         */
         
-        /*
-         if caster does not have spellsheet create one,
-         
-         else update values
-         */
+         let spellSheetFieldNames: [String] = [
+             "Cantrips", "Level 1 Spells", "Level 2 Spells", "Level 3 Spells", "Level 4 Spells",
+             "Level 5 Spells", "Level 6 Spells", "Level 7 Spells", "Level 8 Spells", "Level 9 Spells",
+             "Level 1 Spell Slots", "Level 2 Spell Slots", "Level 3 Spell Slots", "Level 4 Spell Slots",
+             "Level 5 Spell Slots", "Level 6 Spell Slots", "Level 7 Spell Slots", "Level 8 Spell Slots",
+             "Level 9 Spell Slots", "Spell Attack Bonus", "Spell Casting Ability", "Spell Casting Class",
+             "Spell Save DC"
+         ]
+
+        // display error
+        for (index, field) in spellSheetOutlets.enumerated() {
+            if let text = field.text, text.isEmpty {
+                showAlert(forMissingField: spellSheetFieldNames[index])
+                return
+            }
+        }
+        
+        
+        // update a created spellSheet or create a new spellSheet
+        
+        if let spellSheet = character.spellSheet {
+            for (index, key) in spellSheetAttributes.enumerated() {
+                spellSheet.setValue(spellSheetOutlets[index].text, forKey: key)
+            }
+            
+        } else {
+            let spellSheet = NSEntityDescription.insertNewObject(forEntityName: "SpellSheet", into: context)
+            for (index, key) in spellSheetAttributes.enumerated() {
+                    spellSheet.setValue(spellSheetOutlets[index].text, forKey: key)
+            }
+        }
+        
+        saveContext()
     }
-    
-    
     
     func saveContext () {
         if context.hasChanges {
