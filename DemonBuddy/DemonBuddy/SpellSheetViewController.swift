@@ -35,6 +35,7 @@ class SpellSheetViewController: UIViewController {
     @IBOutlet weak var spellCastingClass: UITextField!
     @IBOutlet weak var spellSaveDC: UITextField!
 
+    @IBOutlet weak var reset: UIButton!
     
     var spellSheetOutlets: [UITextField] {
         return [
@@ -60,8 +61,12 @@ class SpellSheetViewController: UIViewController {
     var character: Character!
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        reset.isEnabled = false
+        reset.isHidden = true
 
         // if we properly segued from a character page
         if let character = character {
@@ -71,11 +76,18 @@ class SpellSheetViewController: UIViewController {
                     spellSheetOutlets[index].text = value
                 }
             }
+            
+            reset.isEnabled = true
+            reset.isHidden = false
         }
     }
     
-
-    
+    @IBAction func resetButtonPressed(_ sender: Any) {
+        for textField in spellSheetOutlets {
+                textField.text = ""
+            }
+    }
+        
     @IBAction func saveButtonPressed(_ sender: Any) {
         func showAlert(forMissingField fieldName: String) {
             let controller = UIAlertController(
@@ -119,9 +131,16 @@ class SpellSheetViewController: UIViewController {
             for (index, key) in spellSheetAttributes.enumerated() {
                     spellSheet.setValue(spellSheetOutlets[index].text, forKey: key)
             }
+
+            // attach the spellSheet to the corresponding Character
+            character.spellSheet = spellSheet as? SpellSheet
+
         }
         
         saveContext()
+        
+        reset.isEnabled = true
+        reset.isHidden = false
     }
     
     func saveContext () {

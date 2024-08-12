@@ -94,7 +94,7 @@
         <attribute name="xp" optional="YES" attributeType="String"/>
     </entity>
     <entity name="SpellSheet" representedClassName="SpellSheet" syncable="YES" codeGenerationType="class">
-        <attribute name="cantrips0" optional="YES" attributeType="String"/>
+        <attribute name="cantrips" optional="YES" attributeType="String"/>
         <attribute name="level1Spells" optional="YES" attributeType="String"/>
         <attribute name="level1SpellSlots" optional="YES" attributeType="String"/>
         <attribute name="level2Spells" optional="YES" attributeType="String"/>
@@ -115,7 +115,7 @@
         <attribute name="level9SpellSlots" optional="YES" attributeType="String"/>
         <attribute name="spellAttackBonus" optional="YES" attributeType="String"/>
         <attribute name="spellCastingAbility" optional="YES" attributeType="String"/>
-        <attribute name="spellcastingClass" optional="YES" attributeType="String"/>
+        <attribute name="spellCastingClass" optional="YES" attributeType="String"/>
         <attribute name="spellSaveDC" optional="YES" attributeType="String"/>
         <attribute name="userID" optional="YES" attributeType="String"/>
         <relationship name="character" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Character" inverseName="spellSheet" inverseEntity="Character"/>

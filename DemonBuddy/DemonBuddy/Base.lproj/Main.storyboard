@@ -2352,6 +2352,17 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLy-ON-vFQ">
+                                <rect key="frame" x="302" y="45" width="75" height="34.333333333333258"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="DilutedDemonBloodColor"/>
+                                <color key="tintColor" name="PureDemonBloodColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="RESET"/>
+                                <connections>
+                                    <action selector="resetButtonpressed:" destination="iW7-Tv-tKS" eventType="touchUpInside" id="pv6-zl-Phk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="noc-KW-tnN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
