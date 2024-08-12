@@ -625,7 +625,6 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="56.666666666666664" height="70"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="70" id="26p-cb-cqr"/>
-                                                    <constraint firstAttribute="width" constant="70" id="ecc-Cx-Llv"/>
                                                 </constraints>
                                             </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9gn-pj-kIV">
@@ -3422,9 +3421,9 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="qsn-fO-fKv"/>
-        <segue reference="FAa-fW-4SB"/>
-        <segue reference="0Wp-ya-txE"/>
-        <segue reference="IPc-Vi-pTd"/>
+        <segue reference="Re2-iQ-jX1"/>
+        <segue reference="7tu-Qd-nB5"/>
+        <segue reference="CbH-b7-kzV"/>
         <segue reference="BBV-ds-Atw"/>
         <segue reference="bff-6O-SsZ"/>
         <segue reference="9QN-iW-I28"/>

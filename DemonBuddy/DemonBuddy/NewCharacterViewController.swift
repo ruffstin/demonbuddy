@@ -83,7 +83,6 @@ class NewCharacterViewController: UIViewController {
 
     @IBOutlet weak var skills: UITextField!
     
-    // for now so I can create an entity I have just the attacks textbox
     @IBOutlet weak var attacks: UITextField!
     
     @IBOutlet weak var copper: UITextField!
@@ -206,6 +205,14 @@ class NewCharacterViewController: UIViewController {
     @IBOutlet weak var spellButton: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
     
+    var deathSave1F = false
+    var deathSave2F = false
+    var deathSave3F = false
+    var deathSave1S = false
+    var deathSave2S = false
+    var deathSave3S = false
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -227,9 +234,20 @@ class NewCharacterViewController: UIViewController {
             }
             spellButton.isHidden = false
             spellButton.isEnabled = true
+            
+            setUpDeathSaves()
         }
     }
     
+    func setUpDeathSaves() {
+        // check the value, set the image false/true whether false or true accordingly
+        // set the boolean true/false as well
+        
+        //characterToEdit
+    }
+    
+    
+    // @IBAction func deathSave pressed, if pressed switch image, and switch bool value
 
     @IBAction func saveButtonPressed(_ sender: Any) {
         func showAlert(forMissingField fieldName: String) {
@@ -307,6 +325,10 @@ class NewCharacterViewController: UIViewController {
                 characterToEdit.setValue(textFieldOutlets[index].text, forKey: key)
             }
             characterToEdit.setValue(gameNameDropdown.titleLabel!.text, forKey: "gameName")
+            
+            
+            // set the values of the booleans
+            
         } else {
             // Create a new Character instance
             let character = NSEntityDescription.insertNewObject(forEntityName: "Character", into: context)
@@ -317,6 +339,10 @@ class NewCharacterViewController: UIViewController {
             character.setValue(gameNameDropdown.titleLabel!.text, forKey: "gameName")
             spellButton.isHidden = false
             spellButton.isEnabled = true
+            
+            
+            // set the values of the booleans
+
         }
         
         saveContext()

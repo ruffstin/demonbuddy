@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22758" systemVersion="23G80" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22758" systemVersion="23F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="AppSettings" representedClassName="AppSettings" syncable="YES" codeGenerationType="class">
         <attribute name="backgroundColor" optional="YES" attributeType="String"/>
         <attribute name="soundEnabled" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
@@ -9,12 +9,6 @@
         <attribute name="alignment" optional="YES" attributeType="String"/>
         <attribute name="armorClass" optional="YES" attributeType="String"/>
         <attribute name="attacks" optional="YES" attributeType="String"/>
-        <attribute name="attribute" optional="YES"/>
-        <attribute name="attribute1" optional="YES"/>
-        <attribute name="attribute2" optional="YES"/>
-        <attribute name="attribute3" optional="YES"/>
-        <attribute name="attribute4" optional="YES"/>
-        <attribute name="attribute5" optional="YES"/>
         <attribute name="charClass" optional="YES" attributeType="String"/>
         <attribute name="charisma" optional="YES" attributeType="String"/>
         <attribute name="charismaMod" optional="YES" attributeType="String"/>
@@ -26,6 +20,12 @@
         <attribute name="copper" optional="YES" attributeType="String"/>
         <attribute name="currentHealthPoints" optional="YES" attributeType="String"/>
         <attribute name="currentHitDice" optional="YES" attributeType="String"/>
+        <attribute name="deathSaveFail1" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="deathSaveFail2" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="deathSaveFail3" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="deathSaveSucc1" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="deathSaveSucc2" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="deathSaveSucc3" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="dexSaveProfBonus" optional="YES" attributeType="String"/>
         <attribute name="dexterity" optional="YES" attributeType="String"/>
         <attribute name="dexterityMod" optional="YES" attributeType="String"/>
