@@ -21,7 +21,7 @@ class RegisterViewController: UIViewController {
     
     
     @IBOutlet weak var errorLabel: UILabel!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,9 +35,6 @@ class RegisterViewController: UIViewController {
                     self.confirmPasswordInput.text = nil
                 }
         }
-        
-        passwordInput.isSecureTextEntry = true
-        confirmPasswordInput.isSecureTextEntry = true
     }
     
     @IBAction func registerPressed(_ sender: Any) {
@@ -97,5 +94,15 @@ class RegisterViewController: UIViewController {
         }
         
         return false
+    }
+    
+    // send the userName over for the greeting Message
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "registerLoginSegue" {
+            if let navController = segue.destination as? UINavigationController,
+                       let homeVC = navController.viewControllers.first as? HomeViewController {
+                homeVC.userName = usernameInput.text!
+                    }
+        }
     }
 }

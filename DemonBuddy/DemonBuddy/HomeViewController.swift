@@ -29,7 +29,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     var dimBackgroundView: UIView!
     
     var secretCount = 0
-    var username: String? // for if a user just registered. 
+    var userName: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +51,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         gameNameTableView.dataSource = self
         
         grabUserName()
-        
+
         retrieveGameNames()
         
         // Listen for background color changes
@@ -101,44 +101,53 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             
         secretCount = 0
         grabUserName()
+
     }
     
-    /*
-    let userID = Auth.auth().currentUser?.uid
-    let userName = NSEntityDescription.insertNewObject(forEntityName: "UserName", into: context)
-    userName.setValue(userID, forKey: "userID")
-    userName.setValue(self.usernameInput.text, forKey: "userName")
-    self.saveContext()*/
-    
     func grabUserName() {
+        // Ensure that the current user is logged in
+        guard let userID = Auth.auth().currentUser?.uid else {
+            return
+        }
+        
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "UserName")
+        request.predicate = NSPredicate(format: "userID == %@", userID)
         
-        var userName = "MASTER"
-        guard let user = Auth.auth().currentUser?.uid else {
-                print("No current user logged in.")
-                return
-            }
-        
-        let predicate = NSPredicate(format: "userID == %@", user)
-        request.predicate = predicate
+        var userName = "MASTER" // Default value if no username is found
         
         do {
             let results = try context.fetch(request)
             
             if let userNameEntity = results.first as? NSManagedObject {
+                // If a username is found in Core Data, use it
                 if let coreUser = userNameEntity.value(forKey: "userName") as? String {
-                    userName = coreUser // EDIT THIS CODE HERE! @MARK
+                    userName = coreUser
+                }
+            } else {
+                // If no UserName entity exists, check if the provided `username` is not nil
+                if let providedUsername = self.userName, !providedUsername.isEmpty {
+                    // Create a new UserName entity and save it
+                    let newUserNameEntity = NSEntityDescription.insertNewObject(forEntityName: "UserName", into: context)
+                    newUserNameEntity.setValue(userID, forKey: "userID")
+                    newUserNameEntity.setValue(providedUsername, forKey: "userName")
+                    
+                    
+                    saveContext()
+                    userName = providedUsername
                 }
             }
         } catch {
             print("Could not find UserName")
         }
         
+        // Set the greeting message
         demonBuddyLine.text = "What Infernal Magicks are we going to get up to today \(userName)?"
     }
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return gameNames.count
+        // return gameNames.count
+        return gameNames?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -181,9 +190,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let notesRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Note")
         let charactersRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Character")
         let npcsRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "NPCorMonster")
-        let spellsRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "SpellSheet")
         
-        let deleteRequests: [NSFetchRequest] = [notesRequest, charactersRequest, npcsRequest, spellsRequest]
+        let deleteRequests: [NSFetchRequest] = [notesRequest, charactersRequest, npcsRequest]
         
         // Create predicate to match entities to user and game name
         let user = (Auth.auth().currentUser?.uid as? String)!
