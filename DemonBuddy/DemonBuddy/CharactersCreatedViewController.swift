@@ -217,7 +217,7 @@ class CharactersCreatedViewController: UIViewController, UITableViewDelegate, UI
     @IBAction func filtersDonePressed(_ sender: Any) {
         var sortBy: String!
         if nameSortSelected {
-            sortBy = "title"
+            sortBy = "name"
         } else if gameSortSelected {
             sortBy = "gameName"
         }

@@ -65,20 +65,21 @@ class SpellSheetViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        reset.isEnabled = false
-        reset.isHidden = true
+        //reset.isEnabled = false
+        //reset.isHidden = true
 
         // if we properly segued from a character page
         if let character = character {
             // if said character has a saved spellSheet fill in the values
-            if let spellSheet = character.spellSheet {
+            if character.spellSheet != nil {
                 for (index, value) in spellSheetAttributes.enumerated() {
-                    spellSheetOutlets[index].text = value
+                    if let value = character.spellSheet?.value(forKey: value) as? String {
+                        spellSheetOutlets[index].text = value
+                    }
                 }
+                reset.isEnabled = true
+                reset.isHidden = false
             }
-            
-            reset.isEnabled = true
-            reset.isHidden = false
         }
         
         // Listen for background color changes

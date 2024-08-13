@@ -29,6 +29,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     var dimBackgroundView: UIView!
     
     var secretCount = 0
+    var username: String? // for if a user just registered. 
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -101,6 +102,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         secretCount = 0
         grabUserName()
     }
+    
+    /*
+    let userID = Auth.auth().currentUser?.uid
+    let userName = NSEntityDescription.insertNewObject(forEntityName: "UserName", into: context)
+    userName.setValue(userID, forKey: "userID")
+    userName.setValue(self.usernameInput.text, forKey: "userName")
+    self.saveContext()*/
     
     func grabUserName() {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "UserName")

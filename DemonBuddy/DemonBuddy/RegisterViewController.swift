@@ -35,6 +35,9 @@ class RegisterViewController: UIViewController {
                     self.confirmPasswordInput.text = nil
                 }
         }
+        
+        passwordInput.isSecureTextEntry = true
+        confirmPasswordInput.isSecureTextEntry = true
     }
     
     @IBAction func registerPressed(_ sender: Any) {
@@ -58,13 +61,6 @@ class RegisterViewController: UIViewController {
                 } else {
                     self.errorLabel.text = nil
                 }
-                
-                /*
-                let userID = Auth.auth().currentUser?.uid
-                let userName = NSEntityDescription.insertNewObject(forEntityName: "UserName", into: context)
-                userName.setValue(userID, forKey: "userID")
-                userName.setValue(self.usernameInput.text, forKey: "userName")
-                self.saveContext()*/
             }
         }
     }

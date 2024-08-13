@@ -59,23 +59,6 @@ class DiceRollerViewController: UIViewController {
                 return
             }
         }
-        //issue, the sound will only play if the user intializes the settings by clicking on the settings tab so, upon logging in or going to the home screen I need to intialize these flags and send them to DiceRoller VC for the sound to work
-        if soundFlag {
-            playSound(named: "dice-142528")
-            //print("sound on")
-        } else {
-            print("sound off")
-        }
-        
-        if vibrationFlag{
-            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
-            //print("vib on")
-        } else {
-            print("vib off")
-        }
-           
-        //ANIMATION GOES HERE!!
-        
         
             var totalRolled = 0
             
@@ -91,14 +74,37 @@ class DiceRollerViewController: UIViewController {
                 }
             }
         
-        
         if (totalRolled > 0) {
             totalNum.text = "Total: \(totalRolled)"
             reset.isEnabled = true
             reset.isHidden = false
+            
+            // only make sound/vibrate the phone/or animate IF there are dice selected to roll
+            soundNShakeNAnimate()
         }
     }
 
+    func soundNShakeNAnimate() {
+        //issue, the sound will only play if the user intializes the settings by clicking on the settings tab so, upon logging in or going to the home screen I need to intialize these flags and send them to DiceRoller VC for the sound to work
+        if soundFlag {
+            playSound(named: "dice-142528")
+            //print("sound on")
+        } else {
+            print("sound off")
+        }
+        
+        if vibrationFlag{
+            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+            
+            // have something to show that haptics are happening?
+            
+            //print("vib on")
+        } else {
+            print("vib off")
+        }
+        //ANIMATION GOES HERE!!
+       
+    }
     
     // clean out the dice tray and reset the num of values
     @IBAction func resetButtonpressed(_ sender: Any) {

@@ -171,7 +171,7 @@ class CreatedMonstersorNPCViewController: UIViewController, UITableViewDelegate,
     @IBAction func filtersDonePressed(_ sender: Any) {
         var sortBy: String!
         if nameSortSelected {
-            sortBy = "title"
+            sortBy = "creatureName"
         } else if gameSortSelected {
             sortBy = "gameName"
         }

@@ -27,6 +27,8 @@ class LoginViewController: UIViewController {
                     self.passwordInput.text = nil
                 }
         }
+        
+        passwordInput.isSecureTextEntry = true
     }
     
     

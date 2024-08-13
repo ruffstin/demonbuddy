@@ -58,8 +58,8 @@ class SettingsViewController: UIViewController {
             UIAction(title: "gray", state: currentSelection == "gray" ? .on : .off, handler: optionClosure),
             UIAction(title: "mint", state: currentSelection == "mint" ? .on : .off, handler: optionClosure),
             UIAction(title: "orange", state: currentSelection == "orange" ? .on : .off, handler: optionClosure),
-            UIAction(title: "red", state: currentSelection == "pink" ? .on : .off, handler: optionClosure),
-            UIAction(title: "green", state: currentSelection == "purple" ? .on : .off, handler: optionClosure)
+            UIAction(title: "red", state: currentSelection == "red" ? .on : .off, handler: optionClosure),
+            UIAction(title: "green", state: currentSelection == "green" ? .on : .off, handler: optionClosure)
         ]
         //the menu displays the color that is chosen based on the string chosen in menuItems
         colorPopupMenu.menu = UIMenu(children: menuItems)
