@@ -127,7 +127,10 @@ class NewNoteViewController: UIViewController {
             present(controller, animated: true)
         } else {
             let title = titleTextView.text
-            let game = gameNameDropdown.title(for: .normal)
+            var game = gameNameDropdown.title(for: .normal)
+            if (game == "Game Name") {
+                game = "None"
+            }
             let userID = Auth.auth().currentUser?.uid
             let noteText = textView.text
             let date = dateLabel.text

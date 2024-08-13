@@ -211,7 +211,11 @@ class NewNPCMonsterViewController: UIViewController {
                 for (index, key) in textFieldKeys.enumerated() {
                         monsterOrNpc.setValue(textFieldOutlets[index].text, forKey: key)
                 }
-                monsterOrNpc.setValue(gameNameDropdown.titleLabel!.text, forKey: "gameName")
+                if (gameNameDropdown.titleLabel!.text == "Game Name") {
+                    monsterOrNpc.setValue("None", forKey: "gameName")
+                } else {
+                    monsterOrNpc.setValue(gameNameDropdown.titleLabel!.text, forKey: "gameName")
+                }
             }
             
             saveContext()

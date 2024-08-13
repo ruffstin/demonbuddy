@@ -407,7 +407,11 @@ class NewCharacterViewController: UIViewController {
             for (index, key) in attributes.enumerated() {
                 character.setValue(textFieldOutlets[index].text, forKey: key)
             }
-            character.setValue(gameNameDropdown.titleLabel!.text, forKey: "gameName")
+            if (gameNameDropdown.titleLabel!.text == "Game Name") {
+                character.setValue("None", forKey: "gameName")
+            } else {
+                character.setValue(gameNameDropdown.titleLabel!.text, forKey: "gameName")
+            }
             spellButton.isHidden = false
             spellButton.isEnabled = true
             
