@@ -74,7 +74,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         switch currColor {
             case "gray":
-                color = UIColor.systemGray
+                color = UIColor.background
             case "mint":
                 color = UIColor.systemMint
             case "orange":
@@ -84,7 +84,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             case "purple":
                 color = UIColor.systemPurple
             default:
-                color = UIColor.systemGray
+                color = UIColor.background
         }
         
         self.view.backgroundColor = color

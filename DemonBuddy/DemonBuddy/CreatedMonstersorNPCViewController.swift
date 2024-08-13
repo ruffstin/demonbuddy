@@ -91,7 +91,7 @@ class CreatedMonstersorNPCViewController: UIViewController, UITableViewDelegate,
         
         switch currColor {
             case "gray":
-                color = UIColor.systemGray
+                color = UIColor.background
             case "mint":
                 color = UIColor.systemMint
             case "orange":
@@ -101,7 +101,7 @@ class CreatedMonstersorNPCViewController: UIViewController, UITableViewDelegate,
             case "purple":
                 color = UIColor.systemPurple
             default:
-                color = UIColor.systemGray
+                color = UIColor.background
         }
         
         self.view.backgroundColor = color

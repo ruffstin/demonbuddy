@@ -70,7 +70,7 @@ class NewNoteViewController: UIViewController {
         
         switch currColor {
             case "gray":
-                color = UIColor.systemGray
+                color = UIColor.background
             case "mint":
                 color = UIColor.systemMint
             case "orange":
@@ -80,7 +80,7 @@ class NewNoteViewController: UIViewController {
             case "purple":
                 color = UIColor.systemPurple
             default:
-                color = UIColor.systemGray
+                color = UIColor.background
         }
         
         self.view.backgroundColor = color
