@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import CoreData
+//import CoreData
 
 //sends a notification to the other VCs to changer their background colors based on what is selected in the PopupMenu
 extension Notification.Name {
@@ -76,7 +76,7 @@ class SettingsViewController: UIViewController {
         
         switch newColor.lowercased() {
         case "gray":
-            color = UIColor.systemBackground
+            color = UIColor.background
         case "mint":
             color = UIColor.systemMint
         case "orange":
@@ -86,7 +86,7 @@ class SettingsViewController: UIViewController {
         case "green":
             color = UIColor.systemGreen
         default:
-            color = UIColor.systemBackground
+            color = UIColor.background
         }
         
         self.view.backgroundColor = color
@@ -111,6 +111,7 @@ class SettingsViewController: UIViewController {
         soundSwitch.setOn(true, animated: true)
         colorPopupMenu.setTitle("gray", for: .normal)
         updateBackgroundColor(newColor: "gray")
+        saveDefaultData()
     }
     
     func saveDefaultData() {
@@ -123,10 +124,10 @@ class SettingsViewController: UIViewController {
     func getDefaultData() {
         //need to comeback and see if this is what I want in the case that the keyValue pair is nil
         currColor = defaults.string(forKey: "backgroundColor") ?? "gray"
-        colorPopupMenu.setTitle(currColor, for: .normal)
-        updateBackgroundColor(newColor: currColor)
         soundSwitch.setOn(defaults.bool(forKey: "soundEnabled"), animated: false)
         vibrationSwitch.setOn(defaults.bool(forKey: "vibrationEnabled"), animated: false)
+        colorPopupMenu.setTitle(currColor, for: .normal)
+        updateBackgroundColor(newColor: currColor)
     }
     
     func clearDefaultButton() {

@@ -440,15 +440,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uCI-ma-9tS">
-                                <rect key="frame" x="34" y="77" width="107" height="36"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="hpQ-iI-Y9G">
+                                <rect key="frame" x="0.0" y="750" width="393" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="hpQ-iI-Y9G">
-                                <rect key="frame" x="0.0" y="751" width="393" height="44"/>
                                 <items>
                                     <barButtonItem title="Home Button" image="house" catalog="system" id="xtA-pA-p2u">
                                         <connections>
@@ -537,16 +531,20 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Button"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uCI-ma-9tS">
+                                <rect key="frame" x="34" y="98" width="107" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JIV-gw-sIO"/>
                         <color key="backgroundColor" name="Background Color"/>
                         <constraints>
-                            <constraint firstItem="TgN-NA-6fr" firstAttribute="centerX" secondItem="hpQ-iI-Y9G" secondAttribute="centerX" id="3vH-Nn-5T6"/>
                             <constraint firstItem="TgN-NA-6fr" firstAttribute="centerX" secondItem="MdO-yy-KhW" secondAttribute="centerX" id="DiU-JV-f3h"/>
                             <constraint firstItem="TgN-NA-6fr" firstAttribute="leading" secondItem="JIV-gw-sIO" secondAttribute="leading" constant="64" id="M5W-Ei-cpD"/>
                             <constraint firstItem="TgN-NA-6fr" firstAttribute="top" secondItem="dTe-Nh-uhg" secondAttribute="bottom" constant="8" id="Pw4-Ni-Peb"/>
-                            <constraint firstItem="hpQ-iI-Y9G" firstAttribute="top" secondItem="TgN-NA-6fr" secondAttribute="bottom" constant="83" id="jAf-mk-4BU"/>
-                            <constraint firstItem="hpQ-iI-Y9G" firstAttribute="leading" secondItem="JIV-gw-sIO" secondAttribute="leading" id="nUQ-wd-PpR"/>
                             <constraint firstItem="TgN-NA-6fr" firstAttribute="centerX" secondItem="dTe-Nh-uhg" secondAttribute="centerX" id="pGt-er-co4"/>
                             <constraint firstAttribute="bottom" secondItem="TgN-NA-6fr" secondAttribute="bottom" constant="174" id="v9Q-3F-7uk"/>
                         </constraints>
@@ -3420,8 +3418,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="qsn-fO-fKv"/>
-        <segue reference="Re2-iQ-jX1"/>
-        <segue reference="7tu-Qd-nB5"/>
+        <segue reference="FAa-fW-4SB"/>
+        <segue reference="0Wp-ya-txE"/>
         <segue reference="CbH-b7-kzV"/>
         <segue reference="BBV-ds-Atw"/>
         <segue reference="VnP-I4-fiZ"/>

@@ -242,7 +242,47 @@ class NewCharacterViewController: UIViewController {
             
             setUpDeathSaves()
         }
+        NotificationCenter.default.addObserver(self, selector: #selector(handleBackgroundColorChange(notification:)), name: .backgroundColorDidChange, object: nil)
+        
+        // Apply the saved background color on load
+        applySavedBackgroundColor()
     }
+    
+    // Handle the notification and update the background color
+    @objc func handleBackgroundColorChange(notification: Notification) {
+        if let color = notification.object as? UIColor {
+            self.view.backgroundColor = color
+        }
+    }
+    
+    // Apply the saved background color from UserDefaults
+    func applySavedBackgroundColor() {
+        let currColor = UserDefaults.standard.string(forKey: "backgroundColor") ?? "gray"
+        var color: UIColor
+        
+        switch currColor {
+            case "gray":
+                color = UIColor.systemGray
+            case "mint":
+                color = UIColor.systemMint
+            case "orange":
+                color = UIColor.systemOrange
+            case "pink":
+                color = UIColor.systemPink
+            case "purple":
+                color = UIColor.systemPurple
+            default:
+                color = UIColor.systemGray
+        }
+        
+        self.view.backgroundColor = color
+    }
+    
+    deinit {
+        // Remove observer when the view controller is deallocated
+        NotificationCenter.default.removeObserver(self, name: .backgroundColorDidChange, object: nil)
+    }
+
     
     // function to change the buttons view upon entering a created character
     func setUpDeathSaves() {
