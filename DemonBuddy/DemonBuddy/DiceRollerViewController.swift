@@ -151,18 +151,18 @@ class DiceRollerViewController: UIViewController {
         var color: UIColor
         
         switch currColor {
-            case "gray":
-                color = UIColor.background
-            case "mint":
-                color = UIColor.systemMint
-            case "orange":
-                color = UIColor.systemOrange
-            case "pink":
-                color = UIColor.systemPink
-            case "purple":
-                color = UIColor.systemPurple
-            default:
-                color = UIColor.background
+        case "gray":
+            color = UIColor.background
+        case "mint":
+            color = UIColor.systemMint
+        case "orange":
+            color = UIColor.systemOrange
+        case "red":
+            color = UIColor.systemRed
+        case "green":
+            color = UIColor.systemGreen
+        default:
+            color = UIColor.background
         }
         
         self.view.backgroundColor = color
