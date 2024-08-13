@@ -13,8 +13,7 @@ extension Notification.Name {
     static let backgroundColorDidChange = Notification.Name("backgroundColorDidChange")
 }
 
-//recieves the settings from core data and stores it in the list
-var settingsList: [Settings] = []
+let defaults = UserDefaults.standard
 
 class SettingsViewController: UIViewController {
     
@@ -29,26 +28,9 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // gets the values from core data and stores it in the settingsList
-//        settingsList = getSettings().map { entity in
-//            let settingsEntity = entity as! AppSettings
-//            return Settings(color: settingsEntity.backgroundColor ?? "", sound: settingsEntity.soundEnabled, vibration: settingsEntity.vibrationEnabled)
-//        }
-//        // after getting the settings from core data, apply the settings to the insatnce variables if there is core data
-//        if let settings = settingsList.first {
-//            currColor = settings.color.lowercased()
-//            soundSwitch.setOn(settings.sound, animated: false)
-//            vibrationSwitch.setOn(settings.vibration, animated: false)
-//            colorPopupMenu.setTitle(settings.color, for: .normal)
-//            updateBackgroundColor(newColor: settings.color)
-//        } else {
-//            //default settings if there is no core data so these are the applied settings
-//            currColor = "gray"
-//            soundSwitch.setOn(true, animated: false)
-//            vibrationSwitch.setOn(true, animated: false)
-//            colorPopupMenu.setTitle("gray", for: .normal)
-//            updateBackgroundColor(newColor: "gray")
-//        }
+        
+        getDefaultData()
+        print(defaults.dictionaryRepresentation())
         //set up pop up button menu
         setPopupButton()
         
@@ -110,83 +92,47 @@ class SettingsViewController: UIViewController {
         self.view.backgroundColor = color
         //sends the signal to the other screens what the color the background is
         NotificationCenter.default.post(name: .backgroundColorDidChange, object: color)
-        //clear the core data before saving new setting changes
-        clearCoreData()
-        storeSettings(backgroundColor: newColor, soundEnabled: soundSwitch.isOn, vibrationEnabled: vibrationSwitch.isOn)
+        saveDefaultData()
     }
 
     //when the sound switch is switched then clear the previous core data and store it with the new values
     @IBAction func soundSwitchPressed(_ sender: Any) {
-        clearCoreData()
-        storeSettings(backgroundColor: currColor, soundEnabled: soundSwitch.isOn, vibrationEnabled: vibrationSwitch.isOn)
+        saveDefaultData()
     }
     
     //when the vibration switch is switched then tclear the previous core data and store it with the new values
     @IBAction func vibrationSwitchPressed(_ sender: Any) {
-        clearCoreData()
-        storeSettings(backgroundColor: currColor, soundEnabled: soundSwitch.isOn, vibrationEnabled: vibrationSwitch.isOn)
+        saveDefaultData()
     }
     
     // if the user wants to have the default settings
     @IBAction func defaultButtonPressed(_ sender: Any) {
-        clearCoreData()
         vibrationSwitch.setOn(true, animated: true)
         soundSwitch.setOn(true, animated: true)
         colorPopupMenu.setTitle("gray", for: .normal)
         updateBackgroundColor(newColor: "gray")
-        storeSettings(backgroundColor: "gray", soundEnabled: soundSwitch.isOn, vibrationEnabled: vibrationSwitch.isOn)
     }
     
-    //core data function to save it
-    func saveContext () {
-        if context.hasChanges {
-            do {
-                try context.save()
-            } catch {
-                let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-            }
-        }
+    func saveDefaultData() {
+        defaults.set(currColor, forKey: "backgroundColor")
+        defaults.set(soundSwitch.isOn, forKey: "soundEnabled")
+        defaults.set(vibrationSwitch.isOn, forKey: "vibrationEnabled")
+        defaults.synchronize()
     }
     
-    //set the values for core data then save it by calling saveContext()
-    func storeSettings(backgroundColor:String, soundEnabled: Bool, vibrationEnabled: Bool){
-        let settings = NSEntityDescription.insertNewObject(forEntityName: "AppSettings", into: context)
-        //set the values of the attributes then save it to core data
-        settings.setValue(backgroundColor, forKey: "backgroundColor")
-        settings.setValue(soundEnabled, forKey: "soundEnabled")
-        settings.setValue(vibrationEnabled, forKey: "vibrationEnabled")
-        saveContext()
+    func getDefaultData() {
+        //need to comeback and see if this is what I want in the case that the keyValue pair is nil
+        currColor = defaults.string(forKey: "backgroundColor") ?? "gray"
+        colorPopupMenu.setTitle(currColor, for: .normal)
+        updateBackgroundColor(newColor: currColor)
+        soundSwitch.setOn(defaults.bool(forKey: "soundEnabled"), animated: false)
+        vibrationSwitch.setOn(defaults.bool(forKey: "vibrationEnabled"), animated: false)
     }
     
-    //fetch/get the settings from core data
-    func getSettings() -> [NSManagedObject] {
-        //make the request from core data
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "AppSettings")
-        //this is the data structure that will be returned with the values from core data
-        var fetchedResults: [NSManagedObject]? = nil
-        do {
-            try fetchedResults = context.fetch(request) as? [NSManagedObject]
-        } catch {
-            print("failed to load settings from core data")
-            
-        }
-        return fetchedResults ?? []
-    }
-    
-    //remove the core data values
-    func clearCoreData() {
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "AppSettings")
-        do {
-            if let fetchedResults = try context.fetch(request) as? [NSManagedObject] {
-                for result in fetchedResults {
-                    context.delete(result)
-                }
-                saveContext()
-            }
-        } catch {
-            print("error while clearing core data")
-        }
+    func clearDefaultButton() {
+        defaults.removeObject(forKey: "backgroundColor")
+        defaults.removeObject(forKey: "soundEnabled")
+        defaults.removeObject(forKey: "vibrationEnabled")
     }
     
 }
