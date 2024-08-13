@@ -102,7 +102,7 @@ class RegisterViewController: UIViewController {
             if let navController = segue.destination as? UINavigationController,
                        let homeVC = navController.viewControllers.first as? HomeViewController {
                 homeVC.userName = usernameInput.text!
-                    }
+            }
         }
     }
 }
