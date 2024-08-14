@@ -53,7 +53,6 @@ class NewCharacterViewController: UIViewController {
     @IBOutlet weak var tempHp: UITextField!
     @IBOutlet weak var inspiration: UITextField!
     
-    
     // how to save death saves to core data?
     @IBOutlet weak var deathSaveSucc1: UIButton!
     @IBOutlet weak var deathSaveSucc2: UIButton!
@@ -63,17 +62,6 @@ class NewCharacterViewController: UIViewController {
     @IBOutlet weak var deathSaveFail2: UIButton!
     @IBOutlet weak var deathSaveFail3: UIButton!
     
-    // these 6 buttons are here in the case we wish to expand our app in the future adding
-    // QoL calculation bonus' to the user.
-    @IBOutlet weak var strSaveProf: UIButton!
-    @IBOutlet weak var conSaveProf: UIButton!
-    @IBOutlet weak var wisSaveProf: UIButton!
-    
-    @IBOutlet weak var dexSaveProf: UIButton!
-    @IBOutlet weak var intSaveProf: UIButton!
-    @IBOutlet weak var chaSaveProf: UIButton!
-    
-    
     @IBOutlet weak var strSaveProfBonus: UITextField!
     @IBOutlet weak var conSaveProfBonus: UITextField!
     @IBOutlet weak var wisSaveProfBonus: UITextField!
@@ -82,9 +70,9 @@ class NewCharacterViewController: UIViewController {
     @IBOutlet weak var intSaveProfBonus: UITextField!
     @IBOutlet weak var chaSaveProfBonus: UITextField!
 
-    @IBOutlet weak var skills: UITextField!
+    @IBOutlet weak var skills: UITextView!
     
-    @IBOutlet weak var attacks: UITextField!
+    @IBOutlet weak var attacks: UITextView!
     
     @IBOutlet weak var copper: UITextField!
     @IBOutlet weak var silver: UITextField!
@@ -92,9 +80,9 @@ class NewCharacterViewController: UIViewController {
     @IBOutlet weak var electrum: UITextField!
     @IBOutlet weak var platinum: UITextField!
     
-    @IBOutlet weak var featuresAndTraits: UITextField!
+    @IBOutlet weak var featuresAndTraits: UITextView!
     
-    @IBOutlet weak var items: UITextField!
+    @IBOutlet weak var items: UITextView!
     
     
     // Array for UITextFields
@@ -102,7 +90,6 @@ class NewCharacterViewController: UIViewController {
         return [
             alignment,
             armorClass,
-            attacks,
             chaMod,
             chaScore,
             chaSaveProfBonus,
@@ -119,7 +106,6 @@ class NewCharacterViewController: UIViewController {
             dexScore,
             dexSaveProfBonus,
             electrum,
-            featuresAndTraits,
             gold,
             hitDice,
             hp,
@@ -127,14 +113,12 @@ class NewCharacterViewController: UIViewController {
             intMod,
             intScore,
             intSaveProfBonus,
-            items,
             level,
             platinum,
             profBonus,
             race,
             subRace,
             silver,
-            skills,
             speed,
             strMod,
             strScore,
@@ -147,10 +131,18 @@ class NewCharacterViewController: UIViewController {
         ]
     }
     
+    var textViewOutlets: [UITextView] {
+        return [
+            attacks,
+            featuresAndTraits,
+            items,
+            skills
+        ]
+    }
+    
     let attributes: [String] = [
         "alignment",
         "armorClass",
-        "attacks",
         "charismaMod",
         "charisma",
         "charismaSaveProfBonus",
@@ -167,7 +159,6 @@ class NewCharacterViewController: UIViewController {
         "dexterity",
         "dexSaveProfBonus",
         "electrum",
-        "featuresAndTraits",
         "gold",
         "hitDice",
         "healthPoints",
@@ -175,14 +166,12 @@ class NewCharacterViewController: UIViewController {
         "intelligenceMod",
         "intelligence",
         "intelligenceSaveProfBonus",
-        "items",
         "level",
         "platinum",
         "proficiencyBonus",
         "race",
         "subRace",
         "silver",
-        "skills",
         "speed",
         "strengthMod",
         "strength",
@@ -192,6 +181,13 @@ class NewCharacterViewController: UIViewController {
         "wisdom",
         "wisSaveProfBonus",
         "experiencePoints"
+    ]
+    
+    let viewAttributes: [String] = [
+        "attacks",
+        "featuresAndTraits",
+        "items",
+        "skills"
     ]
 
     
@@ -234,6 +230,14 @@ class NewCharacterViewController: UIViewController {
                     textFieldOutlets[index].text = textToInput
                 }
             }
+            
+            for (index, key) in viewAttributes.enumerated() {
+                if let textToInput = characterToEdit?.value(forKey: key) as? String {
+                    textViewOutlets[index].text = textToInput
+                }
+            }
+            
+            
             if let game = characterToEdit?.value(forKey: "gameName") as? String {
                 gameNameDropdown.setTitle(game, for: .normal)
             }
@@ -241,6 +245,11 @@ class NewCharacterViewController: UIViewController {
             spellButton.isEnabled = true
             
             setUpDeathSaves()
+        } else {
+            // ensuring that the death save buttons are viewed
+            for (index, key) in deathSaveAttrib.enumerated() {
+                deathSaveButtons[index].setImage(UIImage(named: "radioOff"), for: .normal)
+            }
         }
         NotificationCenter.default.addObserver(self, selector: #selector(handleBackgroundColorChange(notification:)), name: .backgroundColorDidChange, object: nil)
         
@@ -332,7 +341,6 @@ class NewCharacterViewController: UIViewController {
         let fieldNames: [String] = [
             "Alignment",
             "Armor Class",
-            "Attacks",
             "Charisma Mod",
             "Charisma",
             "Charisma Save Prof Bonus",
@@ -348,7 +356,6 @@ class NewCharacterViewController: UIViewController {
             "Dexterity",
             "Dexterity Save Prof Bonus",
             "Electrum",
-            "Features and Traits",
             "Gold",
             "Hit Dice",
             "Health Points",
@@ -356,7 +363,6 @@ class NewCharacterViewController: UIViewController {
             "Intelligence Mod",
             "Intelligence",
             "Intelligence Save Prof Bonus",
-            "Items",
             "Level",
             "Name",
             "Platinum",
@@ -364,7 +370,6 @@ class NewCharacterViewController: UIViewController {
             "Race",
             "Subrace",
             "Silver",
-            "Skills",
             "Speed",
             "Strength Mod",
             "Strength",
@@ -376,9 +381,23 @@ class NewCharacterViewController: UIViewController {
             "Experience Points"
         ]
         
+        let fieldNameViews: [String] = [
+            "Attacks",
+            "Features and Traits",
+            "Items",
+            "Skills"
+        ]
+        
         for (index, field) in textFieldOutlets.enumerated() {
             if let text = field.text, text.isEmpty {
                 showAlert(forMissingField: fieldNames[index])
+                return
+            }
+        }
+        
+        for (index, field) in textViewOutlets.enumerated() {
+            if let text = field.text, text.isEmpty {
+                showAlert(forMissingField: fieldNameViews[index])
                 return
             }
         }
@@ -394,6 +413,9 @@ class NewCharacterViewController: UIViewController {
             }
             characterToEdit.setValue(gameNameDropdown.titleLabel!.text, forKey: "gameName")
             
+            for (index, key) in viewAttributes.enumerated() {
+                characterToEdit.setValue(textViewOutlets[index].text, forKey: key)
+            }
             
             for (index, key) in deathSaveAttrib.enumerated() {
                 characterToEdit.setValue(deathSaveBooleans[index], forKey: key)
@@ -407,11 +429,17 @@ class NewCharacterViewController: UIViewController {
             for (index, key) in attributes.enumerated() {
                 character.setValue(textFieldOutlets[index].text, forKey: key)
             }
+            
+            for (index, key) in viewAttributes.enumerated() {
+                character.setValue(textViewOutlets[index].text, forKey: key)
+            }
+            
             if (gameNameDropdown.titleLabel!.text == "Game Name") {
                 character.setValue("None", forKey: "gameName")
             } else {
                 character.setValue(gameNameDropdown.titleLabel!.text, forKey: "gameName")
             }
+            
             spellButton.isHidden = false
             spellButton.isEnabled = true
             
@@ -458,8 +486,6 @@ class NewCharacterViewController: UIViewController {
             }
         }
     }
-    
-    
     
     func saveContext () {
         if context.hasChanges {

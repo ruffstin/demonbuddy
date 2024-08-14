@@ -11,7 +11,7 @@ import FirebaseAuth
 
 class NewNPCMonsterViewController: UIViewController {
     
-    let textFieldKeys: [String] = [
+    let textFieldKeysFields: [String] = [
         "creatureName",
         "hitPoints",
         "armorClass",
@@ -23,7 +23,10 @@ class NewNPCMonsterViewController: UIViewController {
         "dexterity",
         "intelligence",
         "wisdom",
-        "charisma",
+        "charisma"
+    ]
+    
+    let textFieldKeysViews: [String] = [
         "skills",
         "senses",
         "languages",
@@ -50,12 +53,12 @@ class NewNPCMonsterViewController: UIViewController {
     @IBOutlet weak var wisdom: UITextField!
     @IBOutlet weak var charisma: UITextField!
     
-    @IBOutlet weak var skills: UITextField!
-    @IBOutlet weak var senses: UITextField!
-    @IBOutlet weak var languages: UITextField!
-    @IBOutlet weak var creatureFeatures: UITextField!
-    @IBOutlet weak var actions: UITextField!
-    @IBOutlet weak var items: UITextField!
+    @IBOutlet weak var skills: UITextView!
+    @IBOutlet weak var senses: UITextView!
+    @IBOutlet weak var languages: UITextView!
+    @IBOutlet weak var creatureFeatures: UITextView!
+    @IBOutlet weak var actions: UITextView!
+    @IBOutlet weak var items: UITextView!
     
     var delegate: UIViewController!
     
@@ -64,17 +67,23 @@ class NewNPCMonsterViewController: UIViewController {
     var gameNameOptions: [UIAction]!
     
     // Array of UITextFields
-        var textFieldOutlets: [UITextField] {
-            return [
-                creatureNameText, hitPoints,
-                armorClass, speed,
-                challengeRating, xpToEarn,
-                strength, constitution, dexterity,
-                intelligence, wisdom, charisma,
-                skills, senses, languages,
-                creatureFeatures, actions, items
-            ]
-        }
+    var textFieldOutlets: [UITextField] {
+        return [
+            creatureNameText, hitPoints,
+            armorClass, speed,
+            challengeRating, xpToEarn,
+            strength, constitution, dexterity,
+            intelligence, wisdom, charisma
+        ]
+    }
+        
+    // Array of textViews!
+    var textFieldViews: [UITextView] {
+        return [
+            skills, senses, languages,
+            creatureFeatures, actions, items
+        ]
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,9 +93,15 @@ class NewNPCMonsterViewController: UIViewController {
         if monsterOrNpcToEdit != nil {
             
             // gamename would be edited per Joseph's implementation
-            for (index, key) in textFieldKeys.enumerated() {
+            for (index, key) in textFieldKeysFields.enumerated() {
                 if let textToInput = monsterOrNpcToEdit?.value(forKey: key) as? String {
                     textFieldOutlets[index].text = textToInput
+                }
+            }
+            
+            for (index, key) in textFieldKeysViews.enumerated() {
+                if let textToInput = monsterOrNpcToEdit?.value(forKey: key) as? String {
+                    textFieldViews[index].text = textToInput
                 }
             }
 
@@ -165,7 +180,7 @@ class NewNPCMonsterViewController: UIViewController {
                 present(controller, animated: true)
             }
             
-        let fieldNames: [String] = [
+        let fieldNamesFields: [String] = [
             "Creature Name",
             "Hit Points",
             "Armor Class",
@@ -177,7 +192,10 @@ class NewNPCMonsterViewController: UIViewController {
             "Constitution",
             "Intelligence",
             "Wisdom",
-            "Charisma",
+            "Charisma"
+        ]
+        
+        let fielddNamesViews: [String] = [
             "Skills",
             "Senses",
             "Languages",
@@ -188,35 +206,53 @@ class NewNPCMonsterViewController: UIViewController {
 
         for (index, field) in textFieldOutlets.enumerated() {
             if let text = field.text, text.isEmpty {
-                showAlert(forMissingField: fieldNames[index])
+                showAlert(forMissingField: fieldNamesFields[index])
+                return
+            }
+        }
+        
+        for (index, field) in textFieldViews.enumerated() {
+            if let text = field.text, text.isEmpty {
+                showAlert(forMissingField: fielddNamesViews[index])
                 return
             }
         }
             
             // All required fields are present, proceed with entity creation
-            let userID = Auth.auth().currentUser?.uid
+        let userID = Auth.auth().currentUser?.uid
             
-            if let monsterOrNpcToEdit = monsterOrNpcToEdit {
+        if let monsterOrNpcToEdit = monsterOrNpcToEdit {
                 // Update existing monsters/npc instance
 
-                for (index, key) in textFieldKeys.enumerated() {
-                    monsterOrNpcToEdit.setValue(textFieldOutlets[index].text, forKey: key)
-                }
-                monsterOrNpcToEdit.setValue(gameNameDropdown.titleLabel!.text, forKey: "gameName")
-
-            } else {
-                // Create new NPC/Monster instance
-                let monsterOrNpc = NSEntityDescription.insertNewObject(forEntityName: "NPCorMonster", into: context)
-                monsterOrNpc.setValue(userID, forKey: "userID")
-                for (index, key) in textFieldKeys.enumerated() {
-                        monsterOrNpc.setValue(textFieldOutlets[index].text, forKey: key)
-                }
-                if (gameNameDropdown.titleLabel!.text == "Game Name") {
-                    monsterOrNpc.setValue("None", forKey: "gameName")
-                } else {
-                    monsterOrNpc.setValue(gameNameDropdown.titleLabel!.text, forKey: "gameName")
-                }
+            for (index, key) in textFieldKeysFields.enumerated() {
+                monsterOrNpcToEdit.setValue(textFieldOutlets[index].text, forKey: key)
             }
+            
+            for (index, key) in textFieldKeysViews.enumerated() {
+                monsterOrNpcToEdit.setValue(textFieldViews[index].text, forKey: key)
+            }
+            
+            monsterOrNpcToEdit.setValue(gameNameDropdown.titleLabel!.text, forKey: "gameName")
+
+        } else {
+            // Create new NPC/Monster instance
+            let monsterOrNpc = NSEntityDescription.insertNewObject(forEntityName: "NPCorMonster", into: context)
+                monsterOrNpc.setValue(userID, forKey: "userID")
+            
+            for (index, key) in textFieldKeysFields.enumerated() {
+                    monsterOrNpc.setValue(textFieldOutlets[index].text, forKey: key)
+            }
+            
+            for (index, key) in textFieldKeysViews.enumerated() {
+                    monsterOrNpc.setValue(textFieldViews[index].text, forKey: key)
+            }
+            
+            if (gameNameDropdown.titleLabel!.text == "Game Name") {
+                monsterOrNpc.setValue("None", forKey: "gameName")
+            } else {
+                monsterOrNpc.setValue(gameNameDropdown.titleLabel!.text, forKey: "gameName")
+            }
+        }
             
             saveContext()
             

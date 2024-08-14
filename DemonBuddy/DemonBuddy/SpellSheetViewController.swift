@@ -168,22 +168,35 @@ class SpellSheetViewController: UIViewController {
         }
         
         
-         let spellSheetFieldNames: [String] = [
+         let spellSheetFieldNamesView: [String] = [
              "Cantrips", "Level 1 Spells", "Level 2 Spells", "Level 3 Spells", "Level 4 Spells",
-             "Level 5 Spells", "Level 6 Spells", "Level 7 Spells", "Level 8 Spells", "Level 9 Spells",
-             "Level 1 Spell Slots", "Level 2 Spell Slots", "Level 3 Spell Slots", "Level 4 Spell Slots",
-             "Level 5 Spell Slots", "Level 6 Spell Slots", "Level 7 Spell Slots", "Level 8 Spell Slots",
-             "Level 9 Spell Slots", "Spell Attack Bonus", "Spell Casting Ability", "Spell Casting Class",
-             "Spell Save DC"
+             "Level 5 Spells", "Level 6 Spells", "Level 7 Spells", "Level 8 Spells", "Level 9 Spells"
+             
          ]
+        
+        let spellSheetFieldNamesFields: [String] = [
+            "Level 1 Spell Slots", "Level 2 Spell Slots", "Level 3 Spell Slots", "Level 4 Spell Slots",
+            "Level 5 Spell Slots", "Level 6 Spell Slots", "Level 7 Spell Slots", "Level 8 Spell Slots",
+            "Level 9 Spell Slots", "Spell Attack Bonus", "Spell Casting Ability", "Spell Casting Class",
+            "Spell Save DC"
+        ]
 
         // display error
-        for (index, field) in spellSheetOutlets.enumerated() {
+        for (index, field) in spellSheetViewOutlets.enumerated() {
             if let text = field.text, text.isEmpty {
-                showAlert(forMissingField: spellSheetFieldNames[index])
+                showAlert(forMissingField: spellSheetFieldNamesView[index])
                 return
             }
         }
+        
+        for (index, field) in spellSheetOutlets.enumerated() {
+            if let text = field.text, text.isEmpty {
+                showAlert(forMissingField: spellSheetFieldNamesFields[index])
+                return
+            }
+        }
+        
+        
         
         
         // update a created spellSheet or create a new spellSheet
