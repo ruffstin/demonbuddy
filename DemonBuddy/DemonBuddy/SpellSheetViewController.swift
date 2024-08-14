@@ -11,16 +11,19 @@ import FirebaseAuth
 
 class SpellSheetViewController: UIViewController {
     
-    @IBOutlet weak var cantrips: UITextField!
-    @IBOutlet weak var level1Spells: UITextField!
-    @IBOutlet weak var level2Spells: UITextField!
-    @IBOutlet weak var level3Spells: UITextField!
-    @IBOutlet weak var level4Spells: UITextField!
-    @IBOutlet weak var level5Spells: UITextField!
-    @IBOutlet weak var level6Spells: UITextField!
-    @IBOutlet weak var level7Spells: UITextField!
-    @IBOutlet weak var level8Spells: UITextField!
-    @IBOutlet weak var level9Spells: UITextField!
+    @IBOutlet weak var cantrips: UITextView!
+    @IBOutlet weak var level1Spells: UITextView!
+    @IBOutlet weak var level2Spells: UITextView!
+    @IBOutlet weak var level3Spells: UITextView!
+    @IBOutlet weak var level4Spells: UITextView!
+    @IBOutlet weak var level5Spells: UITextView!
+    @IBOutlet weak var level6Spells: UITextView!
+    @IBOutlet weak var level7Spells: UITextView!
+    @IBOutlet weak var level8Spells: UITextView!
+    @IBOutlet weak var level9Spells: UITextView!
+    
+    // text views are required for storing a lot of text verses 1 or two lines
+    
     @IBOutlet weak var level1SpellSlots: UITextField!
     @IBOutlet weak var level2SpellSlots: UITextField!
     @IBOutlet weak var level3SpellSlots: UITextField!
@@ -34,13 +37,24 @@ class SpellSheetViewController: UIViewController {
     @IBOutlet weak var spellCastingAbility: UITextField!
     @IBOutlet weak var spellCastingClass: UITextField!
     @IBOutlet weak var spellSaveDC: UITextField!
-
+    
+    
+    
+    
+    
+    
     @IBOutlet weak var reset: UIButton!
+    
+    
+    var spellSheetViewOutlets: [UITextView] {
+        return [
+            cantrips, level1Spells, level2Spells, level3Spells, level4Spells,
+            level5Spells, level6Spells, level7Spells, level8Spells, level9Spells
+        ]
+    }
     
     var spellSheetOutlets: [UITextField] {
         return [
-            cantrips, level1Spells, level2Spells, level3Spells, level4Spells,
-            level5Spells, level6Spells, level7Spells, level8Spells, level9Spells,
             level1SpellSlots, level2SpellSlots, level3SpellSlots, level4SpellSlots,
             level5SpellSlots, level6SpellSlots, level7SpellSlots, level8SpellSlots,
             level9SpellSlots, spellAttackBonus, spellCastingAbility, spellCastingClass,
@@ -48,9 +62,15 @@ class SpellSheetViewController: UIViewController {
         ]
     }
     
-    let spellSheetAttributes: [String] = [
+    
+    // spellsheetattribs1
+    let spellSheetAttributeViews: [String] = [
         "cantrips", "level1Spells", "level2Spells", "level3Spells", "level4Spells",
-        "level5Spells", "level6Spells", "level7Spells", "level8Spells", "level9Spells",
+        "level5Spells", "level6Spells", "level7Spells", "level8Spells", "level9Spells"
+    ]
+    
+    // spellsheetattribs2
+    let spellSheetAttributesFields: [String] = [ // attribs2
         "level1SpellSlots", "level2SpellSlots", "level3SpellSlots", "level4SpellSlots",
         "level5SpellSlots", "level6SpellSlots", "level7SpellSlots", "level8SpellSlots",
         "level9SpellSlots", "spellAttackBonus", "spellCastingAbility", "spellCastingClass",
@@ -59,8 +79,6 @@ class SpellSheetViewController: UIViewController {
     
     
     var character: Character!
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,7 +90,13 @@ class SpellSheetViewController: UIViewController {
         if let character = character {
             // if said character has a saved spellSheet fill in the values
             if character.spellSheet != nil {
-                for (index, value) in spellSheetAttributes.enumerated() {
+                for (index, value) in spellSheetAttributeViews.enumerated() {
+                    if let value = character.spellSheet?.value(forKey: value) as? String {
+                        spellSheetViewOutlets[index].text = value
+                    }
+                }
+                
+                for (index, value) in spellSheetAttributesFields.enumerated() {
                     if let value = character.spellSheet?.value(forKey: value) as? String {
                         spellSheetOutlets[index].text = value
                     }
@@ -165,14 +189,22 @@ class SpellSheetViewController: UIViewController {
         // update a created spellSheet or create a new spellSheet
         
         if let spellSheet = character.spellSheet {
-            for (index, key) in spellSheetAttributes.enumerated() {
+            for (index, key) in spellSheetAttributeViews.enumerated() {
+                spellSheet.setValue(spellSheetViewOutlets[index].text, forKey: key)
+            }
+             
+            for (index, key) in spellSheetAttributesFields.enumerated() {
                 spellSheet.setValue(spellSheetOutlets[index].text, forKey: key)
             }
             
         } else {
             let spellSheet = NSEntityDescription.insertNewObject(forEntityName: "SpellSheet", into: context)
-            for (index, key) in spellSheetAttributes.enumerated() {
-                    spellSheet.setValue(spellSheetOutlets[index].text, forKey: key)
+            for (index, key) in spellSheetAttributeViews.enumerated() {
+                spellSheet.setValue(spellSheetViewOutlets[index].text, forKey: key)
+            }
+             
+            for (index, key) in spellSheetAttributesFields.enumerated() {
+                spellSheet.setValue(spellSheetOutlets[index].text, forKey: key)
             }
 
             // attach the spellSheet to the corresponding Character
