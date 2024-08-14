@@ -8,6 +8,12 @@ xcode 15.4, swift version 5.1
 
 ## Special instructions
 Ensure FirebaseAuth is installed and core data is enabled.
+Use the iPhone 15 Pro simulator (unknown if it'll work on a iPhone)
+As we are using core data and not firebase to store information,
+you will need to create your own account. Any username, email/password will work. 
+
+I do plan to provide a video of a "test account" that will showcase pre-created/
+filled in code. 
 
 ## Who did What? (or what did the demons have us do?)
 
