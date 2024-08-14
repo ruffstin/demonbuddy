@@ -717,12 +717,25 @@
                     </view>
                     <navigationItem key="navigationItem" id="oGQ-uT-F9P"/>
                     <connections>
+                        <outlet property="d10Image" destination="zo2-za-75S" id="Z3G-WL-rlX"/>
                         <outlet property="d10Num" destination="9gn-pj-kIV" id="o3L-Pb-Pfe"/>
+                        <outlet property="d12Image" destination="aPs-lG-Kmq" id="qNt-ZT-YVa"/>
                         <outlet property="d12Num" destination="Q0T-fK-kKR" id="Y57-bb-Qpw"/>
+                        <outlet property="d20Image" destination="E7i-ap-b0B" id="Hn4-Gp-hhr"/>
                         <outlet property="d20Num" destination="fbd-N7-3pK" id="4Fk-N6-3Hu"/>
+                        <outlet property="d4Image" destination="t1O-G8-uhR" id="hEa-0i-Qn5"/>
                         <outlet property="d4Num" destination="ktg-F4-Otc" id="4Rt-8e-24U"/>
+                        <outlet property="d6Image" destination="eDy-Gc-q0B" id="yGC-f7-Ur9"/>
                         <outlet property="d6Num" destination="eLX-jN-PhJ" id="XPh-o5-dcd"/>
+                        <outlet property="d8Image" destination="TIg-vZ-S3J" id="nq1-Hp-NB6"/>
                         <outlet property="d8Num" destination="TnW-2H-EaB" id="RDi-6T-lvA"/>
+                        <outlet property="diceImageView1" destination="t1O-G8-uhR" id="xu2-QG-np3"/>
+                        <outlet property="diceImageView2" destination="eDy-Gc-q0B" id="mxN-dO-Ts8"/>
+                        <outlet property="diceImageView3" destination="TIg-vZ-S3J" id="wVc-If-muR"/>
+                        <outlet property="diceImageView4" destination="zo2-za-75S" id="tL7-DS-71C"/>
+                        <outlet property="diceImageView5" destination="aPs-lG-Kmq" id="anY-NH-GnB"/>
+                        <outlet property="diceImageView6" destination="E7i-ap-b0B" id="dIH-49-7uL"/>
+                        <outlet property="mainDiceImage" destination="Yax-6E-PnP" id="Wtl-Rv-9N6"/>
                         <outlet property="reset" destination="waJ-MZ-I7B" id="ZCd-L9-T5Y"/>
                         <outlet property="rollButton" destination="6Kf-ak-5UJ" id="Hq6-J2-B6c"/>
                         <outlet property="totalNum" destination="rVs-dt-GTw" id="OoT-0r-VDJ"/>
@@ -3922,13 +3935,13 @@
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="secondarySystemBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

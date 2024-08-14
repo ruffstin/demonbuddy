@@ -11,6 +11,7 @@ import AudioToolbox
 
 class DiceRollerViewController: UIViewController {
 
+
     @IBOutlet weak var d4Num: UITextField!
     @IBOutlet weak var d6Num: UITextField!
     @IBOutlet weak var d8Num: UITextField!
@@ -18,6 +19,14 @@ class DiceRollerViewController: UIViewController {
     @IBOutlet weak var d12Num: UITextField!
     @IBOutlet weak var d20Num: UITextField!
 
+//    @IBOutlet weak var d4Image: UIImageView!
+//    @IBOutlet weak var d6Image: UIImageView!
+//    @IBOutlet weak var d8Image: UIImageView!
+//    @IBOutlet weak var d10Image: UIImageView!
+//    @IBOutlet weak var d12Image: UIImageView!
+//    @IBOutlet weak var d20Image: UIImageView!
+//    @IBOutlet weak var mainDiceImage: UIImageView!
+    
     @IBOutlet weak var rollButton: UIButton!
     
     @IBOutlet weak var totalNum: UILabel!
@@ -29,12 +38,12 @@ class DiceRollerViewController: UIViewController {
     var soundFlag: Bool!
     var vibrationFlag: Bool!
     var delegate: UIViewController!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         reset.isEnabled = false
         reset.isHidden = true
-        
+
         // Access the sound and vibration flags from UserDefaults
         soundFlag = UserDefaults.standard.bool(forKey: "soundEnabled")
         vibrationFlag = UserDefaults.standard.bool(forKey: "vibrationEnabled")
@@ -104,8 +113,50 @@ class DiceRollerViewController: UIViewController {
         }
         //ANIMATION GOES HERE!!
        
+        
     }
     
+//    func animateDice(_ textField: UITextField) {
+//        if let text = textField.text, !text.isEmpty {
+//            var diceImage: UIImage?
+//
+//            switch textField {
+//            case d4Num:
+//                diceImage = d4Image.image
+//            case d6Num:
+//                diceImage = d6Image.image
+//            case d8Num:
+//                diceImage = d8Image.image
+//            case d10Num:
+//                diceImage = d10Image.image
+//            case d12Num:
+//                diceImage = d12Image.image
+//            case d20Num:
+//                diceImage = d20Image.image
+//            default:
+//                break
+//            }
+//
+//            if let image = diceImage {
+//                mainDiceImage.image = image
+//                mainDiceImage.alpha = 0.0
+//                mainDiceImage.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+//
+//                UIView.animate(withDuration: 0.5, delay: 0, options: [.curveEaseInOut], animations: {
+//                    self.mainDiceImage.alpha = 1.0
+//                    self.mainDiceImage.transform = CGAffineTransform.identity
+//                }, completion: nil)
+//            }
+//        } else {
+//            UIView.animate(withDuration: 0.5, animations: {
+//                self.mainDiceImage.alpha = 0.0
+//            }) { _ in
+//                self.mainDiceImage.image = nil
+//                self.mainDiceImage.transform = CGAffineTransform.identity
+//            }
+//        }
+//    }
+
     // clean out the dice tray and reset the num of values
     @IBAction func resetButtonpressed(_ sender: Any) {
         d4Num.text = "0"
@@ -173,6 +224,7 @@ class DiceRollerViewController: UIViewController {
         
         self.view.backgroundColor = color
     }
+
     
     deinit {
         // Remove observer when the view controller is deallocated
