@@ -65,8 +65,8 @@ class SpellSheetViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //reset.isEnabled = false
-        //reset.isHidden = true
+        reset.isEnabled = false
+        reset.isHidden = true
 
         // if we properly segued from a character page
         if let character = character {

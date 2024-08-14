@@ -19,13 +19,13 @@ class DiceRollerViewController: UIViewController {
     @IBOutlet weak var d12Num: UITextField!
     @IBOutlet weak var d20Num: UITextField!
 
-//    @IBOutlet weak var d4Image: UIImageView!
-//    @IBOutlet weak var d6Image: UIImageView!
-//    @IBOutlet weak var d8Image: UIImageView!
-//    @IBOutlet weak var d10Image: UIImageView!
-//    @IBOutlet weak var d12Image: UIImageView!
-//    @IBOutlet weak var d20Image: UIImageView!
-//    @IBOutlet weak var mainDiceImage: UIImageView!
+/*    @IBOutlet weak var d4Image: UIImageView!
+    @IBOutlet weak var d6Image: UIImageView!
+    @IBOutlet weak var d8Image: UIImageView!
+    @IBOutlet weak var d10Image: UIImageView!
+    @IBOutlet weak var d12Image: UIImageView!
+    @IBOutlet weak var d20Image: UIImageView!
+    @IBOutlet weak var mainDiceImage: UIImageView!*/
     
     @IBOutlet weak var rollButton: UIButton!
     

@@ -2190,6 +2190,7 @@
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="RESET"/>
                                                                 <connections>
+                                                                    <action selector="resetButtonPressed:" destination="Wzq-Tf-2Fh" eventType="touchUpInside" id="cnB-bY-bYH"/>
                                                                     <action selector="resetButtonpressed:" destination="iW7-Tv-tKS" eventType="touchUpInside" id="pv6-zl-Phk"/>
                                                                 </connections>
                                                             </button>
@@ -2779,6 +2780,7 @@
                                                         <buttonConfiguration key="configuration" style="plain" title="Save"/>
                                                         <connections>
                                                             <action selector="saveButtonPressed:" destination="7wq-90-HKY" eventType="touchUpInside" id="IzZ-3d-rbz"/>
+                                                            <action selector="saveButtonPressed:" destination="Wzq-Tf-2Fh" eventType="touchUpInside" id="kPS-9G-XJN"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
