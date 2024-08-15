@@ -152,7 +152,11 @@ class SpellSheetViewController: UIViewController {
     @IBAction func resetButtonPressed(_ sender: Any) {
         for textField in spellSheetOutlets {
                 textField.text = ""
-            }
+        }
+        
+        for textField in spellSheetViewOutlets {
+            textField.text = ""
+        }
     }
         
     @IBAction func saveButtonPressed(_ sender: Any) {
