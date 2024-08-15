@@ -94,7 +94,6 @@ class DiceRollerViewController: UIViewController {
                         }
                         // make note of which dice are being rolled
                         diceToAnimate[index] = true
-                        print("dice index \(index) \(diceToAnimate[index])")
                     // ensure that if no dice of this size, don't have them animating
                     } else {
                         diceToAnimate[index] = false
@@ -138,6 +137,19 @@ class DiceRollerViewController: UIViewController {
         for (index, imageView) in diceImageViews.enumerated() {
             if diceToAnimate[index] {
                 imageView.isHidden = false
+                
+                imageView.alpha = 0.0
+                imageView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+                            
+                UIView.animate(withDuration: 0.3, delay: 0, options: [.curveEaseInOut], animations: {
+                    imageView.alpha = 1.0
+                    imageView.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
+                }, completion: { _ in
+                // Animate back to original size
+                UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseInOut], animations: {
+                    imageView.transform = CGAffineTransform.identity
+                }, completion: nil)
+                })
                 
             } else {
                 imageView.isHidden = true
