@@ -140,6 +140,17 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             print("Could not find UserName")
         }
         
+        // admin mode check
+        guard let user = Auth.auth().currentUser else {
+                print("No user is currently logged in.")
+                return
+        }
+        
+        if user.email == "admin@gmail.com" {
+            userName = "CommanderAdmin"
+        }
+        
+        
         // Set the greeting message
         demonBuddyLine.text = "What Infernal Magicks are we going to get up to today \(userName)?"
     }

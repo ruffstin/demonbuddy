@@ -190,6 +190,7 @@ class NewCharacterViewController: UIViewController {
         "skills"
     ]
 
+    @IBOutlet weak var adminFillInTextButton: UIButton!
     
     var delegate: UIViewController!
 

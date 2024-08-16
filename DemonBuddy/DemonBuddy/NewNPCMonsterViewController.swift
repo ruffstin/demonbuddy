@@ -96,13 +96,14 @@ class NewNPCMonsterViewController: UIViewController {
         }
         
         if user.email == "admin@gmail.com" {
-            adminFillInTextButton.isHidden = false
             adminFillInTextButton.isEnabled = true
         } else {
-            adminFillInTextButton.isHidden = true
+            if let customColor = UIColor(named: "Background Color") {
+                adminFillInTextButton.backgroundColor = customColor
+                adminFillInTextButton.setTitle("", for: .normal)
+               }
             adminFillInTextButton.isEnabled = false
         }
-        
         
         
         updateGameNameMenu()
@@ -299,7 +300,7 @@ class NewNPCMonsterViewController: UIViewController {
         wisdom.text = "10"
         charisma.text = "8"
         
-        skills.text = "athletics"
+        skills.text = "athletics +7"
         senses.text = "blindsense 10 ft"
         languages.text = "common, giant"
         creatureFeatures.text = "Charge \nCreature moves 30ft in a straight line and can strike a foe within 5 ft with it's hooves, \n1D10 + 4 bludgeoning damage"

@@ -77,6 +77,7 @@ class SpellSheetViewController: UIViewController {
         "spellSaveDC"
     ]
     
+    @IBOutlet weak var adminFillInTextButton: UIButton!
     
     var character: Character!
     
