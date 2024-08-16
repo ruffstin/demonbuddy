@@ -85,8 +85,25 @@ class NewNPCMonsterViewController: UIViewController {
         ]
     }
     
+    @IBOutlet weak var adminFillInTextButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        guard let user = Auth.auth().currentUser else {
+                print("No user is currently logged in.")
+                return
+        }
+        
+        if user.email == "admin@gmail.com" {
+            adminFillInTextButton.isHidden = false
+            adminFillInTextButton.isEnabled = true
+        } else {
+            adminFillInTextButton.isHidden = true
+            adminFillInTextButton.isEnabled = false
+        }
+        
+        
         
         updateGameNameMenu()
         
@@ -252,6 +269,8 @@ class NewNPCMonsterViewController: UIViewController {
             } else {
                 monsterOrNpc.setValue(gameNameDropdown.titleLabel!.text, forKey: "gameName")
             }
+            
+            monsterOrNpcToEdit = monsterOrNpc
         }
             
             saveContext()
@@ -263,6 +282,41 @@ class NewNPCMonsterViewController: UIViewController {
         }
 
 
+    @IBAction func fillInMonsterValues(_ sender: Any) {
+        creatureNameText.text = "Lightning Slayer"
+        hitPoints.text = "100"
+        
+        armorClass.text = "16"
+        speed.text = "60"
+        
+        challengeRating.text = "6"
+        xpToEarn.text = "5000"
+        
+        strength.text = "18"
+        constitution.text = "16"
+        dexterity.text = "12"
+        intelligence.text = "7"
+        wisdom.text = "10"
+        charisma.text = "8"
+        
+        skills.text = "athletics"
+        senses.text = "blindsense 10 ft"
+        languages.text = "common, giant"
+        creatureFeatures.text = "Charge \nCreature moves 30ft in a straight line and can strike a foe within 5 ft with it's hooves, \n1D10 + 4 bludgeoning damage"
+        actions.text = "MultiAttack \nLighting Slayer can make 2 spear attacks \nSpear 1d6 + 4 piercing + 2d6 lightning Damage"
+        items.text = "Lightning Helm \nLightning Lance \nLightning Lance does 1d6 piercing and 2d6 lightning plus your strength modifier"
+        
+        let alert = UIAlertController(title: "Reminder", message: "Scroll to the bottom and hit save, please.", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(okAction)
+            
+            self.present(alert, animated: true, completion: nil)
+        
+    }
+    
+    
+    
     func saveContext () {
         if context.hasChanges {
             do {
