@@ -133,11 +133,11 @@ class DiceRollerViewController: UIViewController {
         animateDice()
     }
     
+    // animate dice images
     func animateDice() {
         for (index, imageView) in diceImageViews.enumerated() {
             if diceToAnimate[index] {
                 imageView.isHidden = false
-                
                 imageView.alpha = 0.0
                 imageView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
                             
@@ -145,7 +145,7 @@ class DiceRollerViewController: UIViewController {
                     imageView.alpha = 1.0
                     imageView.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
                 }, completion: { _ in
-                // Animate back to original size
+                    
                 UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseInOut], animations: {
                     imageView.transform = CGAffineTransform.identity
                 }, completion: nil)
@@ -156,45 +156,6 @@ class DiceRollerViewController: UIViewController {
             }
         }
     }
-    
-/*    func animateDice(_ textField: UITextField) {
-       if let text = textField.text, !text.isEmpty {
-           var diceImage: UIImage?
-
-           switch textField {
-          case d4Num:
-               diceImage = d4Image.image
-          case d6Num:
-                diceImage = d6Image.image
-           case d8Num:
-              diceImage = d8Image.image
-           case d10Num:
-                diceImage = d10Image.image
-           case d12Num:
-                diceImage = d12Image.image
-           case d20Num:
-              diceImage = d20Image.image
-           default:
-               break
-           }
-
-          if let image = diceImage {              mainDiceImage.image = image
-             mainDiceImage.alpha = 0.0
-        mainDiceImage.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
-              
-                UIView.animate(withDuration: 0.5, delay: 0, options: [.curveEaseInOut], animations: {
-                   self.mainDiceImage.alpha = 1.0//                    self.mainDiceImage.transform = CGAffineTransform.identity
-                }, completion: nil)
-            }
-        } else {
-           UIView.animate(withDuration: 0.5, animations: {
-               self.mainDiceImage.alpha = 0.0
-            }) { _ in
-                self.mainDiceImage.image = nil
-                self.mainDiceImage.transform = CGAffineTransform.identity
-           }
-        }
-    }*/
 
     // clean out the dice tray and reset the num of values
     @IBAction func resetButtonpressed(_ sender: Any) {
