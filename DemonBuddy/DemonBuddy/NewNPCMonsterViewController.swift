@@ -90,6 +90,7 @@ class NewNPCMonsterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // admin mode enabler
         guard let user = Auth.auth().currentUser else {
                 print("No user is currently logged in.")
                 return
@@ -97,6 +98,7 @@ class NewNPCMonsterViewController: UIViewController {
         
         if user.email == "admin@gmail.com" {
             adminFillInTextButton.isEnabled = true
+            
         } else {
             if let customColor = UIColor(named: "Background Color") {
                 adminFillInTextButton.backgroundColor = customColor

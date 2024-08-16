@@ -222,6 +222,23 @@ class NewCharacterViewController: UIViewController {
         spellButton.isHidden = true
         spellButton.isEnabled = false
         
+        // admin mode enabler
+        guard let user = Auth.auth().currentUser else {
+                print("No user is currently logged in.")
+                return
+        }
+        
+        if user.email == "admin@gmail.com" {
+            adminFillInTextButton.isEnabled = true
+            
+        } else {
+            if let customColor = UIColor(named: "Background Color") {
+                adminFillInTextButton.backgroundColor = customColor
+                adminFillInTextButton.setTitle("", for: .normal)
+               }
+            adminFillInTextButton.isEnabled = false
+        }
+        
         updateGameNameMenu()
         
         if characterToEdit != nil {
@@ -248,7 +265,7 @@ class NewCharacterViewController: UIViewController {
             setUpDeathSaves()
         } else {
             // ensuring that the death save buttons are viewed
-            for (index, key) in deathSaveAttrib.enumerated() {
+            for (index, _) in deathSaveAttrib.enumerated() {
                 deathSaveButtons[index].setImage(UIImage(named: "radioOff"), for: .normal)
             }
         }
@@ -487,6 +504,78 @@ class NewCharacterViewController: UIViewController {
             }
         }
     }
+    
+    
+    @IBAction func fillInCharacterSheet(_ sender: Any) {
+        charName.text = "Moulder Bouldercrash"
+        race.text = "Human"
+        subRace.text = "-"
+        charClass.text = "Druid"
+        charSubclass.text = "Land - Forest"
+        
+        xP.text = "milestone"
+        level.text = "20"
+        profBonus.text = "+6"
+        alignment.text = "NG"
+        armorClass.text = "14"
+        speed.text = "30"
+        
+        strScore.text = "10"
+        conScore.text = "16"
+        wisScore.text = "20"
+        
+        strMod.text = "+0"
+        conMod.text = "+3"
+        wisMod.text = "+5"
+
+        dexScore.text = "14"
+        intScore.text = "14"
+        chaScore.text = "10"
+
+        dexMod.text = "+2"
+        intMod.text = "+2"
+        chaMod.text = "+0"
+
+        hp.text = "120"
+        currHP.text = "109"
+
+        hitDice.text = "20d8"
+        currHitDice.text = "10d8"
+
+        tempHp.text = "0"
+        inspiration.text = "2"
+
+        strSaveProfBonus.text = "+0"
+        conSaveProfBonus.text = "+3"
+        wisSaveProfBonus.text = "+11"
+
+        dexSaveProfBonus.text = "+2"
+        intSaveProfBonus.text = "+7"
+        chaSaveProfBonus.text = "+0"
+
+        skills.text = "Animal Handling +11 \nMedicine +7 \nNature +7 \nPerception +11"
+
+        attacks.text = "sickle - 1d4 + 0 slashing damage"
+
+        copper.text = "4"
+        silver.text = "2"
+        gold.text = "5"
+        electrum.text = "1"
+        platinum.text = "2"
+
+        featuresAndTraits.text = "You know Druidic, the secret language of druids. You can speak the language and use it to leave hidden messages. You and others who know this language automatically spot such a message. Others spot the message's presence with a successful DC 15 Wisdom (Perception) check but can't decipher it without magic. \n\n Wild Shape \nStarting at 2nd level, you can use your action to magically assume the shape of a beast that you have seen before. You can use this feature twice. You regain expended uses when you finish a short or long rest. Timeless Body \nStarting at 18th level, the primal magic that you wield causes you to age more slowly. For every 10 years that pass, your body ages only 1 year. \nBeast Spells        \nBeginning at 18th level, you can cast many of your druid spells in any shape you assume using Wild Shape. You can perform the somatic and verbal components of a druid spell while in a beast shape, but you aren't able to provide material components. \nArchdruid \nAt 20th level, you can use your Wild Shape an unlimited number of times. \nAdditionally, you can ignore the verbal and somatic components of your druid spells, as well as any material components that lack a cost and aren't consumed by a spell. You gain this benefit in both your normal shape and your beast shape from Wild Shape."
+
+        items.text = "hide armor, druidic focus, worn travelers clothes, pouch, sickle"
+        
+        
+        let alert = UIAlertController(title: "Reminder", message: "Scroll to the bottom and hit save, please.", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(okAction)
+            
+            self.present(alert, animated: true, completion: nil)
+    }
+    
     
     func saveContext () {
         if context.hasChanges {

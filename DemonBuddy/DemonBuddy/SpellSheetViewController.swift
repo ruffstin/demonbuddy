@@ -86,6 +86,25 @@ class SpellSheetViewController: UIViewController {
         
         reset.isEnabled = false
         reset.isHidden = true
+        
+        
+        // admin mode enabler
+        guard let user = Auth.auth().currentUser else {
+                print("No user is currently logged in.")
+                return
+        }
+        
+        if user.email == "admin@gmail.com" {
+            adminFillInTextButton.isEnabled = true
+            
+        } else {
+            if let customColor = UIColor(named: "Background Color") {
+                adminFillInTextButton.backgroundColor = customColor
+                adminFillInTextButton.setTitle("", for: .normal)
+               }
+            adminFillInTextButton.isEnabled = false
+        }
+        
 
         // if we properly segued from a character page
         if let character = character {
@@ -235,6 +254,44 @@ class SpellSheetViewController: UIViewController {
         reset.isEnabled = true
         reset.isHidden = false
     }
+    
+    
+    @IBAction func defaultButtonPressed(_ sender: Any) {
+        cantrips.text = "produce flame \nmold earth \ndruidcraft"
+        level1Spells.text = "create and destroy water \nthunderwave \ngoodberry - 10 berries, 1 hp per berry and you are good on food for  the day"
+        level2Spells.text = "flame blade \npass w/out trace - + 10 to stealth checks"
+        level3Spells.text  = "dispel magic"
+        level4Spells.text = "blight \npolymorph"
+        level5Spells.text = "Commune with Nature \nSummon Elemental"
+        level6Spells.text = "Bones of the Earth \nSunbeam"
+        level7Spells.text = "Reverse Gravity"
+        level8Spells.text = "Sunburst"
+        level9Spells.text = "True Resurrection"
+        
+        
+        level1SpellSlots.text = "4"
+        level2SpellSlots.text = "3"
+        level3SpellSlots.text = "3"
+        level4SpellSlots.text = "3"
+        level5SpellSlots.text = "3"
+        level6SpellSlots.text = "2"
+        level7SpellSlots.text = "2"
+        level8SpellSlots.text = "1"
+        level9SpellSlots.text = "1"
+        spellAttackBonus.text = "+11"
+        spellCastingAbility.text = "Wisdom"
+        spellCastingClass.text = "Druid"
+        spellSaveDC.text = "19"
+        
+        let alert = UIAlertController(title: "Reminder", message: "Scroll to the bottom and hit save, please.", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(okAction)
+            
+            self.present(alert, animated: true, completion: nil)
+    }
+    
+    
     
     func saveContext () {
         if context.hasChanges {

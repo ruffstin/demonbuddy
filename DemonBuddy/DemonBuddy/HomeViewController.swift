@@ -152,7 +152,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         
         // Set the greeting message
-        demonBuddyLine.text = "What Infernal Magicks are we going to get up to today \(userName)?"
+        demonBuddyLine.text = "What Infernal Magicks are we going to get up to today \n\(userName)?"
     }
 
     
